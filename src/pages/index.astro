@@ -3,6 +3,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
 import "../style/generalstyle.css";
 import Buttons from "../components/Buttons.astro";
 import Card from "../components/Card.astro";
+import Collaborate from "../components/Collaborate.astro";
 ---
 
 <html lang="en">
@@ -14,7 +15,28 @@ import Card from "../components/Card.astro";
     <title>Astro</title>
   </head>
 
-  <Mainlayout />
+  <Mainlayout>
+    <section class="header_karrusel"></section>
+    <div>
+      <h3>AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
+    </div>
+    <section class="artist_section">
+      <div class="artist_filter_buttons"></div>
+      <div class="cards_grid"></div>
+    </section>
+    <section class="collaborate">
+      <div>
+        <h2>OUR COLLABORATORS</h2>
+        <p>Samarbejde med Affiliated ... mere tekst følger...</p>
+      </div>
+      <div><Collaborate /></div>
+    </section>
+    <section class="contact">
+      <Button /><Button />
+    </section>
+    <img class="frontpage_logo" src="" alt="" />
+    <Button />
+  </Mainlayout>
 
 
 </html>
