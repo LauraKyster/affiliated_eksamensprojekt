@@ -1,14 +1,19 @@
 ---
 import Buttons from "../components/Buttons.astro";
+import "../style/generalstyle.css";
 ---
 
 <header class="header">
-  <nav>
-    <a href="https://www.instagram.com/affiliatedcph/"><img src="../public/img/insta_icon.png" alt="instagram_icon" /></a>
-    <img src="../public/img/facebook_icon.png" alt="facebook_icon" />
-    <img src="../public/img/youtube_icon.png" alt="youtube_icon" />
-    <img src="../public/img/spotify_icon.png" alt="spotify_icon" />
-    <img src="../public/img/nav_logo.png" alt="logo" />
+  <nav class="navbar">
+    <a href="https://www.instagram.com/affiliatedcph/"><img class="nav_icon" src="../public/img/insta_icon.png" alt="instagram_icon" /></a>
+
+    <a href="https://www.facebook.com/affiliatedcph"> <img class="nav_icon" src="../public/img/facebook_icon.png" alt="facebook_icon" /></a>
+
+    <a href=""><img class="nav_icon" src="../public/img/youtube_icon.png" alt="youtube_icon" /></a>
+
+    <a href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=qMr7DjAXRBu-HW5ivuspnA"><img class="nav_icon" src="../public/img/spotify_icon.png" alt="spotify_icon" /></a>
+
+    <img class="nav_logo" src="../public/img/nav_logo.png" alt="logo" />
     <button>COMMUNITY</button>
     <ul class="nav_menu">
       <li class="nav_item"><a href="">ARTISTER</a></li>
@@ -25,20 +30,58 @@ import Buttons from "../components/Buttons.astro";
 </header>
 
 <style>
+  .nav_menu.active li {
+    list-style: none;
+  }
+  .nav_menu.active a {
+    text-decoration: none;
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
+  }
   .nav_menu {
+    display: none;
+  }
+  .nav_menu.active {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    z-index: 2;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav_icon {
+    height: 25px;
+    width: auto;
+  }
+  .nav_logo {
+    width: 30px;
+    height: 30px;
+  }
+  .bar {
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    background-color: var(--textColor);
+  }
+  button {
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
   }
 </style>
 
 <script>
-  const hamburger = document.querySelector(".burger_menu");
+  const burgerMenu = document.querySelector(".burger_menu");
   const navMenu = document.querySelector(".nav_menu");
 
-  hamburger.addEventListener("click", mobileMenu);
+  burgerMenu.addEventListener("click", mobileMenu);
 
   function mobileMenu() {
-    hamburger.classList.toggle("active");
+    burgerMenu.classList.toggle("active");
     navMenu.classList.toggle("active");
   }
 </script>
