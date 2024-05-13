@@ -5,14 +5,18 @@ import Buttons from "..components/Buttons.astro";
 import Card from "../components/Card.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-
-  <Mainlayout />
-</html>
+<Mainlayout>
+  <section class="singleview_img">
+    <img src="" alt="" />
+    <h1>Artist name</h1>
+  </section>
+  <section class="artist_info">
+    <div class="singleview_grid">
+      <div class="singleview_text">
+        <h3>Artist name</h3>
+        <p>Artist info</p>
+      </div>
+      <div class="singleview_links"></div>
+    </div>
+  </section>
+</Mainlayout>
