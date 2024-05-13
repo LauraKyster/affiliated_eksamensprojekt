@@ -5,18 +5,20 @@ import "../style/generalstyle.css";
 
 <header class="header">
   <nav class="navbar">
-    <a href="https://www.instagram.com/affiliatedcph/"><img class="nav_icon" src="../public/img/insta_icon.png" alt="instagram_icon" /></a>
+    <div class="nav_icons">
+      <a href="https://www.instagram.com/affiliatedcph/"><img class="nav_icon" src="../public/img/insta_icon.png" alt="instagram_icon" /></a>
 
-    <a href="https://www.facebook.com/affiliatedcph"> <img class="nav_icon" src="../public/img/facebook_icon.png" alt="facebook_icon" /></a>
+      <a href="https://www.facebook.com/affiliatedcph"> <img class="nav_icon" src="../public/img/facebook_icon.png" alt="facebook_icon" /></a>
 
-    <a href=""><img class="nav_icon" src="../public/img/youtube_icon.png" alt="youtube_icon" /></a>
+      <a href=""><img class="nav_icon" src="../public/img/youtube_icon.png" alt="youtube_icon" /></a>
 
-    <a href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=qMr7DjAXRBu-HW5ivuspnA"><img class="nav_icon" src="../public/img/spotify_icon.png" alt="spotify_icon" /></a>
+      <a href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=qMr7DjAXRBu-HW5ivuspnA"><img class="nav_icon" src="../public/img/spotify_icon.png" alt="spotify_icon" /></a>
+    </div>
 
     <img class="nav_logo" src="../public/img/nav_logo.png" alt="logo" />
-    <button>COMMUNITY</button>
+    <button class="community_button">COMMUNITY</button>
     <ul class="nav_menu">
-      <li class="nav_item"><a href="">ARTISTER</a></li>
+      <li class="nav_item"><a href="">ARTISTS</a></li>
       <li class="nav_item"><a href="">BOOKING</a></li>
       <li class="nav_item"><a href="">CONTACT</a></li>
       <li class="nav_item"><a href="">COLLABORATE</a></li>
@@ -30,36 +32,57 @@ import "../style/generalstyle.css";
 </header>
 
 <style>
+  .header {
+    margin: 15px 15px 10px 15px;
+  }
+  .nav_menu {
+    display: none;
+  }
   .nav_menu.active li {
     list-style: none;
   }
   .nav_menu.active a {
     text-decoration: none;
-    background-color: var(--buttonColor);
     color: var(--buttonText);
   }
-  .nav_menu {
-    display: none;
-  }
+
   .nav_menu.active {
     display: flex;
     flex-direction: column;
     position: fixed;
     z-index: 2;
+    right: 55px;
+    background-color: var(--buttonColor);
+    text-align: left;
+    border-radius: 1px;
+    padding: 20px 55px 40px 20px;
+  }
+  .nav_menu.active a:hover {
+    color: #ff8a00;
   }
   .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  .nav_icons {
+    display: flex;
+    margin-right: auto;
   }
   .nav_icon {
-    height: 25px;
+    height: 20px;
     width: auto;
+    margin-right: 10px;
   }
   .nav_logo {
     width: 30px;
     height: 30px;
   }
+  .burger_menu {
+    margin-left: auto;
+  }
   .bar {
+    z-index: 3;
     display: block;
     width: 40px;
     height: 3px;
@@ -71,6 +94,9 @@ import "../style/generalstyle.css";
   button {
     background-color: var(--buttonColor);
     color: var(--buttonText);
+  }
+  .community_button {
+    margin-left:;
   }
 </style>
 
