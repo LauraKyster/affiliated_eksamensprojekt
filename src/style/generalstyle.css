@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* Farver og fonts */
+@font-face {
+  font-family: sans_tekst;
+  src: url("../public/fonts/ptsans.woff2");
+}
+
+@font-face {
+  font-family: serif_tekst;
+  src: url("../public/fonts/ptserif.woff2");
+}
+
+:root {
+  --backgroundColor: #efece5;
+  --accentColor: #d07b31;
+  --buttonColor: #574c45;
+  --textColor: #292929;
+  --buttonText: #f8f7f4;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+/* generel styling */
+
+h1,
+h2,
+h3,
+button,
+a {
+  font-family: sans_tekst;
+}
+p {
+  font-family: serif_tekst;
+}
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 16px;
+}
+p,
+a {
+  font-size: 12px;
+}
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 100px;
+  }
+  h2 {
+    font-size: 64px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  p,
+  a {
+    font-size: 20px;
+  }
+}
