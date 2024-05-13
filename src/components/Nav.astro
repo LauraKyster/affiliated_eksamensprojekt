@@ -1,3 +1,44 @@
 ---
 import Buttons from "../components/Buttons.astro";
 ---
+
+<header class="header">
+  <nav>
+    <img src="../public/img/insta_logo.png" alt="instagram_icon" />
+    <img src="" alt="facebook_icon" />
+    <img src="" alt="youtube_icon" />
+    <img src="" alt="spotify_icon" />
+    <img src="" alt="logo" />
+    <button>COMMUNITY</button>
+    <ul class="nav_menu">
+      <li class="nav_item"><a href="">ARTISTER</a></li>
+      <li class="nav_item"><a href="">BOOKING</a></li>
+      <li class="nav_item"><a href="">CONTACT</a></li>
+      <li class="nav_item"><a href="">COLLABORATE</a></li>
+    </ul>
+    <div class="burger_menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav_menu {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector(".burger_menu");
+  const navMenu = document.querySelector(".nav_menu");
+
+  hamburger.addEventListener("click", mobileMenu);
+
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+</script>
