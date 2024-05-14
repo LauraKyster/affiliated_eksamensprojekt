@@ -1,3 +1,172 @@
 ---
 import Buttons from "../components/Buttons.astro";
 ---
+
+<header class="header">
+  <nav class="navbar">
+    <div class="nav_icons">
+      <a href="https://www.instagram.com/affiliatedcph/"><img class="nav_icon" src="../public/img/insta_icon.png" alt="instagram_icon" /></a>
+
+      <a href="https://www.facebook.com/affiliatedcph"> <img class="nav_icon" src="../public/img/facebook_icon.png" alt="facebook_icon" /></a>
+
+      <a href=""><img class="nav_icon" src="../public/img/youtube_icon.png" alt="youtube_icon" /></a>
+
+      <a href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=qMr7DjAXRBu-HW5ivuspnA"><img class="nav_icon" src="../public/img/spotify_icon.png" alt="spotify_icon" /></a>
+    </div>
+
+    <img class="nav_logo" src="../public/img/nav_logo.png" alt="logo" />
+    <button class="community_button">COMMUNITY</button>
+    <ul class="nav_menu">
+      <li class="nav_item"><a href="">ARTISTS</a></li>
+      <li class="nav_item"><a href="">BOOKING</a></li>
+      <li class="nav_item"><a href="">CONTACT</a></li>
+      <li class="nav_item"><a href="">COLLABORATE</a></li>
+    </ul>
+    <div class="burger_menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav_icons {
+    display: flex;
+    margin-right: auto;
+  }
+  .nav_icon {
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+  }
+  .nav_logo {
+    width: 30px;
+    height: 30px;
+  }
+  .nav_item {
+    transition: 0.7s ease;
+    text-align: left;
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--textColor);
+  }
+
+  .nav_menu.active {
+    right: 0;
+  }
+
+  .burger_menu {
+    display: flex;
+    color: var(--backgroundColor);
+    margin-left: auto;
+    z-index: 99;
+    display: block;
+    cursor: pointer;
+  }
+
+  .burger_menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .burger_menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--backgroundColor);
+  }
+  .burger_menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--backgroundColor);
+  }
+
+  /*  .nav_item {
+    margin: 16px 0;
+  } */
+  .nav_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1;
+    right: -100%;
+    width: 33.33%;
+    height: 100vh;
+    background-color: var(--textColor);
+    text-align: left;
+    top: 0;
+    position: fixed;
+    transition: right 0.3s ease;
+    padding: 3rem 5rem;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    font-size: 35px;
+    height: 80px;
+  }
+
+  /* Fjerner list-style prikker*/
+  li {
+    list-style: none;
+    margin: 10px;
+  }
+  /* Fjerner understregning på*/
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  /* Links i nav-baren*/
+  .navbar a {
+    float: right;
+    font-size: 18px;
+    color: var(--backgroundColor);
+    text-align: center;
+    text-decoration: none;
+  }
+  .navbar a:hover {
+    color: #d68c45;
+  }
+
+  /* Så links i dropdown er block, og derfor vises*/
+  .nav_item:hover .dropdown-content {
+    display: block;
+  }
+  .navbar a:hover,
+  .nav_item:hover .dropbtn {
+  }
+
+  @media screen and (max-width: 700px) {
+    .nav_menu {
+      width: 45%;
+      padding: 1rem 2rem;
+    }
+  }
+</style>
+
+<script>
+  const burgerMenu = document.querySelector(".burger_menu");
+  const navMenu = document.querySelector(".nav_menu");
+
+  burgerMenu.addEventListener("click", () => {
+    burgerMenu.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // tilføjer click event listener til hamburger icon. når klikket aktiveres aktiv class på på hamburger og nav
+
+  document.querySelectorAll(".nav_item").forEach((n) => {
+    n.addEventListener("click", () => {
+      burgerMenu.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+</script>
