@@ -1,5 +1,18 @@
 ---
 import Footer from "..//pages/components/Footer.astro";
+
+const data = await fetch(
+  "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+    },
+  }
+).then((res) => res.json());
+
+console.log(data);
 ---
 
 <html lang="en">
