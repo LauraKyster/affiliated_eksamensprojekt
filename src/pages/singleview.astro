@@ -41,11 +41,17 @@ import Card from "../components/Card.astro";
 <style>
 .artist_background_color{
   background-color: rgba(171, 154, 140, 1);
+  height: 50%;
 }
 
 img{
-  
   position: relative;
+  height: auto;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
 }
 .name_scrollbar{
   display: flex;
@@ -53,6 +59,7 @@ img{
   position: absolute;
   z-index: 0;
   gap: 10rem;
+  text-align: center;
 }
 
 </style>
