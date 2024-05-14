@@ -5,6 +5,12 @@
   line-height: 1.5;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Farver og fonts */
 @font-face {
   font-family: sans_tekst;

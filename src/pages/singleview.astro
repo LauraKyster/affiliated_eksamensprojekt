@@ -6,15 +6,19 @@ import Card from "../components/Card.astro";
 ---
 
 <Mainlayout>
-  ---
-
-  ---
+  <section class="artist_background_color">
+    <div class="name_scrollbar">
+      <h1>HAKAMI</h1>
+      <h1>HAKAMI</h1>
+      <h1>HAKAMI</h1>
+    </div>
+    <img src="/public/images/hakami_cutout.png" alt="">
+</section>
   
+
+
   <template id="singleview">
-      <section class="artist_background_color">
-          <h1></h1>
-          <img src="" alt="">
-      </section>
+    
       <section>
           <div class="artist_info">
               <h3></h3>
@@ -35,5 +39,20 @@ import Card from "../components/Card.astro";
 </Mainlayout>
 
 <style>
+.artist_background_color{
+  background-color: rgba(171, 154, 140, 1);
+}
+
+img{
   
+  position: relative;
+}
+.name_scrollbar{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 0;
+  gap: 10rem;
+}
+
 </style>
