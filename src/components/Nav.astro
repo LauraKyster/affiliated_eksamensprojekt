@@ -44,18 +44,21 @@ import "../style/generalstyle.css";
   .nav_menu.active a {
     text-decoration: none;
     color: var(--buttonText);
+    font-size: 20px;
   }
 
   .nav_menu.active {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     position: fixed;
     z-index: 2;
     right: 55px;
     background-color: var(--buttonColor);
     text-align: left;
     border-radius: 1px;
-    padding: 20px 55px 40px 20px;
+    padding: 35px 100px 100px 50px;
+    margin: 15rem 0 0 1rem;
   }
   .nav_menu.active a:hover {
     color: #ff8a00;
@@ -97,6 +100,19 @@ import "../style/generalstyle.css";
   }
   .community_button {
     margin-left:;
+  }
+
+  @media screen and (max-width: 700px) {
+    .nav_menu.active a {
+      font-size: 12px;
+    }
+
+    .nav_menu.active {
+      gap: 1rem;
+      right: 55px;
+      padding: 25px 60px 60px 30px;
+      margin: 10rem 0 0 1rem;
+    }
   }
 </style>
 
