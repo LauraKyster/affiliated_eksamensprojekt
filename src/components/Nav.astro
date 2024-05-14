@@ -1,3 +1,129 @@
 ---
 import Buttons from "../components/Buttons.astro";
+import "../style/generalstyle.css";
 ---
+
+<header class="header">
+  <nav class="navbar">
+    <div class="nav_icons">
+      <a href="https://www.instagram.com/affiliatedcph/"><img class="nav_icon" src="../public/img/insta_icon.png" alt="instagram_icon" /></a>
+
+      <a href="https://www.facebook.com/affiliatedcph"> <img class="nav_icon" src="../public/img/facebook_icon.png" alt="facebook_icon" /></a>
+
+      <a href=""><img class="nav_icon" src="../public/img/youtube_icon.png" alt="youtube_icon" /></a>
+
+      <a href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=qMr7DjAXRBu-HW5ivuspnA"><img class="nav_icon" src="../public/img/spotify_icon.png" alt="spotify_icon" /></a>
+    </div>
+
+    <img class="nav_logo" src="../public/img/nav_logo.png" alt="logo" />
+    <button class="community_button">COMMUNITY</button>
+    <ul class="nav_menu">
+      <li class="nav_item"><a href="">ARTISTS</a></li>
+      <li class="nav_item"><a href="">BOOKING</a></li>
+      <li class="nav_item"><a href="">CONTACT</a></li>
+      <li class="nav_item"><a href="">COLLABORATE</a></li>
+    </ul>
+    <div class="burger_menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    margin: 15px 15px 10px 15px;
+  }
+  .nav_menu {
+    display: none;
+  }
+  .nav_menu.active li {
+    list-style: none;
+  }
+  .nav_menu.active a {
+    text-decoration: none;
+    color: var(--buttonText);
+    font-size: 20px;
+  }
+
+  .nav_menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: fixed;
+    z-index: 2;
+    right: 55px;
+    background-color: var(--buttonColor);
+    text-align: left;
+    border-radius: 1px;
+    padding: 35px 100px 100px 50px;
+    margin: 15rem 0 0 1rem;
+  }
+  .nav_menu.active a:hover {
+    color: #ff8a00;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav_icons {
+    display: flex;
+    margin-right: auto;
+  }
+  .nav_icon {
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+  }
+  .nav_logo {
+    width: 30px;
+    height: 30px;
+  }
+  .burger_menu {
+    margin-left: auto;
+  }
+  .bar {
+    z-index: 3;
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    background-color: var(--textColor);
+  }
+  button {
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
+  }
+  .community_button {
+    margin-left:;
+  }
+
+  @media screen and (max-width: 700px) {
+    .nav_menu.active a {
+      font-size: 12px;
+    }
+
+    .nav_menu.active {
+      gap: 1rem;
+      right: 55px;
+      padding: 25px 60px 60px 30px;
+      margin: 10rem 0 0 1rem;
+    }
+  }
+</style>
+
+<script>
+  const burgerMenu = document.querySelector(".burger_menu");
+  const navMenu = document.querySelector(".nav_menu");
+
+  burgerMenu.addEventListener("click", mobileMenu);
+
+  function mobileMenu() {
+    burgerMenu.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+</script>
