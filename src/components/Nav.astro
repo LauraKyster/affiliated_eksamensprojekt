@@ -32,87 +32,111 @@ import "../style/generalstyle.css";
 </header>
 
 <style>
-  .header {
-    margin: 15px 15px 10px 15px;
+  .nav_item {
+    transition: 0.7s ease;
+    text-align: left;
   }
-  .nav_menu {
-    display: none;
-  }
-  .nav_menu.active li {
-    list-style: none;
-  }
-  .nav_menu.active a {
-    text-decoration: none;
-    color: var(--buttonText);
-    font-size: 20px;
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--textColor);
   }
 
   .nav_menu.active {
+    right: 0;
+  }
+
+  .burger_menu {
+    display: flex;
+    color: var(--backgroundColor);
+    margin-left: auto;
+    z-index: 99;
+    display: block;
+    cursor: pointer;
+  }
+
+  .burger_menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .burger_menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger_menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /*  .nav_item {
+    margin: 16px 0;
+  } */
+  .nav_menu {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    position: fixed;
-    z-index: 2;
-    right: 55px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1;
+    right: -100%;
+    width: 33.33%;
+    height: 100vh;
     background-color: var(--buttonColor);
     text-align: left;
-    border-radius: 1px;
-    padding: 35px 100px 100px 50px;
-    margin: 15rem 0 0 1rem;
-  }
-  .nav_menu.active a:hover {
-    color: #ff8a00;
+    top: 0;
+    position: fixed;
+    transition: right 0.3s ease;
   }
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 24px;
+    font-size: 35px;
+    height: 80px;
   }
-  .nav_icons {
-    display: flex;
-    margin-right: auto;
+
+  /* Div class udenom menu elementerne*/
+  .nav_menu {
+    z-index: 2;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    flex-direction: column;
+    width: 33.333%;
+    text-align: center;
+    transition: 0.3s;
   }
-  .nav_icon {
-    height: 20px;
-    width: auto;
-    margin-right: 10px;
+
+  /* Fjerner list-style prikker*/
+  li {
+    list-style: none;
+    margin: 10px;
   }
-  .nav_logo {
-    width: 30px;
-    height: 30px;
+  /* Fjerner understregning på*/
+  a {
+    text-decoration: none;
+    color: black;
   }
-  .burger_menu {
-    margin-left: auto;
+
+  /* Links i nav-baren*/
+  .navbar a {
+    float: right;
+    font-size: 18px;
+    color: var(--backgroundColor);
+    text-align: center;
+    text-decoration: none;
   }
-  .bar {
-    z-index: 3;
+  .navbar a:hover {
+    color: #d68c45;
+  }
+
+  /* Så links i dropdown er block, og derfor vises*/
+  .nav_item:hover .dropdown-content {
     display: block;
-    width: 40px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    background-color: var(--textColor);
   }
-  button {
-    background-color: var(--buttonColor);
-    color: var(--buttonText);
-  }
-  .community_button {
-    margin-left:;
-  }
-
-  @media screen and (max-width: 700px) {
-    .nav_menu.active a {
-      font-size: 12px;
-    }
-
-    .nav_menu.active {
-      gap: 1rem;
-      right: 55px;
-      padding: 25px 60px 60px 30px;
-      margin: 10rem 0 0 1rem;
-    }
+  .navbar a:hover,
+  .nav_item:hover .dropbtn {
   }
 </style>
 
@@ -120,10 +144,131 @@ import "../style/generalstyle.css";
   const burgerMenu = document.querySelector(".burger_menu");
   const navMenu = document.querySelector(".nav_menu");
 
-  burgerMenu.addEventListener("click", mobileMenu);
-
-  function mobileMenu() {
+  burgerMenu.addEventListener("click", () => {
     burgerMenu.classList.toggle("active");
     navMenu.classList.toggle("active");
-  }
+  });
+
+  // tilføjer click event listener til hamburger icon. når klikket aktiveres aktiv class på på hamburger og nav
+
+  document.querySelectorAll(".nav_item").forEach((n) => {
+    n.addEventListener("click", () => {
+      burgerMenu.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
 </script>
+
+<!-- .header {
+  margin: 15px 15px 10px 15px;
+}
+.nav_menu {
+  display: none;
+}
+.burger_menu {
+  display: flex;
+  color: white;
+  margin-left: 300px;
+  z-index: 99;
+  display: block;
+  cursor: pointer;
+}
+
+.burger_menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.burger_menu.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger_menu.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav_menu.active li {
+  list-style: none;
+}
+.nav_menu.active a {
+  float: left;
+  text-decoration: none;
+  color: var(--buttonText);
+  font-size: 20px;
+}
+
+.nav_menu.active {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: fixed;
+  z-index: 2;
+  right: 55px;
+  background-color: var(--buttonColor);
+  text-align: left;
+  border-radius: 1px;
+  padding: 35px 100px 100px 50px;
+  margin: 15rem 0 0 1rem;
+  transition: 0.3s;
+}
+.nav_menu.active a:hover {
+  color: #ff8a00;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  font-size: 35px;
+  overflow: hidden;
+  height: 80px;
+}
+.nav_icons {
+  display: flex;
+  margin-right: auto;
+}
+.nav_icon {
+  height: 20px;
+  width: auto;
+  margin-right: 10px;
+}
+.nav_logo {
+  width: 30px;
+  height: 30px;
+}
+.burger_menu {
+  margin-left: auto;
+}
+.bar {
+  z-index: 3;
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color: var(--textColor);
+}
+button {
+  background-color: var(--buttonColor);
+  color: var(--buttonText);
+}
+.community_button {
+  margin-left:;
+}
+.nav_item:hover .dropdown-content {
+  display: block;
+}
+.navbar a:hover,
+.nav_item:hover .dropbtn {
+}
+
+@media screen and (max-width: 700px) {
+  .nav_menu.active a {
+    font-size: 12px;
+  }
+
+  .nav_menu.active {
+    gap: 1rem;
+    right: 55px;
+    padding: 25px 60px 60px 30px;
+    margin: 10rem 0 0 1rem;
+  }
+} -->
