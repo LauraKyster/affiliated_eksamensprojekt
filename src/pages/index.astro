@@ -6,35 +6,85 @@ import Card from "../components/Card.astro";
 import Collaborate from "../components/Collaborate.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-
-  <Mainlayout>
-    <section class="header_karrusel"></section>
-    <div>
-      <h3>AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
+<Mainlayout>
+  <section class="header_karrusel"></section>
+  <div>
+    <h3>AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
+  </div>
+  <section class="artist_section">
+    <div class="artist_filter_buttons">
+      <Button variant="filter_knap">ALL</Button>
+      <Button variant="filter_knap">LABEL</Button>
+      <Button variant="filter_knap">PUBLISHING</Button>
+      <Button variant="filter_knap">MANAGEMENT</Button>
     </div>
-    <section class="artist_section">
-      <div class="artist_filter_buttons"></div>
-      <div class="cards_grid"></div>
-    </section>
+    <hr class="underline" />
+    <div class="cards_grid"></div>
+  </section>
 
-    <section class="collaborate">
-      <div>
-        <h2>OUR COLLABORATORS</h2>
-        <p>Samarbejde med Affiliated ... mere tekst følger...</p>
-      </div>
-      <div><Collaborate /></div>
-    </section>
-    <section class="contact"></section>
-    <img class="frontpage_logo" src="" alt="" />
-  </Mainlayout>
+  <section class="collaborate">
+    <div>
+      <h2>OUR COLLABORATORS</h2>
+      <p>Samarbejde med Affiliated ... mere tekst følger...</p>
+    </div>
+    <div><Collaborate /></div>
+  </section>
+  <section class="contact">
+    <Button variant="primary" id="bookingBtn">BOOKING</Button>
+    <Button variant="primary" id="contactBtn">CONTACT</Button>
+    <div id="bookingMail" class="mail hidden">booking@affiliatedcph.com</div>
+    <div id="contactMail" class="mail hidden">manager@affiliatedcph.com</div>
+  </section>
+  <img class="frontpage_logo" src="" alt="" />
+</Mainlayout>
 
+<style>
+  .underline {
+    width: 22rem;
+    margin: auto;
+  }
+  .artist_filter_buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .mail {
+    color: var(--textColor);
+    text-decoration: underline;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  .hidden {
+    display: none;
+  }
+  .contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    margin: 5rem;
+  }
+  @media screen and (min-width: 700px) {
+    .underline {
+      width: 33rem;
+      margin: auto;
+    }
+    .contact {
+      gap: 10rem;
+    }
+  }
+</style>
 
-</html>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    function showMail(type) {
+      const mailElement = document.getElementById(type);
+      mailElement.classList.toggle("hidden");
+    }
+
+    document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
+    document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
+  });
+</script>
