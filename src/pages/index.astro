@@ -58,10 +58,21 @@ import Collaborate from "../components/Collaborate.astro";
   .hidden {
     display: none;
   }
+  .contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    margin: 5rem;
+  }
   @media screen and (min-width: 700px) {
     .underline {
       width: 33rem;
       margin: auto;
+    }
+    .contact {
+      gap: 10rem;
     }
   }
 </style>
