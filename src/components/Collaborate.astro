@@ -9,32 +9,65 @@ import "../style/generalstyle.css";
             <img src="/public/images/roskilde_logo.png" alt="Roskilde logo">
             <img src="/public/images/spot-festival_logo.png" alt="Spot Festival logo">
             <img src="/public/images/vega_logo.png" alt="Vega logo">
+
+            <img src="/public/images/frankies_logo.png" alt="Frankies Logo">
+            <img src="/public/images/huset_logo.png" alt="Huset logo">
+            <img src="/public/images/koda_logo.png" alt="Koda logo">
+            <img src="/public/images/roskilde_logo.png" alt="Roskilde logo">
+            <img src="/public/images/spot-festival_logo.png" alt="Spot Festival logo">
+            <img src="/public/images/vega_logo.png" alt="Vega logo">
         </div>
+        
 </article>
 
 <style>
 .collab_wrapper{
-     overflow: hidden;
+    width: 100%;
+    overflow: hidden;
     position: relative;
     white-space: nowrap;
 }
 
 .img_wrapper{
-  display: inline-block;
-    position: absolute;
+    display: flex;
     width: 100%;
-    animation: scrollText 20s linear infinite;
+    animation: scrollText 10s linear infinite;
 }
 
+img{
+    width: auto;
+    height: 4rem;
+    margin: 0 1.2rem;
+}
 
   @keyframes scrollText {
     from {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(-201%);
     }
   }
+  @media (min-width: 700px) {
+
+
+
+    img{
+        height: 6rem;
+        margin: 0 1.5rem;
+    }
+
+
+    @keyframes scrollText {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-91%);
+    }
+  }
+}
+
 
 </style>
 
