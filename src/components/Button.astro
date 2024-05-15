@@ -1,0 +1,46 @@
+---
+import "../style/generalstyle.css";
+const { variant, size } = Astro.props;
+---
+
+<button class={variant}><slot /></button>
+
+<style>
+  button {
+    padding: 1rem;
+  }
+  .primary {
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
+    font-size: 30px;
+  }
+  .secondary {
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
+    font-size: 20px;
+  }
+  .secondary:hover {
+    background-color: none;
+    color: var(--textColor);
+  }
+  .community_button {
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
+    font-size: 16px;
+    width: 130px;
+    height: 30px;
+  }
+  @media and screen (max-width: 700px) {
+    .primary {
+      font-size: 10px;
+    }
+    .secondary {
+      font-size: 16px;
+    }
+    .community_button {
+      font-size: 10px;
+      width: 80px;
+      height: 20px;
+    }
+  }
+</style>

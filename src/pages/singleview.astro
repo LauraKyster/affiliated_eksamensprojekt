@@ -1,7 +1,7 @@
 ---
 import Mainlayout from "../layouts/Mainlayout.astro";
 import "../style/generalstyle.css";
-import Buttons from "../components/Buttons.astro";
+import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 ---
 
@@ -12,54 +12,47 @@ import Card from "../components/Card.astro";
       <h1>HAKAMI</h1>
       <h1>HAKAMI</h1>
     </div>
-    <img src="/public/images/hakami_cutout.png" alt="">
-</section>
-  
-
+    <img src="/public/images/hakami_cutout.png" alt="" />
+  </section>
 
   <template id="singleview">
-    
-      <section>
-          <div class="artist_info">
-              <h3></h3>
-              <p></p>
-          </div>
-          <iframes src="" frameborder="0"></iframe>
-          <div class="so_me_links">
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-              <a href=""></a>
-          </div>
-          <a href="">BOOKING KNAP</a>
-          
-      </section>
-  
+    <section>
+      <div class="artist_info">
+        <h3></h3>
+        <p></p>
+      </div>
+      <iframes src="" frameborder="0"></iframes>
+      <div class="so_me_links">
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+      </div>
+      <a href="">BOOKING KNAP</a>
+    </section>
   </template>
 </Mainlayout>
 
 <style>
-.artist_background_color{
-  background-color: rgba(171, 154, 140, 1);
-  height: 50%;
-}
+  .artist_background_color {
+    background-color: rgba(171, 154, 140, 1);
+    height: 50%;
+  }
 
-img{
-  position: relative;
-  height: auto;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-}
-.name_scrollbar{
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  z-index: 0;
-  gap: 10rem;
-  text-align: center;
-}
-
+  img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .name_scrollbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 0;
+    gap: 10rem;
+    text-align: center;
+  }
 </style>
