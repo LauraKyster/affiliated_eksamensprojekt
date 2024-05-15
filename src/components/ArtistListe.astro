@@ -7,12 +7,7 @@ const { data } = Astro.props;
 <a href={`artist/${data.slug}`}>
   <article>
     <h2>{data.kunsterNavn}</h2>
-    <img
-      src={"/img/artist_kort/" +
-        (myData.image ? myData.image : "../../undefined.jpg")}
-      alt="billede af artist"
-      ;
-    />
+
     <p></p>
   </article>
 </a>
