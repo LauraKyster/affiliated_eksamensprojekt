@@ -1,0 +1,51 @@
+---
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+      },
+    }
+  ).then((response) => response.json());
+
+  return data.map((artist) => {
+    return {
+      params: { slug: artist.slug },
+      props: { myData: artist },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+
+// {
+//   id: 5,
+//   kunsterNavn: 'MILEZ',
+//   beskrivelse: null,
+//   kunsterBillede1: 'milez_card.webp',
+//   kunsterBillede2: 'milez_singleview.png',
+//   spotifyPlaylistLink: null,
+//   facebookLogoLink: null,
+//   instagramLogoLink: null,
+//   spotifyLogoLink: null,
+//   slug: 'Milez'
+// }
+---
+
+<section class="singleview_img">
+  <img src="" alt="" />
+  <h1>{myData.kunsterNavn}</h1>
+</section>
+<section class="artist_info">
+  <div class="singleview_grid">
+    <div class="singleview_text">
+      <h3>{myData.kunsterNavn}</h3>
+      <p>{myData.beskrivelse}</p>
+    </div>
+    <div class="singleview_links"></div>
+  </div>
+</section>
