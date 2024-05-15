@@ -1,0 +1,19 @@
+---
+const { data } = Astro.props;
+---
+
+<section class="grid">
+  <a href={`artister/${data.slug}`}>
+    <article>
+      {
+        data ? (
+          <>
+            <p>{data.artist}</p>
+          </>
+        ) : (
+          <p>Loading...</p>
+        )
+      }
+    </article>
+  </a>
+</section>

@@ -1,5 +1,19 @@
 ---
 import Footer from "..//pages/components/Footer.astro";
+import ArtistListe from "../components/ArtistListe.astro";
+
+const data = await fetch(
+  "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+    },
+  }
+).then((res) => res.json());
+
+console.log(data);
 ---
 
 <html lang="en">
@@ -20,8 +34,23 @@ import Footer from "..//pages/components/Footer.astro";
   <body>
     <header></header>
 
-    <main></main>
-
-    <Footer />
+    <main>
+      <section class="artist">
+        {
+          data.map((artist) => {
+            return <ArtistListe data={artist} />;
+          })
+        }
+      </section>
+    </main>
   </body>
 </html>
+<!-- 
+      <section class="test">
+        <h2>Hej</h2>
+        {
+          data.map((artister) => {
+            return <ArtistListe data={artister} />;
+          })
+        }
+      </section> -->
