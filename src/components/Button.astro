@@ -7,21 +7,33 @@ const { variant, size } = Astro.props;
 
 <style>
   button {
-    padding: 1rem;
+    padding: 0.3rem 1.5rem;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
   .primary {
     background-color: var(--buttonColor);
     color: var(--buttonText);
     font-size: 30px;
   }
-  .secondary {
-    background-color: var(--buttonColor);
+  .primary:hover {
+    background-color: var(--accentColor);
     color: var(--buttonText);
+  }
+  .filter_knap {
+    background-color: transparent;
+    border: none;
+    color: var(--textColor);
     font-size: 20px;
   }
-  .secondary:hover {
-    background-color: none;
-    color: var(--textColor);
+  .filter_knap:hover {
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
   }
   .community_button {
     background-color: var(--buttonColor);
@@ -30,12 +42,13 @@ const { variant, size } = Astro.props;
     width: 130px;
     height: 30px;
   }
-  @media and screen (max-width: 700px) {
+
+  @media screen and (max-width: 700px) {
     .primary {
       font-size: 10px;
     }
-    .secondary {
-      font-size: 16px;
+    .filter_knap {
+      font-size: 12px;
     }
     .community_button {
       font-size: 10px;
