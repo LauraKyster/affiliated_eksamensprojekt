@@ -2,7 +2,6 @@
 import "../style/generalstyle.css";
 ---
 <article class="collab_wrapper">
-    <section class="collab_images">
         <div class="img_wrapper">
             <img src="/public/images/frankies_logo.png" alt="Frankies Logo">
             <img src="/public/images/huset_logo.png" alt="Huset logo">
@@ -11,22 +10,31 @@ import "../style/generalstyle.css";
             <img src="/public/images/spot-festival_logo.png" alt="Spot Festival logo">
             <img src="/public/images/vega_logo.png" alt="Vega logo">
         </div>
-    
-    </section>
 </article>
 
 <style>
-
- .collab_images{
-        overflow: hidden;
-        position: relative;
-        white-space: nowrap;
- }
-.img_wrapper{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+.collab_wrapper{
+     overflow: hidden;
+    position: relative;
+    white-space: nowrap;
 }
+
+.img_wrapper{
+  display: inline-block;
+    position: absolute;
+    width: 100%;
+    animation: scrollText 20s linear infinite;
+}
+
+
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
 </style>
 
