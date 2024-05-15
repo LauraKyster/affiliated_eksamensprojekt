@@ -1,5 +1,6 @@
 ---
 import Footer from "..//pages/components/Footer.astro";
+import ArtistListe from "../components/ArtistListe.astro";
 
 const data = await fetch(
   "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
@@ -33,8 +34,23 @@ console.log(data);
   <body>
     <header></header>
 
-    <main></main>
-
-    <Footer />
+    <main>
+      <section class="artist">
+        {
+          data.map((artist) => {
+            return <ArtistListe data={artist} />;
+          })
+        }
+      </section>
+    </main>
   </body>
 </html>
+<!-- 
+      <section class="test">
+        <h2>Hej</h2>
+        {
+          data.map((artister) => {
+            return <ArtistListe data={artister} />;
+          })
+        }
+      </section> -->
