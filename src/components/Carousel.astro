@@ -47,6 +47,14 @@
           <img src="/public/img/heroN4.jpg" alt="d" />
         </li>
       </ul>
+      <div class="carousel_nav">
+        <ul class="dotsData">
+          <li><button class="carousel_indicator current-slide" data-dot="0"></button></li>
+          <li><button class="carousel_indicator" data-dot="1"></button></li>
+          <li><button class="carousel_indicator" data-dot="2"></button></li>
+          <li><button class="carousel_indicator" data-dot="3"></button></li>
+        </ul>
+      </div>
     </div>
   </section>
 </body>
@@ -129,19 +137,77 @@
   .carousel_button.next {
     right: 1rem;
   }
-  /* Her skal billederne være størrer så der ikke er hvist omkring dem */
-  @media screen and (min-width: 1058px) {
-    .slide > img {
-      object-fit: cover;
-    }
-  }
-  @media screen and (max-width: 700px) {
-    .slide > img {
-      object-fit: cover;
-    }
 
+  .carousel_nav {
+    background-color: #bd6e29;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 100;
+  }
+
+  .carousel_indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 0 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .carousel_indicator.current-slide {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .dotsData {
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+    position: relative;
+    top: 70vh;
+  }
+  .dotsData li {
+    list-style: none;
+  }
+  /* Her skal billederne være størrer så der ikke er hvist omkring dem */
+
+  @media screen and (max-width: 700px) {
     .carousel {
       height: 40vh;
+    }
+
+    .dotsData {
+      top: 30vh;
+    }
+
+    .carousel_indicator {
+      width: 12px;
+      height: 12px;
+    }
+
+    #Layer_1 {
+      width: 2rem;
+    }
+    #Layer_2 {
+      width: 2rem;
+    }
+    .carousel_button.prev {
+      display: none;
+    }
+
+    .carousel_button.next {
+      display: none;
+    }
+
+    @media screen and (max-width: 482px) {
+      .carousel {
+        height: 30vh;
+      }
+      .dotsData {
+        top: 21vh;
+      }
     }
   }
 </style>
@@ -149,22 +215,74 @@
 <!-- defer = at script'et loader efter alt andet er loadet  -->
 <script defer>
   const buttons = document.querySelectorAll("[data-carousel-button]");
+  const dots = document.querySelectorAll(".carousel_indicator");
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const offset = button.dataset.carouselButton === "next" ? 1 : -1;
       const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
 
-      const activeSlides = slides.querySelector("[data-active]");
-      // ... -> bliver lavet om til et arry
-      let newIndex = [...slides.children].indexOf(activeSlides) + offset;
-      // Hvis tallet bliver mindre end 0, bilver den sendt over til det baggerste billed
+      const activeSlide = slides.querySelector("[data-active]");
+      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+
       if (newIndex < 0) newIndex = slides.children.length - 1;
-      // Hvis tallet er størrer eller lig med billedes placering, så sætter den os tilbage til billede nr 0 (det første)
       if (newIndex >= slides.children.length) newIndex = 0;
 
       slides.children[newIndex].dataset.active = true;
-      delete activeSlides.dataset.active;
+      delete activeSlide.dataset.active;
+
+      updateDots(newIndex);
     });
   });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      const slides = document.querySelector("[data-slides]");
+      const activeSlide = slides.querySelector("[data-active]");
+
+      slides.children[index].dataset.active = true;
+      delete activeSlide.dataset.active;
+
+      updateDots(index);
+    });
+  });
+
+  function updateDots(activeIndex) {
+    dots.forEach((dot, index) => {
+      if (index === activeIndex) {
+        dot.classList.add("current-slide");
+      } else {
+        dot.classList.remove("current-slide");
+      }
+    });
+  }
+
+  let autoSlideInterval = setInterval(() => {
+    const slides = document.querySelector("[data-slides]");
+    const activeSlide = slides.querySelector("[data-active]");
+    let newIndex = [...slides.children].indexOf(activeSlide) + 1;
+
+    if (newIndex >= slides.children.length) newIndex = 0;
+
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+
+    updateDots(newIndex);
+  }, 7000); // 7000 milliseconds = 7 seconds
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+      const slides = document.querySelector("[data-slides]");
+      const activeSlide = slides.querySelector("[data-active]");
+      let newIndex = [...slides.children].indexOf(activeSlide) + 1;
+
+      if (newIndex >= slides.children.length) newIndex = 0;
+
+      slides.children[newIndex].dataset.active = true;
+      delete activeSlide.dataset.active;
+
+      updateDots(newIndex);
+    }, 7000);
+  }
 </script>
