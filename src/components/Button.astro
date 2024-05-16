@@ -31,10 +31,12 @@ const { variant, size } = Astro.props;
     color: var(--textColor);
     font-size: 20px;
   }
-  .filter_knap:hover {
+  .filter_knap:hover,
+  .filter_knap:active {
     background-color: var(--buttonColor);
     color: var(--buttonText);
   }
+
   .community_button {
     background-color: var(--buttonColor);
     color: var(--buttonText);

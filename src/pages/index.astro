@@ -87,4 +87,15 @@ import Collaborate from "../components/Collaborate.astro";
     document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
     document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter_knap");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((btn) => btn.classList.remove("active")); // Fjern 'active' fra alle filter knapper
+        button.classList.add("active"); // Tilføj 'active' til den klikkede filter knap
+      });
+    });
+  });
 </script>
