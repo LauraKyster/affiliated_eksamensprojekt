@@ -37,7 +37,11 @@ console.log(myData);
 ---
 
 <section class="singleview_img">
-  <img src="" alt="" />
+  <img
+    src={"/public/images/" + `${myData.kunsterBillede2}`}
+    alt="billede af artist"
+    ;
+  />
   <h1>{myData.kunsterNavn}</h1>
 </section>
 <section class="artist_info">

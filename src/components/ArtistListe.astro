@@ -5,8 +5,26 @@ const { data } = Astro.props;
 ---
 
 <a href={`artist/${data.slug}`}>
-  <article>
+  <articl>
     <h2>{data.kunsterNavn}</h2>
-    <p></p>
-  </article>
+    <img
+      src={"/public/images/" + `${data.kunsterBillede1}`}
+      alt="billede af artist"
+      ;
+    />
+  </articl>
 </a>
+
+<style>
+  img {
+    width: 380px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-filter: grayscale(100%);
+  }
+
+  img:hover {
+    -webkit-filter: none;
+  }
+</style>
