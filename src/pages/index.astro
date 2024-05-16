@@ -4,6 +4,7 @@ import "../style/generalstyle.css";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import Collaborate from "../components/Collaborate.astro";
+import Carousel from "../components/Carousel.astro";
 
 import ArtistListe from "../components/ArtistListe.astro";
 const data = await fetch(
@@ -22,6 +23,9 @@ console.log(data);
 
 <Mainlayout>
   <section class="header_karrusel"></section>
+  <section>
+    <Carousel />
+  </section>
   <div>
     <h3>
       AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO
