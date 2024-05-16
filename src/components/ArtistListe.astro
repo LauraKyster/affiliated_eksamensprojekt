@@ -8,7 +8,8 @@ const { data } = Astro.props;
   <articl>
     <section class="collab_wrappe">
       <div class="name_wrapper">
-        <h2 class="listeNavn">{data.kunsterNavn}</h2>
+        <h2 class="col listeNavn">{data.kunsterNavn}</h2>
+
         <img
           src={"/public/images/" + `${data.kunsterBillede1}`}
           alt="billede af artist"
@@ -38,11 +39,12 @@ const { data } = Astro.props;
   .listeNavn {
     position: absolute;
     top: 35%;
-
     width: 100%;
     animation: scrollText 10s linear infinite;
     display: none;
+    pointer-events: none;
   }
+
   img {
     overflow: hidden;
   }
@@ -60,6 +62,9 @@ const { data } = Astro.props;
     display: flex;
     width: 100%;
     animation: scrollText 1s linear infinite;
+  }
+  .col {
+    display: flex;
   }
 
   @keyframes scrollText {
