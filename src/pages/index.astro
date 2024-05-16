@@ -80,6 +80,22 @@ console.log(data);
 </Mainlayout>
 
 <style>
+  .collab_text {
+    margin: auto;
+    max-width: 24rem;
+    text-align: left;
+    padding-bottom: 3rem;
+  }
+
+  .collab_header {
+    padding-bottom: 1.5rem;
+  }
+
+  .affiliated_logo {
+    width: 20rem;
+    height: auto;
+    margin: auto;
+  }
   .underline {
     width: 22rem;
     margin: auto;
@@ -90,15 +106,15 @@ console.log(data);
     align-items: center;
     justify-content: center;
   }
+  .grid_auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
+  }
   .mail {
     color: var(--textColor);
     text-decoration: underline;
     margin-top: 1rem;
     font-size: 1.2rem;
-  }
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
   }
   .hidden {
     display: none;
@@ -111,7 +127,32 @@ console.log(data);
     gap: 5rem;
     margin: 5rem;
   }
-  @media screen and (min-width: 700px) {
+
+  @media (min-width: 700px) {
+    .collab_grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .collab_grid > .collab_text {
+      order: -1;
+    }
+
+    .collab_text {
+      max-width: 45rem;
+      padding-left: 5rem;
+    }
+
+    .affiliated_logo {
+      width: 40rem;
+      height: auto;
+      margin: auto;
+    }
+
+    .collab_p {
+      max-width: 100%;
+    }
     .underline {
       width: 33rem;
       margin: auto;
