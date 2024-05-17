@@ -1,4 +1,5 @@
 ---
+import "../../style/generalstyle.css";
 export async function getStaticPaths() {
   const data = await fetch(
     "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
@@ -40,6 +41,8 @@ console.log(myData);
    <div class="name_scrollbar">
     <h1>{myData.kunsterNavn}</h1>
     <h1>{myData.kunsterNavn}</h1>
+    <h1>{myData.kunsterNavn}</h1>
+    <h1>{myData.kunsterNavn}</h1>
    </div>
     
 </section>
@@ -56,7 +59,10 @@ console.log(myData);
 
 <style>
 
-
+.singleview_img{
+  overflow: hidden;
+  background-color: rgba(42, 36, 32, 1);
+}
 
   .artist_img {
     position: relative;
@@ -65,7 +71,8 @@ console.log(myData);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    overflow: hidden;
+    opacity: 70%;
+    
   
   }
   .name_scrollbar {
@@ -75,19 +82,20 @@ console.log(myData);
     z-index: 0;
     gap: 30rem;
     top: 25%;
-    animation: scrollText 5s linear infinite;
+    animation: scrollText 10s linear infinite;
    
     
   }
-h2 {
+h1 {
   overflow: hidden;
+  color: var(--backgroundColor);
 }
   @keyframes scrollText {
     from {
       transform: translateX(0%);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(-60%);
     }
   }
 
