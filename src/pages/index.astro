@@ -26,7 +26,7 @@ console.log(data);
   <div>
     <h3 class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
   </div>
-  <section class="artist_section">
+  <section class="artist_section" id="artist_link_sektion">
     <div class="artist_filter_buttons">
       <Button variant="filter_knap">ALL</Button>
       <Button variant="filter_knap">LABEL</Button>
@@ -43,7 +43,7 @@ console.log(data);
       })
     }
   </section>
-  <section class="collaborate">
+  <section class="collaborate" id="col_link_sektion">
     <div class="collab_grid">
       <img class="affiliated_logo" id="order" src="/public/images/affiliated_logo.png" alt="Affiliated Logo" />
       <div class="collab_text">
@@ -58,7 +58,7 @@ console.log(data);
     </div>
     <div><Collaborate /></div>
   </section>
-  <section class="contact">
+  <section class="contact" id="contact_link_sektion">
     <Button variant="primary" id="bookingBtn">BOOKING</Button>
     <Button variant="primary" id="contactBtn">CONTACT</Button>
     <div id="bookingMail" class="mail hidden">booking@affiliatedcph.com</div>
@@ -176,8 +176,7 @@ console.log(data);
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
       },
     });
     return response.json();
