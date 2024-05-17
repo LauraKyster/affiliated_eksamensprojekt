@@ -15,6 +15,8 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
 }).then((res) => res.json());
 
 console.log(data);
+
+// Filter function to get artists based on category
 ---
 
 <Mainlayout>
@@ -167,5 +169,36 @@ console.log(data);
 
     document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
     document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
+  });
+
+  // Function to fetch data based on "stilling"
+  async function fetchData(stilling) {
+    const url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=${stilling}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+      },
+    });
+    return response.json();
+  }
+
+  // Function to render artists
+  function renderArtists(artists) {
+    const artistSection = document.querySelector(".artist.grid_auto");
+    artistSection.innerHTML = ""; // Clear previous content
+    artists.forEach((artist) => {
+      artistSection.innerHTML += `<ArtistListe data=${artist} />`;
+    });
+  }
+
+  // Event listener for filter buttons
+  document.querySelectorAll(".filter_knap").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const stilling = button.textContent.toUpperCase();
+      const data = await fetchData(stilling);
+      renderArtists(data);
+    });
   });
 </script>
