@@ -35,14 +35,13 @@ console.log(myData);
 //   slug: 'Milez'
 // }
 ---
-
-<section class="singleview_img">
-  <img
-    src={"/public/images/" + `${myData.kunsterBillede2}`}
-    alt="billede af artist"
-    ;
-  />
-  <h1>{myData.kunsterNavn}</h1>
+<section class="singleview_img ">
+  <img class="artist_img" src={"/public/images/" + `${myData.kunsterBillede2}`} alt="billede af artist";/>
+   <div class="name_scrollbar">
+    <h1>{myData.kunsterNavn}</h1>
+    <h1>{myData.kunsterNavn}</h1>
+   </div>
+    
 </section>
 <section class="artist_info">
   <div class="singleview_grid">
@@ -53,3 +52,58 @@ console.log(myData);
     <div class="singleview_links"></div>
   </div>
 </section>
+
+
+<style>
+
+
+
+  .artist_img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+  
+  }
+  .name_scrollbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 0;
+    gap: 30rem;
+    top: 25%;
+    animation: scrollText 5s linear infinite;
+   
+    
+  }
+h2 {
+  overflow: hidden;
+}
+  @keyframes scrollText {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: 700px){
+
+
+    .name_scrollbar{
+      top: 15%;
+    }
+    .artist_img{
+      width: 100%;
+      background-size: cover;
+      height: auto;
+      margin: auto;
+    }
+  }
+
+
+</style>
