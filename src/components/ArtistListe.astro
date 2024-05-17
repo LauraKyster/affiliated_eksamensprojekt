@@ -4,21 +4,34 @@
 const { data } = Astro.props;
 ---
 
-<a href={`artist/${data.slug}`}>
-  <articl>
-    <section class="collab_wrappe">
-      <div class="name_wrapper">
-        <h2 class="col listeNavn">{data.kunsterNavn}</h2>
+<div class="containerCards">
+  <a href={`artist/${data.slug}`}>
+    <articl>
+      <section class="collab_wrappe">
+        <div class="name_wrapper">
+          <h2 class="col listeNavn">{data.kunsterNavn}</h2>
 
-        <img
-          src={"/public/images/" + `${data.kunsterBillede1}`}
-          alt="billede af artist"
-          ;
-        />
-      </div>
-    </section>
-  </articl>
-</a>
+          <img src={"/public/images/" + `${data.kunsterBillede1}`} alt="billede af artist" ; />
+
+          <div class="icon_container">
+            <p>
+              <a class="social-icon" href="https://www.facebook.com/"><i class="fab fa-spotify fa-2xl"></i></a>
+            </p>
+            <p>
+              <a class="social-icon" href="https://twitter.com/?lang=da"><i class="fab fa-youtube fa-2xl"></i></a>
+            </p>
+            <p>
+              <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram fa-2xl"></i></a>
+            </p>
+            <p>
+              <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-facebook fa-2xl"></i></a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </articl>
+  </a>
+</div>
 
 <style>
   img {
@@ -28,12 +41,37 @@ const { data } = Astro.props;
     object-position: center;
     -webkit-filter: grayscale(100%);
   }
+  .icon_container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 5vh;
+  }
+  .icon_container p {
+    margin: 0.5rem;
+  }
+  .social-icon {
+    font-size: 0.6rem;
+  }
+
+  .social-icon:hover {
+    color: var(--accentColor);
+  }
+  .containerCards {
+    width: 370px;
+    height: 360px;
+  }
   a {
     text-decoration: none;
     color: var(--backgroundColor);
   }
   img:hover {
     -webkit-filter: none;
+  }
+
+  .boxLink {
+    position: relative;
+    width: 360px;
   }
 
   .listeNavn {
