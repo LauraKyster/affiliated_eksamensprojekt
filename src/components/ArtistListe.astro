@@ -6,12 +6,17 @@ const { data } = Astro.props;
 
 <a href={`artist/${data.slug}`}>
   <articl>
-    <h2>{data.kunsterNavn}</h2>
-    <img
-      src={"/public/images/" + `${data.kunsterBillede1}`}
-      alt="billede af artist"
-      ;
-    />
+    <section class="collab_wrappe">
+      <div class="name_wrapper">
+        <h2 class="col listeNavn">{data.kunsterNavn}</h2>
+
+        <img
+          src={"/public/images/" + `${data.kunsterBillede1}`}
+          alt="billede af artist"
+          ;
+        />
+      </div>
+    </section>
   </articl>
 </a>
 
@@ -23,8 +28,51 @@ const { data } = Astro.props;
     object-position: center;
     -webkit-filter: grayscale(100%);
   }
-
+  a {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
   img:hover {
     -webkit-filter: none;
+  }
+
+  .listeNavn {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    animation: scrollText 10s linear infinite;
+    display: none;
+    pointer-events: none;
+  }
+
+  img {
+    overflow: hidden;
+  }
+  .name_wrapper:hover .listeNavn {
+    display: block;
+  }
+  .collab_wrappe {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .img_wrapper {
+    display: flex;
+    width: 100%;
+    animation: scrollText 1s linear infinite;
+  }
+  .col {
+    display: flex;
+  }
+
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-60%);
+    }
   }
 </style>
