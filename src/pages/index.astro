@@ -23,7 +23,7 @@ console.log(data);
     <Carousel />
   </section>
   <div>
-    <h3>AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
+    <h3 class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
   </div>
   <section class="artist_section">
     <div class="artist_filter_buttons">
@@ -67,6 +67,10 @@ console.log(data);
 </Mainlayout>
 
 <style>
+  .intro {
+    margin: 2rem 4rem 2rem 4rem;
+    font-size: 12px;
+  }
   .collab_text {
     margin: auto;
     max-width: 24rem;
@@ -116,6 +120,10 @@ console.log(data);
   }
 
   @media (min-width: 700px) {
+    .intro {
+      margin: 5rem 45rem 7rem 5rem;
+      font-size: 24px;
+    }
     .collab_grid {
       display: flex;
       flex-direction: row;
