@@ -1,4 +1,6 @@
 ---
+import "../../style/generalstyle.css";
+
 export async function getStaticPaths() {
   const data = await fetch(
     "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
@@ -22,6 +24,7 @@ export async function getStaticPaths() {
 const { myData } = Astro.props;
 console.log(myData);
 
+
 // {
 //   id: 5,
 //   kunsterNavn: 'MILEZ',
@@ -36,13 +39,14 @@ console.log(myData);
 // }
 ---
 
-<section class="singleview_img">
-  <img
-    src={"/public/images/" + `${myData.kunsterBillede2}`}
-    alt="billede af artist"
-    ;
-  />
-  <h1>{myData.kunsterNavn}</h1>
+<section class="singleview_img ">
+  <article class="artist_background_color "> 
+   <div class="name_scrollbar">
+    <h1>{myData.kunsterNavn}</h1>
+    <h1>{myData.kunsterNavn}</h1>
+   </div>
+    <img class="artist_img" src={"/public/images/" + `${myData.kunsterBillede2}`} alt="billede af artist";/>
+   </article> 
 </section>
 <section class="artist_info">
   <div class="singleview_grid">
@@ -53,3 +57,66 @@ console.log(myData);
     <div class="singleview_links"></div>
   </div>
 </section>
+
+
+<style>
+
+
+.singleview-img{
+  
+}
+.artist_background_color {
+    background-color: rgba(171, 154, 140, 1);
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .artist_img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+  
+  }
+  .name_scrollbar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 0;
+    gap: 30rem;
+    top: 25%;
+    animation: scrollText 5s linear infinite;
+   
+    
+  }
+h2 {
+  overflow: hidden;
+}
+  @keyframes scrollText {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: 700px){
+
+
+    .name_scrollbar{
+      top: 15%;
+    }
+    .artist_img{
+      width: 25%;
+      height: auto;
+      margin: auto;
+    }
+  }
+
+
+</style>
