@@ -46,13 +46,16 @@ console.log(myData);
    </div>
     
 </section>
-<section class="artist_info">
-  <div class="singleview_grid">
-    <div class="singleview_text">
+<div class="singleview_links">
+  <p>
+    <a class="social-icon" href=`${myData.spotifyLogoLink}`
+      ><i class="fab fa-spotify fa-2xl"></i></a>
+  </p>
+</div>
+<section class="singleview_grid">
+  <div class="artist_info">
       <h3>{myData.kunsterNavn}</h3>
       <p>{myData.beskrivelse}</p>
-    </div>
-    <div class="singleview_links"></div>
   </div>
   <div id="embed-iframe">
     <iframe
@@ -60,20 +63,21 @@ console.log(myData);
       src=`https://open.spotify.com/embed/${myData.spotifyPlaylistLink}`
       width="100%"
       height="352"
-      frameBorder="
-      0"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      frameBorder="0"
+      allowfullscreen=""allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"></iframe>
+     
   </div>
 </section>
 
 
 <style>
 
+
 .singleview_img{
   overflow: hidden;
   background-color: rgba(42, 36, 32, 1);
+  box-shadow: inset 0 -1em 5px rgb(0 0 0 / 100%);
 }
 
   .artist_img {
@@ -83,7 +87,7 @@ console.log(myData);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 70%;
+    opacity: 75%;
     
   
   }
@@ -93,7 +97,7 @@ console.log(myData);
     position: absolute;
     z-index: 0;
     gap: 30rem;
-    top: 25%;
+    top: 30%;
     animation: scrollText 10s linear infinite;
    
     
@@ -102,6 +106,44 @@ h1 {
   overflow: hidden;
   color: var(--backgroundColor);
 }
+
+
+.singleview_links{
+display: flex;
+flex-direction: row;
+
+}
+.singleview_grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 5rem;
+  }
+  
+  h3{
+    padding-bottom: 1.5rem;
+    
+  }
+
+.aretist_info{
+
+
+}
+.embed-iframe{
+
+}
+
+.icon_container p {
+    margin: 0.5rem;
+  }
+  .social-icon {
+    font-size: 0.6rem;
+  }
+
+  .social-icon:hover {
+    color: var(--accentColor);
+  }
+
+
   @keyframes scrollText {
     from {
       transform: translateX(0%);
@@ -113,6 +155,12 @@ h1 {
 
   @media (min-width: 700px){
 
+    .singleview_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5rem;
+    gap: 5rem;
+  }
 
     .name_scrollbar{
       top: 15%;
@@ -123,7 +171,12 @@ h1 {
       height: auto;
       margin: auto;
     }
+
+
+
   }
+
+
 
 
 </style>
