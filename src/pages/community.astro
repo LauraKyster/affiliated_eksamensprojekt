@@ -6,15 +6,28 @@ import Card from "../components/Card.astro";
 ---
 
 <Mainlayout>
-  <section class="hero_section">
-    <h1 class="hero_title">AFFILIATED</h1>
-    <div class="orange_boks">
-      <img src="../img/herocom1.jpg" alt="" class="hero_image" />
-    </div>
+  <section class="parallax">
+    <section class="hero_section">
+      <h1 class="hero_title">AFFILIATED</h1>
+      <div class="orange_boks parallax_layer">
+        <img src="../img/herocom1.jpg" alt="" class="hero_image" />
+      </div>
+    </section>
+  </section>
+  <section class="flex_img">
+    <img src="../img/herocom2.jpg" alt="" />
+    <img src="../img/herocom3.jpg" alt="" />
   </section>
 </Mainlayout>
 
 <style>
+  img {
+    width: 100%;
+  }
+  .flex_img {
+    display: flex;
+    flex-direction: row;
+  }
   .hero_section {
     position: relative;
     width: 100%;
@@ -22,9 +35,9 @@ import Card from "../components/Card.astro";
   .hero_title {
     position: absolute;
     top: -1rem; /* Juster denne værdi efter behov */
-    left: 2rem;
+    left: 1rem;
     font-family: "leghug2", sans-serif; /* Sørg for at fonten er korrekt importeret */
-    font-size: 60px; /* Juster denne værdi efter behov */
+    font-size: 70px; /* Juster denne værdi efter behov */
     color: var(--backgroundColor); /* Juster denne værdi efter behov */
     z-index: 10;
     font-family: "../fonts/leghug2.woff2";
@@ -34,6 +47,10 @@ import Card from "../components/Card.astro";
     background-color: #bd6e29;
     overflow: hidden; /* For at sikre, at intet strækker sig uden for boksen */
     position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .hero_image {
     display: block;
@@ -41,6 +58,7 @@ import Card from "../components/Card.astro";
     height: auto;
     max-height: 100%;
     margin-top: 4rem;
+    z-index: 1;
   }
   .image_gallery {
     padding: 20px;
@@ -49,13 +67,18 @@ import Card from "../components/Card.astro";
   @media screen and (min-width: 700px) {
     .hero_title {
       position: absolute;
-      top: -3rem; /* Juster denne værdi efter behov */
+      top: -2.8rem; /* Juster denne værdi efter behov */
       left: 30rem;
       font-family: "leghug2", sans-serif; /* Sørg for at fonten er korrekt importeret */
       font-size: 100px; /* Juster denne værdi efter behov */
       color: var(--backgroundColor); /* Juster denne værdi efter behov */
       z-index: 10;
       font-family: "../fonts/leghug2.woff2";
+    }
+    .flex_img {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
     }
   }
 </style>
