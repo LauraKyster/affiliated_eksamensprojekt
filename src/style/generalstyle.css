@@ -5,6 +5,10 @@
   line-height: 1.5;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;
