@@ -7,11 +7,11 @@ const { variant, size } = Astro.props;
 
 <style>
   button {
-    padding: 0.3rem 1.5rem;
+    padding: 0 1rem;
     border: 1px solid black;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 4px;
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
@@ -22,8 +22,8 @@ const { variant, size } = Astro.props;
     font-size: 30px;
   }
   .primary:hover {
-    background-color: var(--buttonText);
-    color: var(--accentColor);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
   }
   .filter_knap {
     background-color: transparent;
