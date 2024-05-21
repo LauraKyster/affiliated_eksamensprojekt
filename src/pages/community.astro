@@ -1,18 +1,58 @@
 ---
 import Mainlayout from "../layouts/Mainlayout.astro";
-import "../style/communitystyle.css";
+import "../style/generalstyle.css";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
+<Mainlayout>
+  <div class="parallax"></div>
+  <section class="grid_img">
+    <img src="../img/herocom2.jpg" alt="" />
+    <img src="../img/herocom3.jpg" alt="" />
+  </section>
+  <section class="grid_img">
+    <p>noget</p>
+    <img src="../img/herocom4.jpg" alt="" />
+  </section>
 
-  <Mainlayout />
-</html>
+  <section class="grid_img">
+    <img src="../img/herocom5.jpg" alt="" />
+    <img src="../img/herocom6.jpg" alt="" />
+  </section>
+</Mainlayout>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .parallax {
+    background-image: url("../img/parallax_hvid.webp");
+    min-height: 650px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .grid_img {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 100%;
+    margin: 0 0;
+  }
+
+  @media screen and (min-width: 700px) {
+    img {
+      max-width: 100%;
+    }
+  }
+</style>

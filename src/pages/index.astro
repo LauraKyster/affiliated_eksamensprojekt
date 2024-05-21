@@ -18,7 +18,7 @@ console.log(data);
 // Filter function to get artists based on category
 ---
 
-<Mainlayout>
+<Mainlayout id="frontpage">
   <section class="header_karrusel"></section>
   <section>
     <Carousel />
@@ -119,7 +119,9 @@ console.log(data);
     gap: 5rem;
     margin: 5rem;
   }
-
+  .header_karrusel {
+    margin-top: 6rem;
+  }
   @media (min-width: 700px) {
     .intro {
       margin: 5rem 45rem 7rem 5rem;
