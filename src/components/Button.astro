@@ -38,12 +38,15 @@ const { variant, size } = Astro.props;
   }
 
   .community_button {
-    background-color: var(--accentColor);
-    color: var(--textColor);
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
     border: none;
     font-size: 16px;
     position: relative;
     left: 3rem;
+  }
+  .community_button:hover {
+    background-color: var(--accentColor);
   }
 
   @media screen and (max-width: 700px) {
