@@ -35,6 +35,7 @@ console.log(myData);
 // }
 ---
 
+<a href="../#frontpage"><div class="arrow_background"><img class="arrow" src="../img/normalArrowH.svg" alt="" /></div></a>
 <section class="singleview_img">
   <img class="artist_img" src={"/public/images/" + `${myData.kunsterBillede2}`} alt="billede af artist" />
   <div class="name_scrollbar">
@@ -60,6 +61,17 @@ console.log(myData);
 </section>
 
 <style>
+  .arrow {
+    rotate: 270deg;
+    position: absolute;
+    z-index: 10;
+    margin: 1rem 1rem 1rem 2rem;
+    width: 3rem;
+  }
+  .arrow_background {
+    background-color: var(--backgroundColor);
+    z-index:;
+  }
   .singleview_img {
     position: relative;
     overflow: hidden;
