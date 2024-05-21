@@ -2,6 +2,7 @@
 // import { isVNode } from "astro/jsx-runtime";
 
 const { data } = Astro.props;
+import Somelinks from "../components/Somelinks.astro";
 ---
 
 <div class="containerCards">
@@ -11,34 +12,8 @@ const { data } = Astro.props;
         <div class="name_wrapper">
           <h2 class="col listeNavn">{data.kunsterNavn}</h2>
 
-          <img
-            src={"/public/images/" + `${data.kunsterBillede1}`}
-            alt="billede af artist"
-            ;
-          />
-
-          <div class="icon_container">
-            <p>
-              <a class="social-icon" href=`${data.spotifyLogoLink}`
-                ><i class="fab fa-spotify fa-2xl"></i></a
-              >
-            </p>
-            <p>
-              <a class="social-icon" href=`${data.youtubeLogoLink}`
-                ><i class="fab fa-youtube fa-2xl"></i></a
-              >
-            </p>
-            <p>
-              <a class="social-icon" href=`${data.instagramLogoLink}`
-                ><i class="fab fa-instagram fa-2xl"></i></a
-              >
-            </p>
-            <p>
-              <a class="social-icon" href=`${data.facebookLogoLink}`
-                ><i class="fab fa-facebook fa-2xl"></i></a
-              >
-            </p>
-          </div>
+          <img src={"/public/images/" + `${data.kunsterBillede1}`} alt="billede af artist" ; />
+          <Somelinks />
         </div>
       </section>
     </articl>
@@ -53,22 +28,7 @@ const { data } = Astro.props;
     object-position: center;
     -webkit-filter: grayscale(100%);
   }
-  .icon_container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    bottom: 5vh;
-  }
-  .icon_container p {
-    margin: 0.5rem;
-  }
-  .social-icon {
-    font-size: 0.6rem;
-  }
 
-  .social-icon:hover {
-    color: var(--accentColor);
-  }
   .containerCards {
     width: 370px;
     height: 360px;

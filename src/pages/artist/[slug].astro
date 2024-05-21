@@ -1,16 +1,13 @@
 ---
 import "../../style/generalstyle.css";
+import Somelinks from "../../components/Somelinks.astro";
 export async function getStaticPaths() {
-  const data = await fetch(
-    "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
-    {
-      method: "GET",
-      headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-      },
-    }
-  ).then((response) => response.json());
+  const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+    },
+  }).then((response) => response.json());
 
   return data.map((artist) => {
     return {
@@ -36,47 +33,38 @@ console.log(myData);
 //   slug: 'Milez'
 // }
 ---
+
 <section class="singleview_img">
-  <img class="artist_img" src={"/public/images/" + `${myData.kunsterBillede2}`} alt="billede af artist"/>
-   <div class="name_scrollbar">
+  <img class="artist_img" src={"/public/images/" + `${myData.kunsterBillede2}`} alt="billede af artist" />
+  <div class="name_scrollbar">
     <h1>{myData.kunsterNavn}</h1>
     <h1>{myData.kunsterNavn}</h1>
     <h1>{myData.kunsterNavn}</h1>
     <h1>{myData.kunsterNavn}</h1>
-   </div>
-    
+  </div>
 </section>
-<div class="singleview_links">
-  <p>
-    <a class="social-icon" href=`${myData.spotifyLogoLink}`
-      ><i class="fab fa-spotify fa-2xl"></i></a>
-  </p>
-</div>
+
 <section class="singleview_grid">
   <div class="artist_info">
+    <div class="col_flexSingle kunsterneNavnS">
       <h3>{myData.kunsterNavn}</h3>
-      <p>{myData.beskrivelse}</p>
+
+      <Somelinks />
+    </div>
+    <p>{myData.beskrivelse}</p>
   </div>
   <div id="embed-iframe">
-    <iframe
-      style="border-radius:12px"
-      src=`https://open.spotify.com/embed/${myData.spotifyPlaylistLink}`
-      width="100%"
-      height="352"
-      frameBorder="0" allowfullscreen=""allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-     
+    <iframe style="border-radius:12px" src=`https://open.spotify.com/embed/${myData.spotifyPlaylistLink}` width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </section>
 
-
 <style>
-
-.singleview_img{
-  position: relative;
-  overflow: hidden;
-  background-color: rgba(42, 36, 32, 1);
-  box-shadow: inset 0 -1em 5px rgb(0 0 0 / 100%);
-}
+  .singleview_img {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(42, 36, 32, 1);
+    box-shadow: inset 0 -1em 5px rgb(0 0 0 / 100%);
+  }
 
   .artist_img {
     position: relative;
@@ -85,8 +73,6 @@ console.log(myData);
     background-repeat: no-repeat;
     background-position: center;
     opacity: 75%;
-    
-  
   }
   .name_scrollbar {
     display: flex;
@@ -96,45 +82,25 @@ console.log(myData);
     gap: 25rem;
     top: 30%;
     animation: scrollText 30s linear infinite;
-     
-    
   }
-h1 {
-  overflow: hidden;
-  color: var(--backgroundColor);
-}
+  h1 {
+    overflow: hidden;
+    color: var(--backgroundColor);
+  }
 
-  
-.singleview_links{
-display: flex;
-flex-direction: row;
+  .singleview_links {
+    display: flex;
+    flex-direction: row;
+  }
 
-}
-
-  h3{
+  h3 {
     padding-bottom: 1.5rem;
-    
   }
 
-.artist_info{
-
-
-}
-.embed-iframe{
-
-}
-
-.icon_container p {
-    margin: 0.5rem;
+  .col_flexSingle {
+    display: flex;
+    flex-direction: row;
   }
-  .social-icon {
-    font-size: 0.6rem;
-  }
-
-  .social-icon:hover {
-    color: var(--accentColor);
-  }
-
 
   @keyframes scrollText {
     from {
@@ -145,25 +111,22 @@ flex-direction: row;
     }
   }
 
-@media screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
+    .singleview_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 5rem 5rem 15rem 5rem;
+      gap: 5rem;
+    }
 
-.singleview_grid{
-display: grid;
-grid-template-columns: 1fr 1fr;
-margin:  5rem 5rem 15rem 5rem;
-gap: 5rem;
-}
-
-.name_scrollbar{
-  top: 33.33%;
-}
-.artist_img{
-  width: 100%;
-  background-size: cover;
-  height: auto;
-  margin: auto;
-}
-
-
-}
+    .name_scrollbar {
+      top: 33.33%;
+    }
+    .artist_img {
+      width: 100%;
+      background-size: cover;
+      height: auto;
+      margin: auto;
+    }
+  }
 </style>
