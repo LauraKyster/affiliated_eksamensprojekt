@@ -6,79 +6,53 @@ import Card from "../components/Card.astro";
 ---
 
 <Mainlayout>
-  <section class="parallax">
-    <section class="hero_section">
-      <h1 class="hero_title">AFFILIATED</h1>
-      <div class="orange_boks parallax_layer">
-        <img src="../img/herocom1.jpg" alt="" class="hero_image" />
-      </div>
-    </section>
-  </section>
-  <section class="flex_img">
+  <div class="parallax"></div>
+  <section class="grid_img">
     <img src="../img/herocom2.jpg" alt="" />
     <img src="../img/herocom3.jpg" alt="" />
+  </section>
+  <section class="grid_img">
+    <p>noget</p>
+    <img src="../img/herocom4.jpg" alt="" />
+  </section>
+
+  <section class="grid_img">
+    <img src="../img/herocom5.jpg" alt="" />
+    <img src="../img/herocom6.jpg" alt="" />
   </section>
 </Mainlayout>
 
 <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
   img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
-  .flex_img {
-    display: flex;
-    flex-direction: row;
-  }
-  .hero_section {
-    position: relative;
-    width: 100%;
-  }
-  .hero_title {
-    position: absolute;
-    top: -1rem; /* Juster denne værdi efter behov */
-    left: 1rem;
-    font-family: "leghug2", sans-serif; /* Sørg for at fonten er korrekt importeret */
-    font-size: 70px; /* Juster denne værdi efter behov */
-    color: var(--backgroundColor); /* Juster denne værdi efter behov */
-    z-index: 10;
-    font-family: "../fonts/leghug2.woff2";
-  }
-  .orange_boks {
-    width: 100%;
-    background-color: #bd6e29;
-    overflow: hidden; /* For at sikre, at intet strækker sig uden for boksen */
-    position: relative;
+  .parallax {
+    background-image: url("../img/parallax_hvid.webp");
+    min-height: 650px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .hero_image {
-    display: block;
-    width: auto;
-    height: auto;
-    max-height: 100%;
-    margin-top: 4rem;
-    z-index: 1;
+  .grid_img {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 100%;
+    margin: 0 0;
   }
-  .image_gallery {
-    padding: 20px;
-    /* Tilføj yderligere styling til galleriet efter behov */
-  }
+
   @media screen and (min-width: 700px) {
-    .hero_title {
-      position: absolute;
-      top: -2.8rem; /* Juster denne værdi efter behov */
-      left: 30rem;
-      font-family: "leghug2", sans-serif; /* Sørg for at fonten er korrekt importeret */
-      font-size: 100px; /* Juster denne værdi efter behov */
-      color: var(--backgroundColor); /* Juster denne værdi efter behov */
-      z-index: 10;
-      font-family: "../fonts/leghug2.woff2";
-    }
-    .flex_img {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
+    img {
+      max-width: 100%;
     }
   }
 </style>
