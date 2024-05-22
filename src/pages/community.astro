@@ -9,18 +9,38 @@ import Card from "../components/Card.astro";
   <div class="parallax"></div>
   <section class="com_intro">
     <h2>VISION</h2>
-    <p>
-      With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more open and transparent to create better opportunities for the smaller players. We wish to give listeners a greater insight into the dominating forces of the music
-      business, as well as why this must change to create equal opportunities for everyone in the industry.
-    </p>
-    <h3>“Independent record label with a vision of artistic freedom”</h3>
+    <p>In Affiliated, we primarily work with upcoming artists and producers, and we help to develop, guide and advise them with an uncompromising and transparent approach to creating and publishing music. We view it as our task to give them the best framework to unleash their artistic potential while ensuring them good business.</p>
+    <h4>“Independent record label with a vision of artistic freedom”</h4>
   </section>
-  <section class="grid_img">
+  <section class="flex_img">
     <img class="img_parallax" src="../img/com_img.webp" alt="" />
     <img class="img_parallax" src="../img/com_img2.webp" alt="" />
   </section>
-  <p class="com_intro">In Affiliated, we primarily work with upcoming artists and producers, and we help to develop, guide and advise them with an uncompromising and transparent approach to creating and publishing music.</p>
-  <section></section>
+  <div class="parallax2">
+    <div class="parallax_tekst">
+      <h3>Four factors particularly distinguish Affiliated from other labels</h3>
+    </div>
+    <div class="parallax_tekst left_h4"><h4>The artists' own musical vision is in focus</h4></div>
+    <div class="parallax_tekst right_h4"><h4>The artists are free to collaborate with anyone</h4></div>
+    <div class="parallax_tekst left_h4"><h4>The artists are not exclusively bound to the label</h4></div>
+    <div class="parallax_tekst right_h4"><h4>The artists own 70% of their master-copyrights</h4></div>
+
+    <!-- <img class="img_parallax" src="../img/studie_hero2.webp" alt="" /> -->
+  </div>
+  <section class="grid_com">
+    <div>
+      <img class="img_parallax" src="../img/studie_hero.webp" alt="" />
+    </div>
+    <div class="com_intro2">
+      <h4>"We believe that artistic freedom and creative expression is the essence of making good music."</h4>
+      <p>In Affiliated, we sign artists across style, genre and language.Where some of our artists work within Hip Hop’s subgenres such as Trap, Drill, UK garage and Backpack-Rap, others make melodic Pop, Neosoul, modern R&B and Afrobeats.</p>
+      <p>
+        With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more open and transparent to create better opportunities for the smaller players. We wish to give listeners a greater insight into the dominating forces of the music
+        business, as well as why this must change to create equal opportunities for everyone in the industry.
+      </p>
+    </div>
+  </section>
+
   <!--   <section class="grid_img">
     <p>noget</p>
     <img src="../img/herocom4.jpg" alt="" />
@@ -30,83 +50,139 @@ import Card from "../components/Card.astro";
     <img src="../img/herocom5.jpg" alt="" />
     <img src="../img/herocom6.jpg" alt="" />
   </section> -->
-</Mainlayout>
 
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  .parallax {
-    background-image: url("../img/parallax_hvid.webp");
-    min-height: 750px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .com_intro {
-    margin: 2rem 5rem 5rem 5rem;
-  }
-
-  .img_parallax {
-    animation-name: img_animation;
-    animation-duration: 2s;
-    animation-timeline: view();
-    animation-range: 250px 500px;
-  }
-  h3 {
-    font-style: italic;
-    margin: 2rem;
-  }
-  @keyframes img_animation {
-    from {
-      scale: 0.8;
-      opacity: 0;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    to {
-      scale: 1;
-      opacity: 1;
-    }
-  }
 
-  @media screen and (min-width: 700px) {
     img {
       max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     .parallax {
       background-image: url("../img/orange collage.webp");
+      min-height: 500px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: fit-content;
+    }
+    .parallax2 {
+      background-image: url("../img/studie_hero2.webp");
       min-height: 700px;
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
-    .title {
-      top: 30rem;
-      font-size: 60px;
-      position: absolute;
-      font-family: "../fonts/leghug2.woff2";
-      right: 2rem;
-      color: #fba35c;
-    }
-    .grid_img {
-      position: relative;
-      display: flex;
-      max-width: 100%;
-      gap: 5rem;
-      justify-content: center;
-    }
+
     .com_intro {
-      margin: 2rem 20rem 5rem 20rem;
+      margin: 2rem 5rem 5rem 5rem;
     }
-  }
-</style>
+    .com_intro2 {
+      margin: 2rem 5rem 5rem 5rem;
+    }
+    .com_intro2 h4,
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /*  .img_parallax {
+        animation-name: img_animation;
+        animation-duration: 2s;
+        animation-timeline: view();
+        animation-range: 250px 500px;
+      } */
+    h3 {
+      font-style: italic;
+      margin: 2rem;
+    }
+    h4 {
+      font-style: italic;
+    }
+
+    @keyframes img_animation {
+      from {
+        scale: 0.8;
+        opacity: 0;
+      }
+      to {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+    @media screen and (max-width: 700px) {
+      .grid_com,
+      .flex_img {
+        margin: 2rem;
+        gap: 1rem;
+      }
+
+      .flex_img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media screen and (min-width: 700px) {
+      img {
+        max-width: 100%;
+      }
+
+      .parallax {
+        background-image: url("../img/orange collage.webp");
+        min-height: 700px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .parallax_tekst h4,
+      h3 {
+        color: var(--backgroundColor);
+        font-style: normal;
+      }
+      .parallax_tekst h3 {
+        padding: 5rem;
+      }
+      .left_h4 {
+        padding: 0 0 3rem 7rem;
+      }
+      .right_h4 {
+        padding: 0 0 3rem 50rem;
+      }
+      .flex_img {
+        position: relative;
+        display: flex;
+        max-width: 100%;
+        gap: 5rem;
+        justify-content: center;
+        margin-bottom: 5rem;
+      }
+      .grid_com {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        margin: 5rem 5rem 5rem 0;
+        gap: 5rem;
+        min-height: 500px;
+      }
+      .grid_com h4,
+      p {
+        margin-bottom: 2rem;
+      }
+      .grid_com h4 {
+        margin-top: -2rem;
+      }
+      .com_intro {
+        margin: 2rem 20rem 5rem 20rem;
+      }
+    }
+  </style>
+</Mainlayout>
