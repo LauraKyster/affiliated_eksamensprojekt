@@ -2,31 +2,18 @@
 // import { isVNode } from "astro/jsx-runtime";
 
 const { data } = Astro.props;
+import Somelinks from "../components/Somelinks.astro";
 ---
 
 <div class="containerCards">
-  <a href={`artist/${data.slug}`}>
+  <a data-filter={data.stilling} class="artisk" href={`artist/${data.slug}`}>
     <articl>
       <section class="collab_wrappe">
         <div class="name_wrapper">
           <h2 class="col listeNavn">{data.kunsterNavn}</h2>
 
           <img src={"/public/images/" + `${data.kunsterBillede1}`} alt="billede af artist" ; />
-
-          <div class="icon_container">
-            <p>
-              <a class="social-icon" href=`${data.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
-            </p>
-            <p>
-              <a class="social-icon" href=`${data.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a>
-            </p>
-            <p>
-              <a class="social-icon" href=`${data.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
-            </p>
-            <p>
-              <a class="social-icon" href=`${data.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
-            </p>
-          </div>
+          <Somelinks />
         </div>
       </section>
     </articl>
@@ -41,22 +28,7 @@ const { data } = Astro.props;
     object-position: center;
     -webkit-filter: grayscale(100%);
   }
-  .icon_container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    bottom: 5vh;
-  }
-  .icon_container p {
-    margin: 0.5rem;
-  }
-  .social-icon {
-    font-size: 0.6rem;
-  }
 
-  .social-icon:hover {
-    color: var(--accentColor);
-  }
   .containerCards {
     width: 370px;
     height: 360px;
@@ -114,60 +86,3 @@ const { data } = Astro.props;
     }
   }
 </style>
-<script>
-  async function fetchData(stilling) {
-    const url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=eq.${stilling}`;
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-      },
-    });
-    return response.json();
-  }
-
-  // Function to render artists
-  function renderArtists(artists) {
-    const artistSection = document.querySelector(".artist");
-    artistSection.innerHTML = ""; // Clear previous content
-    artists.map((artist) => {
-      const artistCard = document.createElement("div");
-      artistCard.classList.add("containerCards");
-      artistCard.innerHTML = `
-        <a href="artist/${artist.slug}">
-          <article>
-            <section class="collab_wrappe">
-              <div class="name_wrapper">
-                <h2 class="col listeNavn">${artist.kunsterNavn}</h2>
-                <img src="/public/images/${artist.kunsterBillede1}" alt="billede af artist" />
-                <div class="icon_container">
-                  <p><a class="social-icon" href="${artist.spotifyLogoLink}"><i class="fab fa-spotify fa-2xl"></i></a></p>
-                  <p><a class="social-icon" href="${artist.youtubeLogoLink}"><i class="fab fa-youtube fa-2xl"></i></a></p>
-                  <p><a class="social-icon" href="${artist.instagramLogoLink}"><i class="fab fa-instagram fa-2xl"></i></a></p>
-                  <p><a class="social-icon" href="${artist.facebookLogoLink}"><i class="fab fa-facebook fa-2xl"></i></a></p>
-                </div>
-              </div>
-            </section>
-          </article>
-        </a>
-      `;
-      artistSection.appendChild(artistCard);
-    });
-  }
-  // function renderArtists(artists) {
-  //   const artistSection = document.querySelector(".artist.grid_auto");
-  //   artistSection.innerHTML = ""; // Clear previous content
-  //   artists.forEach((artist) => {
-  //     artistSection.innerHTML += `<ArtistListe data=${artist} />`;
-  //   });
-  // }
-
-  // // Event listener for filter buttons
-  document.querySelectorAll(".filter_knap").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const stilling = button.textContent.toLowerCase();
-      const data = await fetchData(stilling);
-      renderArtists(data);
-    });
-  });
-</script>
