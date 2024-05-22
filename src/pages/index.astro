@@ -169,7 +169,7 @@ console.log(data);
     document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
     document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
   });
-
+  // Function to fetch data based on "stilling"
   async function fetchData(stilling) {
     const url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=eq.${stilling}`;
     const response = await fetch(url, {
@@ -181,11 +181,13 @@ console.log(data);
     return response.json();
   }
 
+  // Function to render artists
   function renderArtists(artists) {
-    const artistSection = document.querySelector(".artist.grid_auto");
+    const artistSection = document.querySelector(".artist");
     artistSection.innerHTML = ""; // Clear previous content
     artists.forEach((artist) => {
-      artistSection.innerHTML += `<ArtistListe data=${artist} />`;
+      console.log(artist.kunsterNavn);
+      artistSection.innerHTML += `<div class="containerCards" /> ${artist}</div>`;
     });
   }
 
@@ -194,6 +196,7 @@ console.log(data);
     button.addEventListener("click", async () => {
       const stilling = button.textContent.toLowerCase();
       const data = await fetchData(stilling);
+      console.log(stilling);
       renderArtists(data);
     });
   });
