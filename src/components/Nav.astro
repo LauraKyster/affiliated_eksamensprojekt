@@ -5,25 +5,42 @@ import Button from "../components/Button.astro";
 <header class="header">
   <nav class="navbar">
     <div class="nav_icons">
-      <a href="https://www.instagram.com/affiliatedcph/"><img class="nav_icon" src="../public/img/insta_icon.png" alt="instagram_icon" /></a>
-
-      <a href="https://www.facebook.com/affiliatedcph"> <img class="nav_icon" src="../public/img/facebook_icon.png" alt="facebook_icon" /></a>
-
-      <a href="">
-        <img class="nav_icon" src="../public/img/youtube_icon.png" alt="youtube_icon" />
-      </a>
-
-      <a href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=qMr7DjAXRBu-HW5ivuspnA"><img class="nav_icon" src="../public/img/spotify_icon.png" alt="spotify_icon" /></a>
+      <p>
+        <a class="social-icon" href="https://www.facebook.com/"
+          ><i class="fab fa-spotify fa-2xl"></i></a
+        >
+      </p>
+      <p>
+        <a class="social-icon" href="https://twitter.com/?lang=da"
+          ><i class="fab fa-youtube fa-2xl"></i></a
+        >
+      </p>
+      <p>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-instagram fa-2xl"></i></a
+        >
+      </p>
+      <p>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-facebook fa-2xl"></i></a
+        >
+      </p>
     </div>
 
-    <a href="../#frontpage"><img class="nav_logo" src="../public/img/logonormal.svg" alt="logo" /></a>
+    <a href="../#frontpage"
+      ><img class="nav_logo" src="../public/img/logonormal.svg" alt="logo" /></a
+    >
 
-    <a href="../community"> <Button class="com_pos" variant="community_button">COMMUNITY</Button></a>
+    <a href="../community">
+      <Button class="com_pos" variant="community_button">COMMUNITY</Button></a
+    >
     <ul class="nav_menu">
-      <li class="nav_item"><a href="#artist_link_sektion">ARTISTS</a></li>
-      <li class="nav_item"><a href="#contact_link_sektion">BOOKING</a></li>
-      <li class="nav_item"><a href="#contact_link_sektion">CONTACT</a></li>
-      <li class="nav_item"><a href="#col_link_sektion">COLLABORATE</a></li>
+      <li class="nav_item"><a href="#artist_link_sektion">HIGHTLIGHTS</a></li>
+      <li class="nav_item"><a href="#contact_link_sektion">ARTISTS</a></li>
+      <li class="nav_item">
+        <a href="#contact_link_sektion">COLLABORATION</a>
+      </li>
+      <li class="nav_item"><a href="#col_link_sektion">CONTACT</a></li>
     </ul>
     <div class="burger_menu">
       <span class="bar"></span>
@@ -54,6 +71,14 @@ import Button from "../components/Button.astro";
     padding: 10px;
   }
 
+  .nav_icons a {
+    color: black;
+    font-size: 0.75rem;
+    padding-right: 1rem;
+  }
+  .nav_icons a:visited {
+    color: black;
+  }
   .bar {
     display: block;
     width: 25px;
@@ -107,12 +132,15 @@ import Button from "../components/Button.astro";
     transition: right 0.3s ease;
     padding: 3rem 5rem;
   }
+
+  .nav_menu a {
+    font-size: 18px;
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
-    font-size: 35px;
     height: 80px;
     overflow: hidden;
     position: fixed;
@@ -120,6 +148,8 @@ import Button from "../components/Button.astro";
     width: 100%;
     z-index: 10;
     background-color: var(--backgroundColor);
+  }
+  .social-icon {
   }
 
   /* Fjerner list-style prikker*/
@@ -136,7 +166,6 @@ import Button from "../components/Button.astro";
   /* Links i nav-baren*/
   .navbar a {
     float: right;
-    font-size: 18px;
     color: var(--backgroundColor);
     text-align: center;
     text-decoration: none;
