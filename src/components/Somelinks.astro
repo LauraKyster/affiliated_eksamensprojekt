@@ -51,9 +51,23 @@ const { variant } = Astro.props;
   }
   .singleview a {
     color: var(--textColor);
-    font-size: 1rem;
+    font-size: 0.65rem;
   }
   .singleview a:hover {
     color: var(--accentColor);
+  }
+  .singleview {
+    display: flex;
+    margin: 3rem 5rem 0 5rem;
+  }
+
+  @media (min-width: 600px) {
+    .singleview {
+      display: flex;
+      margin: -1rem 5rem 5rem -13rem;
+    }
+    .singleview a {
+      font-size: 1rem;
+    }
   }
 </style>
