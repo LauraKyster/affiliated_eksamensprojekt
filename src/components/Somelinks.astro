@@ -12,7 +12,7 @@ const { variant } = Astro.props;
 ---
 
 <script src="https://kit.fontawesome.com/75de2ab164.js" crossorigin="anonymous"></script>
-<div class={`icon_container ${variant === "singleview" ? "singleview" : ""}`}>
+<div class={`icon_container ${variant === "singleview" ? "singleview" : ""} ${variant === "menu-links" ? "menu-links" : ""}`}>
   <li class="icon_container">
     <ul>
       <a class="social-icon" href=`${someLink.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
@@ -50,6 +50,10 @@ const { variant } = Astro.props;
     color: var(--accentColor);
   }
   .singleview a {
-    color: black;
+    color: var(--textColor);
+    font-size: 1rem;
+  }
+  .singleview a:hover {
+    color: var(--accentColor);
   }
 </style>
