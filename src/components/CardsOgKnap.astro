@@ -1,0 +1,46 @@
+---
+import Button from "../components/Button.astro";
+import ArtistListe from "../components/ArtistListe.astro";
+const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+  },
+}).then((res) => res.json());
+---
+
+<section class="artist_section" id="artist_link_sektion">
+  <div class="artist_filter_buttons">
+    <Button variant="filter_knap">ALL</Button>
+    <Button variant="filter_knap">LABEL</Button>
+    <Button variant="filter_knap">PUBLISHING</Button>
+    <Button variant="filter_knap">MANAGEMENT</Button>
+  </div>
+  <hr class="underline" />
+  <div class="cards_grid"></div>
+
+  <article class="artist grid_auto">
+    {
+      data.map((artist) => {
+        return <ArtistListe data={artist} />;
+      })
+    }
+  </article>
+</section>
+
+<script>
+  const knapper = document.querySelectorAll("button");
+  knapper.forEach((knap) => {
+    knap.addEventListener("click", () => {
+      document.querySelectorAll("article").forEach((elm) => elm.classList.add("gem"));
+
+      if (knap.textContent === "LABEL") {
+        document.querySelectorAll(".label").forEach((elm) => elm.classList.remove("gem"));
+      } else if (knap.textContent === "PUBLISHING") {
+        document.querySelectorAll(".publishing").forEach((elm) => elm.classList.remove("gem"));
+      } else {
+        document.querySelectorAll("article").forEach((elm) => elm.classList.remove("gem"));
+      }
+    });
+  });
+</script>

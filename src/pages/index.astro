@@ -4,7 +4,7 @@ import "../style/generalstyle.css";
 import Button from "../components/Button.astro";
 import Collaborate from "../components/Collaborate.astro";
 import Carousel from "../components/Carousel.astro";
-
+import CardsOgKnap from "../components/CardsOgKnap.astro";
 import ArtistListe from "../components/ArtistListe.astro";
 const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
   method: "GET",
@@ -26,46 +26,30 @@ console.log(data);
   <div>
     <h3 class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
   </div>
-  <section class="artist_section" id="artist_link_sektion">
-    <div class="artist_filter_buttons">
-      <Button variant="filter_knap">ALL</Button>
-      <Button variant="filter_knap">LABEL</Button>
-      <Button variant="filter_knap">PUBLISHING</Button>
-      <Button variant="filter_knap">MANAGEMENT</Button>
-    </div>
-    <hr class="underline" />
-    <div class="cards_grid"></div>
-  </section>
-  <section class="artist grid_auto">
-    {
-      data.map((artist) => {
-        return <ArtistListe data={artist} />;
-      })
-    }
-  </section>
-  <section class="collaborate" id="col_link_sektion">
-    <div class="collab_grid">
-      <img class="affiliated_logo" id="order" src="/public/images/affiliated_logo.png" alt="Affiliated Logo" />
-      <div class="collab_text">
-        <h2 class="collab_header">OUR COLLABORATORS</h2>
-        <p class="collab_p">
-          With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more opne and transparent to create better opportunities for the
-          smaller players. We wish to give listeners a greater insight into the dominationg forces of the music buisness, as well as why this must change to create equal opportunities for everyone in the industry.
-        </p>
-        <!-- <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.
-          </p> -->
-      </div>
-    </div>
-    <div><Collaborate /></div>
-  </section>
-  <section class="contact" id="contact_link_sektion">
-    <Button variant="primary" id="bookingBtn">BOOKING</Button>
-    <Button variant="primary" id="contactBtn">CONTACT</Button>
-    <div id="bookingMail" class="mail hidden">booking@affiliatedcph.com</div>
-    <div id="contactMail" class="mail hidden">manager@affiliatedcph.com</div>
-  </section>
-  <img class="frontpage_logo" src="" alt="" />
 </Mainlayout>
+<CardsOgKnap />
+<section class="collaborate" id="col_link_sektion">
+  <div class="collab_grid">
+    <img class="affiliated_logo" id="order" src="/public/images/affiliated_logo.png" alt="Affiliated Logo" />
+    <div class="collab_text">
+      <h2 class="collab_header">OUR COLLABORATORS</h2>
+      <p class="collab_p">
+        With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more opne and transparent to create better opportunities for the
+        smaller players. We wish to give listeners a greater insight into the dominationg forces of the music buisness, as well as why this must change to create equal opportunities for everyone in the industry.
+      </p>
+      <!-- <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.
+          </p> -->
+    </div>
+  </div>
+  <div><Collaborate /></div>
+</section>
+<section class="contact" id="contact_link_sektion">
+  <Button variant="primary" id="bookingBtn">BOOKING</Button>
+  <Button variant="primary" id="contactBtn">CONTACT</Button>
+  <div id="bookingMail" class="mail hidden">booking@affiliatedcph.com</div>
+  <div id="contactMail" class="mail hidden">manager@affiliatedcph.com</div>
+</section>
+<img class="frontpage_logo" src="" alt="" />
 
 <style>
   .intro {
@@ -200,19 +184,4 @@ console.log(data);
   //     });
   //   });
   //
-
-  const knapper = document.querySelectorAll("button");
-  knapper.forEach((knap) => {
-    knap.addEventListener("click", () => {
-      document.querySelectorAll("section").forEach((elm) => elm.classList.add("gem"));
-
-      if (knap.textContent === "LABEL") {
-        document.querySelectorAll(".label").forEach((elm) => elm.classList.remove("gem"));
-      } else if (knap.textContent === "PUBLISHING") {
-        document.querySelectorAll(".publishing").forEach((elm) => elm.classList.remove("gem"));
-      } else {
-        document.querySelectorAll("section").forEach((elm) => elm.classList.remove("gem"));
-      }
-    });
-  });
 </script>
