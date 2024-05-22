@@ -164,48 +164,20 @@ console.log(data);
   }
 </style>
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    function showMail(type) {
-      const mailElement = document.getElementById(type);
-      mailElement.classList.toggle("hidden");
-    }
+<script>
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   function showMail(type) {
+  //     const mailElement = document.getElementById(type);
+  //     mailElement.classList.toggle("hidden");
+  //   }
 
-    document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
-    document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
-  });
+  //   document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
+  //   document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
+  // });
 
-  // Function to fetch data based on "stilling"
-  async function fetchData(stilling) {
-    const url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=${stilling}`;
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-      },
-    });
-    return response.json();
-  }
+  function ()
 
-  // Function to render artists
-  function renderArtists(artists) {
-    const artistSection = document.querySelector(".artist.grid_auto");
-    artistSection.innerHTML = ""; // Clear previous content
-    artists.forEach((artist) => {
-      artistSection.innerHTML += `<ArtistListe data=${artist} />`;
-    });
-  }
-
-  // Event listener for filter buttons
-  document.querySelectorAll(".filter_knap").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const stilling = button.textContent.toUpperCase();
-      const data = await fetchData(stilling);
-      renderArtists(data);
-    });
-  });
-
-  const cards = document.querySelectorAll("a");
+  const cards = document.querySelectorAll(".artistLinkF");
 
   cards.forEach((card) => {
     card.classList.add("show");
@@ -214,7 +186,7 @@ console.log(data);
   const cardContainer = document.querySelectorAll(".artist_filter_buttons");
 
   if (cardContainer) {
-    const cardContainerBtn = cardContainer.querySelectorAll("button[data-month]");
+    const cardContainerBtn = cardContainer.querySelectorAll("Button[data-month]");
 
     cardContainerBtn.forEach((btn) => {
       btn.addEventListener("click", (e) => {

@@ -6,7 +6,7 @@ import Somelinks from "../components/Somelinks.astro";
 ---
 
 <div class="containerCards">
-  <a data-filter={data.stilling} href={`artist/${data.slug}`}>
+  <a data-filter={data.stilling} class="artistLinkF" href={`artist/${data.slug}`}>
     <articl>
       <section class="collab_wrappe">
         <div class="name_wrapper">
@@ -28,7 +28,9 @@ import Somelinks from "../components/Somelinks.astro";
     object-position: center;
     -webkit-filter: grayscale(100%);
   }
-
+  .show {
+    display: block;
+  }
   .containerCards {
     width: 370px;
     height: 360px;
