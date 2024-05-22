@@ -6,42 +6,30 @@ const { data } = Astro.props;
 
 <div class="containerCards">
   <a href={`artist/${data.slug}`}>
-    <articl>
-      <section class="collab_wrappe">
+    <article>
+      <section class={(data.stilling && "label") || "publishing" || "management" || "collab_wrappe"}>
         <div class="name_wrapper">
           <h2 class="col listeNavn">{data.kunsterNavn}</h2>
 
-          <img
-            src={"/public/images/" + `${data.kunsterBillede1}`}
-            alt="billede af artist"
-            ;
-          />
+          <img src={"/public/images/" + `${data.kunsterBillede1}`} alt="billede af artist" ; />
 
           <div class="icon_container">
             <p>
-              <a class="social-icon" href=`${data.spotifyLogoLink}`
-                ><i class="fab fa-spotify fa-2xl"></i></a
-              >
+              <a class="social-icon" href=`${data.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
             </p>
             <p>
-              <a class="social-icon" href=`${data.youtubeLogoLink}`
-                ><i class="fab fa-youtube fa-2xl"></i></a
-              >
+              <a class="social-icon" href=`${data.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a>
             </p>
             <p>
-              <a class="social-icon" href=`${data.instagramLogoLink}`
-                ><i class="fab fa-instagram fa-2xl"></i></a
-              >
+              <a class="social-icon" href=`${data.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
             </p>
             <p>
-              <a class="social-icon" href=`${data.facebookLogoLink}`
-                ><i class="fab fa-facebook fa-2xl"></i></a
-              >
+              <a class="social-icon" href=`${data.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
             </p>
           </div>
         </div>
       </section>
-    </articl>
+    </article>
   </a>
 </div>
 
