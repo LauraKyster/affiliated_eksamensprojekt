@@ -170,34 +170,34 @@ console.log(data);
     document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
   });
   // Function to fetch data based on "stilling"
-  async function fetchData(stilling) {
-    const url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=eq.${stilling}`;
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-      },
-    });
-    return response.json();
-  }
+  // async function fetchData(stilling) {
+  //   const url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=eq.${stilling}`;
+  //   const response = await fetch(url, {
+  //     method: "GET",
+  //     headers: {
+  //       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+  //     },
+  //   });
+  //   return response.json();
+  // }
 
-  // Function to render artists
-  function renderArtists(artists) {
-    const artistSection = document.querySelector(".artist");
-    artistSection.innerHTML = ""; // Clear previous content
-    artists.forEach((artist) => {
-      console.log(artist.kunsterNavn);
-      artistSection.innerHTML += `<div class="containerCards" /> ${artist}</div>`;
-    });
-  }
+  // // Function to render artists
+  // function renderArtists(artists) {
+  //   const artistSection = document.querySelector(".artist");
+  //   artistSection.innerHTML = ""; // Clear previous content
+  //   artists.forEach((artist) => {
+  //     console.log(artist.kunsterNavn);
+  //     artistSection.innerHTML += `<div class="containerCards" /> ${artist}</div>`;
+  //   });
+  // }
 
-  // Event listener for filter buttons
-  document.querySelectorAll(".filter_knap").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const stilling = button.textContent.toLowerCase();
-      const data = await fetchData(stilling);
-      console.log(stilling);
-      renderArtists(data);
-    });
-  });
+  // // Event listener for filter buttons
+  // document.querySelectorAll(".filter_knap").forEach((button) => {
+  //   button.addEventListener("click", async () => {
+  //     const stilling = button.textContent.toLowerCase();
+  //     const data = await fetchData(stilling);
+  //     console.log(stilling);
+  //     renderArtists(data);
+  //   });
+  // });
 </script>
