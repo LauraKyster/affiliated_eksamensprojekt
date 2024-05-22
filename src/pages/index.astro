@@ -59,10 +59,10 @@ console.log(data);
     <div><Collaborate /></div>
   </section>
   <section class="contact" id="contact_link_sektion">
-    <Button variant="primary" id="bookingBtn">BOOKING</Button>
-    <Button variant="primary" id="contactBtn">CONTACT</Button>
-    <div id="bookingMail" class="mail hidden"><p>booking@affiliatedcph.com</p></div>
-    <div id="contactMail" class="mail hidden"><p>manager@affiliatedcph.com</p></div>
+    <button class="primary" id="bookingBtn">BOOKING</button>
+    <button class="primary" id="contactBtn">CONTACT</button>
+    <div id="bookingMail" class="mail hidden">booking@affiliatedcph.com</div>
+    <div id="contactMail" class="mail hidden">manager@affiliatedcph.com</div>
   </section>
   <img class="frontpage_logo" src="" alt="" />
 </Mainlayout>
@@ -165,11 +165,24 @@ console.log(data);
   document.addEventListener("DOMContentLoaded", () => {
     function showMail(type) {
       const mailElement = document.getElementById(type);
-      mailElement.classList.toggle("hidden");
+      if (mailElement) {
+        mailElement.classList.toggle("hidden");
+        console.log(`${type} visibility toggled`); // Debugging
+      } else {
+        console.log(`Element with ID ${type} not found`); // Debugging
+      }
     }
 
-    document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
-    document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
+    const bookingBtn = document.getElementById("bookingBtn");
+    const contactBtn = document.getElementById("contactBtn");
+
+    if (bookingBtn && contactBtn) {
+      bookingBtn.addEventListener("click", () => showMail("bookingMail"));
+      contactBtn.addEventListener("click", () => showMail("contactMail"));
+      console.log("Event listeners added to buttons"); // Debugging
+    } else {
+      console.log("Buttons not found"); // Debugging
+    }
   });
 
   // Function to fetch data based on "stilling"
