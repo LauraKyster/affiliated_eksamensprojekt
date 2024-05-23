@@ -4,8 +4,9 @@ import "../style/generalstyle.css";
 import Button from "../components/Button.astro";
 import Collaborate from "../components/Collaborate.astro";
 import Carousel from "../components/Carousel.astro";
-import CardsOgKnap from "../components/CardsOgKnap.astro";
+
 import ArtistListe from "../components/ArtistListe.astro";
+import CardsOgKnap from "../components/CardsOgKnap.astro";
 const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
   method: "GET",
   headers: {
@@ -18,7 +19,7 @@ console.log(data);
 // Filter function to get artists based on category
 ---
 
-<Mainlayout>
+<Mainlayout id="frontpage">
   <section class="header_karrusel"></section>
   <section>
     <Carousel />
@@ -26,8 +27,23 @@ console.log(data);
   <div>
     <h3 class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
   </div>
-  <CardsOgKnap />
-
+  <section class="artist_section" id="artist_link_sektion">
+    <div class="artist_filter_buttons">
+      <Button data-stilling="all" variant="filter_knap">ALL</Button>
+      <Button data-stilling="label" variant="filter_knap">LABEL</Button>
+      <Button data-stilling="publishing" variant="filter_knap">PUBLISHING</Button>
+      <Button data-stilling="management" variant="filter_knap">MANAGEMENT</Button>
+    </div>
+    <hr class="underline" />
+    <div class="cards_grid"></div>
+  </section>
+  <section class="artist grid_auto">
+    {
+      data.map((artist) => {
+        return <ArtistListe data={artist} />;
+      })
+    }
+  </section>
   <section class="collaborate" id="col_link_sektion">
     <div class="collab_grid">
       <img class="affiliated_logo" id="order" src="/public/images/affiliated_logo.png" alt="Affiliated Logo" />
@@ -41,6 +57,7 @@ console.log(data);
           </p> -->
       </div>
     </div>
+
     <div><Collaborate /></div>
   </section>
   <section class="contact" id="contact_link_sektion">
@@ -51,10 +68,14 @@ console.log(data);
   </section>
   <img class="frontpage_logo" src="" alt="" />
 </Mainlayout>
+
 <style>
   .intro {
     margin: 2rem 4rem 2rem 4rem;
     font-size: 12px;
+  }
+  .show {
+    display: block;
   }
   .collab_text {
     margin: auto;
@@ -101,9 +122,11 @@ console.log(data);
     align-items: center;
     justify-content: center;
     gap: 5rem;
-    margin: 5rem;
+    margin: 7rem;
   }
-
+  .header_karrusel {
+    margin-top: 6rem;
+  }
   @media (min-width: 700px) {
     .intro {
       margin: 5rem 45rem 7rem 5rem;
@@ -143,45 +166,14 @@ console.log(data);
   }
 </style>
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    function showMail(type) {
-      const mailElement = document.getElementById(type);
-      mailElement.classList.toggle("hidden");
-    }
-
-    document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
-    document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
-  });
-
-  //   // Function to fetch data based on "stilling"
-  //   async function fetchData(stilling) {
-  //     const url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=${stilling}`;
-  //     const response = await fetch(url, {
-  //       method: "GET",
-  //       headers: {
-  //         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-  //       },
-  //     });
-  //     return response.json();
+<script>
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   function showMail(type) {
+  //     const mailElement = document.getElementById(type);
+  //     mailElement.classList.toggle("hidden");
   //   }
 
-  //   // Function to render artists
-  //   function renderArtists(artists) {
-  //     const artistSection = document.querySelector(".artist.grid_auto");
-  //     artistSection.innerHTML = ""; // Clear previous content
-  //     artists.forEach((artist) => {
-  //       artistSection.innerHTML += `<ArtistListe data=${artist} />`;
-  //     });
-  //   }
-
-  //   // Event listener for filter buttons
-  //   document.querySelectorAll(".filter_knap").forEach((button) => {
-  //     button.addEventListener("click", async () => {
-  //       const stilling = button.textContent.toUpperCase();
-  //       const data = await fetchData(stilling);
-  //       renderArtists(data);
-  //     });
-  //   });
-  //
+  //   document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
+  //   document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
+  // });
 </script>
