@@ -18,12 +18,12 @@ import Card from "../components/Card.astro";
   </section>
   <div class="parallax2">
     <div class="parallax_tekst">
-      <h3>Four factors particularly distinguish Affiliated from other labels</h3>
+      <h3>FOUR FACTORS PARTICULARLY DISTINGUISH AFFILIATED FROM OTHER LABELS</h3>
     </div>
-    <div class="parallax_tekst left_h4"><h4>The artists' own musical vision is in focus</h4></div>
-    <div class="parallax_tekst right_h4"><h4>The artists are free to collaborate with anyone</h4></div>
-    <div class="parallax_tekst left_h4"><h4>The artists are not exclusively bound to the label</h4></div>
-    <div class="parallax_tekst right_h4"><h4>The artists own 70% of their master-copyrights</h4></div>
+    <div class="parallax_tekst left_h4"><h4>THE ARTISTS' OWN MUSICAL VISION IS IN FOCUS</h4></div>
+    <div class="parallax_tekst right_h4"><h4>THE ARTISTS ARE FREE TO COLLABORATE WITH ANYONE</h4></div>
+    <div class="parallax_tekst left_h4"><h4>THE ARTISTS ARE NOT EXCLUSIVELY BOUND TO THE LABEL</h4></div>
+    <div class="parallax_tekst right_h4"><h4>THE ARTISTS OWN 70% OF THEIR MASTER-COPYRIGHTS</h4></div>
 
     <!-- <img class="img_parallax" src="../img/studie_hero2.webp" alt="" /> -->
   </div>
@@ -38,6 +38,26 @@ import Card from "../components/Card.astro";
         With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more open and transparent to create better opportunities for the smaller players. We wish to give listeners a greater insight into the dominating forces of the music
         business, as well as why this must change to create equal opportunities for everyone in the industry.
       </p>
+    </div>
+  </section>
+  <section class="partner_section">
+    <div class="partner_flex">
+      <div class="partner_wrap">
+        <img class="partner_img" src="../public/img/partner2.webp" alt="" />
+        <div class="partner_name"><p>Alexander Engel</p><p>Creative Director</p></div>
+      </div>
+      <div class="partner_wrap">
+        <img class="partner_img" src="../public/img/partner3.webp" alt="" />
+        <div class="partner_name"><p>Manus Bell</p><p>Managing Director</p></div>
+      </div>
+      <div class="partner_wrap">
+        <img class="partner_img" src="../public/img/partner4.webp" alt="" />
+        <div class="partner_name"><p>Benjamin Winberg</p><p>Label Manager</p></div>
+      </div>
+      <div class="partner_wrap">
+        <img class="partner_img" src="../public/img/partner5.webp" alt="" />
+        <div class="partner_name"><p>Michael Brandt</p><p>Lawyer</p></div>
+      </div>
     </div>
   </section>
 
@@ -63,7 +83,36 @@ import Card from "../components/Card.astro";
       height: auto;
       display: block;
     }
-
+    .partner_flex {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin: -2rem 2rem 2rem 2rem;
+    }
+    .partner_img {
+      width: 100%;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+    .partner_wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .partner_name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: var(--textColor);
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .partner_wrap:hover .partner_name {
+      opacity: 1;
+    }
     .parallax {
       background-image: url("../img/orange collage.webp");
       min-height: 500px;
@@ -92,12 +141,13 @@ import Card from "../components/Card.astro";
       margin-bottom: 1rem;
     }
 
-    /*  .img_parallax {
-        animation-name: img_animation;
-        animation-duration: 2s;
-        animation-timeline: view();
-        animation-range: 250px 500px;
-      } */
+    .img_parallax {
+      animation-name: img_animation;
+      animation-duration: 2s;
+      animation-timeline: scroll();
+      animation-range: 250px 500px;
+    }
+
     h3 {
       font-style: italic;
       margin: 2rem;
@@ -134,7 +184,10 @@ import Card from "../components/Card.astro";
       img {
         max-width: 100%;
       }
-
+      .partner_flex {
+        gap: 5rem;
+        margin: -5rem 4rem 4rem 4rem;
+      }
       .parallax {
         background-image: url("../img/orange collage.webp");
         min-height: 700px;
@@ -173,6 +226,7 @@ import Card from "../components/Card.astro";
         gap: 5rem;
         min-height: 500px;
       }
+
       .grid_com h4,
       p {
         margin-bottom: 2rem;
