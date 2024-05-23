@@ -2,7 +2,7 @@
 // import { isVNode } from "astro/jsx-runtime";
 
 const { data } = Astro.props;
-import "../style/card.css";
+
 import Somelinks from "../components/Somelinks.astro";
 ---
 
@@ -20,6 +20,73 @@ import Somelinks from "../components/Somelinks.astro";
     </article>
   </a>
 </div>
+
+<style>
+  img {
+    width: 380px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    -webkit-filter: grayscale(100%);
+  }
+
+  .containerCards {
+    width: 370px;
+    height: 360px;
+  }
+  a {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
+  img:hover {
+    -webkit-filter: none;
+  }
+
+  .boxLink {
+    position: relative;
+    width: 360px;
+  }
+
+  .listeNavn {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    animation: scrollText 10s linear infinite;
+    display: none;
+    pointer-events: none;
+  }
+
+  img {
+    overflow: hidden;
+  }
+  .name_wrapper:hover .listeNavn {
+    display: block;
+  }
+  .collab_wrappe {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .img_wrapper {
+    display: flex;
+    width: 100%;
+    animation: scrollText 1s linear infinite;
+  }
+  .col {
+    display: flex;
+  }
+
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-60%);
+    }
+  }
+</style>
 
 <script>
   async function fetchData(stilling) {
