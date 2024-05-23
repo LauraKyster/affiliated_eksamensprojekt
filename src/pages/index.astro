@@ -184,7 +184,7 @@ console.log(data);
   const cardContainer = document.querySelectorAll(".artist_filter_buttons");
 
   if (cardContainer) {
-    const cardContainerBtn = cardContainer.querySelectorAll("Button[data-month]");
+    const cardContainerBtn = cardContainer.querySelectorAll("[data-month]");
 
     cardContainerBtn.forEach((btn) => {
       btn.addEventListener("click", (e) => {
