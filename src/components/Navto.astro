@@ -80,6 +80,9 @@ import Somelinks from "./Somelinks.astro";
     font-size: 0.75rem;
     padding-right: 1rem;
   }
+  .nav_icons a:hover {
+    color: var(--accentColor);
+  }
   .bar {
     display: block;
     width: 25px;
@@ -150,8 +153,6 @@ import Somelinks from "./Somelinks.astro";
     z-index: 10;
     background-color: var(--backgroundColor);
   }
-  .social-icon {
-  }
 
   /* Fjerner list-style prikker*/
   li {
@@ -170,16 +171,16 @@ import Somelinks from "./Somelinks.astro";
     text-align: center;
     text-decoration: none;
   }
-  .navbar a:hover {
-    color: #d68c45;
+  .nav_item a:hover {
+    color: var(--backgroundColor);
+  }
+  .social-icon a {
+    color: #f67f54;
   }
 
   /* Så links i dropdown er block, og derfor vises*/
   .nav_item:hover .dropdown-content {
     display: block;
-  }
-  .navbar a:hover,
-  .nav_item:hover .dropbtn {
   }
 
   @media screen and (max-width: 700px) {
