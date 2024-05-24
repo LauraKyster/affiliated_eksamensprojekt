@@ -116,6 +116,8 @@ console.log(data);
   .underline {
     width: 22rem;
     margin: auto;
+    position: relative;
+    bottom: 0.2vh;
   }
   .artist_filter_buttons {
     display: flex;
@@ -150,10 +152,21 @@ console.log(data);
     margin-top: 6rem;
   }
 
+<<<<<<< HEAD
   @media (min-width: 700px) {
+=======
+  @media (min-width: 1715px) {
+    .collab_p {
+      max-width: 150%;
+      font-size: 2rem;
+    }
+>>>>>>> tekst_fix
     .intro {
-      margin: 5rem 45rem 7rem 5rem;
-      font-size: 24px;
+      font-size: 30px;
+    }
+    .collab_header {
+      font-size: 3.5rem;
+      white-space: nowrap;
     }
     .collab_grid {
       display: flex;
@@ -174,17 +187,144 @@ console.log(data);
       width: 40rem;
       height: auto;
       margin: auto;
+      position: relative;
+      right: 3vw;
+    }
+  }
+  @media (max-width: 1714px) {
+    .intro {
+      font-size: 30px;
+    }
+    .collab_header {
+      font-size: 3.5rem;
+      white-space: nowrap;
+    }
+    .collab_grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .collab_grid > .collab_text {
+      order: -1;
+    }
+
+    .collab_text {
+      max-width: 45rem;
+      padding-left: 5rem;
+    }
+
+    .affiliated_logo {
+      width: 40rem;
+      height: auto;
+      margin: auto;
+      position: relative;
+      right: 3vw;
+    }
+
+    .collab_p {
+      max-width: 100%;
+      font-size: 1.5rem;
+    }
+
+    .contact {
+      gap: 10rem;
+    }
+  }
+
+  @media (max-width: 1293px) {
+    .intro {
+      font-size: 24px;
+    }
+    .collab_header {
+      font-size: 3.5rem;
+      white-space: nowrap;
+    }
+    .collab_grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .collab_grid > .collab_text {
+      order: -1;
+    }
+
+    .collab_text {
+      max-width: 45rem;
+      padding-left: 5rem;
+    }
+
+    .affiliated_logo {
+      width: 30rem;
+      height: auto;
+      margin: auto;
+      position: relative;
+      right: 3vw;
+    }
+
+    .collab_p {
+      max-width: 100%;
+      font-size: 1.5rem;
+    }
+
+    .contact {
+      gap: 10rem;
+    }
+  }
+
+  @media (max-width: 1132px) {
+    .intro {
+      font-size: 18px;
+    }
+    .collab_header {
+      font-size: 2rem;
+      white-space: nowrap;
+    }
+    .collab_grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .collab_grid > .collab_text {
+      order: -1;
+    }
+
+    .collab_text {
+      max-width: 45rem;
+      padding-left: 5rem;
+    }
+
+    .affiliated_logo {
+      width: rem;
+      height: auto;
+      margin: auto;
+      position: relative;
+      right: 3vw;
     }
 
     .collab_p {
       max-width: 100%;
     }
-    .underline {
-      width: 33rem;
-      margin: auto;
-    }
+
     .contact {
       gap: 10rem;
+    }
+  }
+
+  @media (max-width: 699px) {
+    .collab_header {
+      font-size: 2rem;
+      white-space: nowrap;
+    }
+
+    .affiliated_logo {
+      width: 20rem;
+      height: auto;
+      margin: auto;
+      position: relative;
+      right: 3vw;
     }
   }
 </style>
