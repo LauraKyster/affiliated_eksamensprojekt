@@ -7,29 +7,45 @@ import Somelinks from "../components/Somelinks.astro";
   <nav class="navbar">
     <div class="nav_icons">
       <p>
-        <a class="social-icon" href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=YEvX-DwNQiOtpXdhzkcMOg/"><i class="fab fa-spotify fa-2xl"></i></a>
+        <a
+          class="social-icon"
+          href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=YEvX-DwNQiOtpXdhzkcMOg/"
+          ><i class="fab fa-spotify fa-2xl"></i></a
+        >
       </p>
       <p>
-        <a class="social-icon" href="https://twitter.com/?lang=da"><i class="fab fa-youtube fa-2xl"></i></a>
+        <a class="social-icon" href="https://twitter.com/?lang=da"
+          ><i class="fab fa-youtube fa-2xl"></i></a
+        >
       </p>
       <p>
-        <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram fa-2xl"></i></a>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-instagram fa-2xl"></i></a
+        >
       </p>
       <p>
-        <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-facebook fa-2xl"></i></a>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-facebook fa-2xl"></i></a
+        >
       </p>
     </div>
 
-    <a href="../#frontpage"><img class="nav_logo" src="../public/img/logonormal.svg" alt="logo" /></a>
+    <a href="../#frontpage"
+      ><img class="nav_logo" src="../public/img/logonormal.svg" alt="logo" /></a
+    >
 
-    <a href="../community"> <Button class="com_pos" variant="community_button">COMMUNITY</Button></a>
+    <a href="../community">
+      <Button class="com_pos" variant="community_button">COMMUNITY</Button></a
+    >
     <ul class="nav_menu">
-      <li class="nav_item"><a href="#artist_link_sektion">HIGHTLIGHTS</a></li>
-      <li class="nav_item"><a href="#contact_link_sektion">ARTISTS</a></li>
       <li class="nav_item">
-        <a href="#contact_link_sektion">COLLABORATION</a>
+        <a href="#highlights_link_sektion">HIGHTLIGHTS</a>
       </li>
-      <li class="nav_item"><a href="#col_link_sektion">CONTACT</a></li>
+      <li class="nav_item"><a href="#artist_link_sektion">ARTISTS</a></li>
+      <li class="nav_item">
+        <a href="#col_link_sektion">COLLABORATION</a>
+      </li>
+      <li class="nav_item"><a href="#contact_link_sektion">CONTACT</a></li>
     </ul>
     <div class="burger_menu">
       <span class="bar"></span>
@@ -65,12 +81,6 @@ import Somelinks from "../components/Somelinks.astro";
     font-size: 0.75rem;
     padding-right: 1rem;
   }
-  .nav_icons a:visited {
-    color: var(--textColor);
-    font-size: 0.75rem;
-    padding-right: 1rem;
-  }
-
   .bar {
     display: block;
     width: 25px;
@@ -86,7 +96,6 @@ import Somelinks from "../components/Somelinks.astro";
 
   .burger_menu {
     display: flex;
-    color: var(--backgroundColor);
     margin-left: auto;
     z-index: 99;
     display: block;
@@ -118,6 +127,7 @@ import Somelinks from "../components/Somelinks.astro";
     width: 33.33%;
     height: 100vh;
     background-color: var(--textColor);
+    opacity: 95%;
     text-align: left;
     top: 0;
     position: fixed;
@@ -152,11 +162,10 @@ import Somelinks from "../components/Somelinks.astro";
   /* Fjerner understregning på*/
   a {
     text-decoration: none;
-    color: black;
   }
 
   /* Links i nav-baren*/
-  .navbar a {
+  .nav_menu a {
     float: right;
     color: var(--backgroundColor);
     text-align: center;
@@ -179,24 +188,44 @@ import Somelinks from "../components/Somelinks.astro";
       width: 45%;
       padding: 1rem 2rem;
     }
+
+    .nav_icons a {
+      color: var(--textColor);
+      font-size: 0.5rem;
+      padding-right: 0.5rem;
+    }
   }
 </style>
 
 <script>
-  const burgerMenu = document.querySelector(".burger_menu");
-  const navMenu = document.querySelector(".nav_menu");
-
-  burgerMenu.addEventListener("click", () => {
-    burgerMenu.classList.toggle("active");
+  document.querySelector(".burger_menu").addEventListener("click", function () {
+    let navMenu = document.querySelector(".nav_menu");
+    this.classList.toggle("active");
     navMenu.classList.toggle("active");
   });
 
-  // tilføjer click event listener til hamburger icon. når klikket aktiveres aktiv class på på hamburger og nav
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('.nav_menu a[href^="#"]');
 
-  document.querySelectorAll(".nav_item").forEach((n) => {
-    n.addEventListener("click", () => {
-      burgerMenu.classList.remove("active");
-      navMenu.classList.remove("active");
+    links.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          const topOffset =
+            targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+          window.scrollTo({
+            top: topOffset,
+            behavior: "smooth",
+          });
+
+          // Close the burger menu if it's open
+        }
+      });
     });
   });
 </script>
