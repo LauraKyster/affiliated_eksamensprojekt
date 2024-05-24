@@ -6,16 +6,12 @@ import Collaborate from "../components/Collaborate.astro";
 import Carousel from "../components/Carousel.astro";
 
 import ArtistListe from "../components/ArtistListe.astro";
-const data = await fetch(
-  "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-    },
-  }
-).then((res) => res.json());
+const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+  },
+}).then((res) => res.json());
 
 console.log(data);
 
@@ -32,10 +28,7 @@ console.log(data);
     <Carousel />
   </section>
   <div>
-    <h3 class="intro">
-      AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO
-      CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.
-    </h3>
+    <h3 class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
   </div>
   <section class="artist_section" id="artist_link_sektion">
     <div class="artist_filter_buttons">
@@ -56,22 +49,12 @@ console.log(data);
   </section>
   <section class="collaborate" id="col_link_sektion">
     <div class="collab_grid">
-      <img
-        class="affiliated_logo"
-        id="order"
-        src="/public/images/affiliated_logo.png"
-        alt="Affiliated Logo"
-      />
+      <img class="affiliated_logo" id="order" src="/public/images/affiliated_logo.png" alt="Affiliated Logo" />
       <div class="collab_text">
         <h2 class="collab_header">OUR COLLABORATORS</h2>
         <p class="collab_p">
-          With the spread of our music, we want to create a platform for
-          upcoming artists who do not want to compromise on their sound and
-          vision. We dream of making the music industry more opne and
-          transparent to create better opportunities for the smaller players. We
-          wish to give listeners a greater insight into the dominationg forces
-          of the music buisness, as well as why this must change to create equal
-          opportunities for everyone in the industry.
+          With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more opne and transparent to create better opportunities for the
+          smaller players. We wish to give listeners a greater insight into the dominationg forces of the music buisness, as well as why this must change to create equal opportunities for everyone in the industry.
         </p>
         <!-- <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.
           </p> -->
@@ -154,6 +137,7 @@ console.log(data);
 
 <<<<<<< HEAD
   @media (min-width: 700px) {
+<<<<<<< HEAD
 =======
   @media (min-width: 1715px) {
     .collab_p {
@@ -199,6 +183,8 @@ console.log(data);
       font-size: 3.5rem;
       white-space: nowrap;
     }
+=======
+>>>>>>> cards_responsiv_2
     .collab_grid {
       display: flex;
       flex-direction: row;
@@ -336,12 +322,8 @@ console.log(data);
       mailElement.classList.toggle("hidden");
     }
 
-    document
-      .getElementById("bookingBtn")
-      .addEventListener("click", () => showMail("bookingMail"));
-    document
-      .getElementById("contactBtn")
-      .addEventListener("click", () => showMail("contactMail"));
+    document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
+    document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
   });
 
   // knappe metode
