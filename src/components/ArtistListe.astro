@@ -7,13 +7,13 @@ import Somelinks from "../components/Somelinks.astro";
 ---
 
 <div class="containerCards">
-  <a class="cardsLink" href={`artist/${data.slug}`}>
+  <a href={`artist/${data.slug}`}>
     <article>
-      <section class="collab_wrappeCards">
-        <div class="name_wrapperCards">
-          <h2 class="colCard listeNavnCards">{data.kunsterNavn}</h2>
+      <section class="collab_wrappe">
+        <div class="name_wrapper">
+          <h2 class="col listeNavn">{data.kunsterNavn}</h2>
 
-          <img class="kunsterPic" src={"/public/images/" + `${data.kunsterBillede1}`} alt="billede af artist" ; />
+          <img src={"/public/images/" + `${data.kunsterBillede1}`} alt="billede af artist" ; />
           <Somelinks />
         </div>
       </section>
