@@ -1,21 +1,21 @@
-img {
+.kunsterPic {
     width: 380px;
     height: 360px;
     object-fit: cover;
     object-position: center;
-    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
   }
   
   .containerCards {
     width: 370px;
     height: 360px;
   }
-  a {
+  .cardsLink {
     text-decoration: none;
     color: var(--backgroundColor);
   }
-  img:hover {
-    -webkit-filter: none;
+  .kunsterPic:hover {
+    filter: none;
   }
   
   .boxLink {
@@ -23,7 +23,7 @@ img {
     width: 360px;
   }
   
-  .listeNavn {
+  .listeNavnCards {
     position: absolute;
     top: 35%;
     width: 100%;
@@ -32,13 +32,13 @@ img {
     pointer-events: none;
   }
   
-  img {
+  .kunsterPic {
     overflow: hidden;
   }
-  .name_wrapper:hover .listeNavn {
+  .name_wrapperCards:hover .listeNavnCards{
     display: block;
   }
-  .collab_wrappe {
+  .collab_wrappeCards {
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -50,7 +50,7 @@ img {
     width: 100%;
     animation: scrollText 1s linear infinite;
   }
-  .col {
+  .colCard {
     display: flex;
   }
   
