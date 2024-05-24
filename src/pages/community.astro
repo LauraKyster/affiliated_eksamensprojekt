@@ -1,16 +1,16 @@
 ---
-import Mainlayout from "../layouts/Mainlayout.astro";
 import "../style/generalstyle.css";
 import Button from "../components/Button.astro";
+import Communitylayout from "../layouts/Communitylayout.astro";
 ---
 
 <head>
   <title>Community</title>
 </head>
 
-<Mainlayout class="community_main">
+<Communitylayout class="community_main">
   <div class="parallax"></div>
-  <section class="com_intro">
+  <section id="col_link_vision" class="com_intro">
     <h2>VISION</h2>
     <p>
       In Affiliated, we primarily work with upcoming artists and producers, and
@@ -40,7 +40,7 @@ import Button from "../components/Button.astro";
     <div class="parallax_tekst left_h4">
       <h4>THE ARTISTS ARE NOT EXCLUSIVELY BOUND TO THE LABEL</h4>
     </div>
-    <div class="parallax_tekst right_h4">
+    <div id="col_link_about" class="parallax_tekst right_h4">
       <h4>THE ARTISTS OWN 70% OF THEIR MASTER-COPYRIGHTS</h4>
     </div>
 
@@ -72,7 +72,7 @@ import Button from "../components/Button.astro";
       </p>
     </div>
   </section>
-  <section class="partner_section">
+  <section id="col_link_partners" class="partner_section">
     <div class="partner_flex">
       <div class="partner_wrap">
         <img class="partner_img" src="../public/img/partner2.webp" alt="" />
@@ -281,4 +281,4 @@ import Button from "../components/Button.astro";
       }
     }
   </style>
-</Mainlayout>
+</Communitylayout>
