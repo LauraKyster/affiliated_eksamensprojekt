@@ -1,0 +1,377 @@
+.kunsterPic {
+    width: 23.75rem;
+    height: 22.5rem;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+   
+  }
+    
+  .grid_auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   
+  }
+  
+  .containerCards {
+    width: 23.75rem;
+    height: 22.5rem;
+    margin: 0;
+    padding: 0;
+    
+  }
+  .cardsLink {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
+  .kunsterPic:hover {
+    filter: none;
+  }
+  
+  .boxLink {
+    position: relative;
+    width: 360px;
+  }
+  
+  .listeNavnCards {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    animation: scrollText 10s linear infinite;
+    display: none;
+    pointer-events: none;
+  }
+  
+  .kunsterPic {
+    overflow: hidden;
+  }
+  .name_wrapperCards:hover .listeNavnCards{
+    display: block;
+  }
+  .collab_wrappeCards {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .img_wrapper {
+    display: flex;
+    width: 100%;
+    animation: scrollText 1s linear infinite;
+  }
+ 
+  
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-60%);
+    }
+  }
+  .icon_containerCards {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 2vh;
+    right: 1.5vw;
+  }
+  .icon_containerCards a {
+    margin: 0.5rem;
+    font-size: 0.65rem;
+  }
+  .social-iconCards {
+    width: 100%;
+  }
+  .social-iconCards {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
+
+  .social-iconCards:hover {
+    color: var(--accentColor);
+  }
+  .singleview a {
+    color: var(--textColor);
+    font-size: 1rem;
+  }
+  .singleview a:hover {
+    color: var(--accentColor);
+  }
+
+
+
+
+  @media screen and (min-width: 618px) {
+
+
+ 
+    .grid_auto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        
+      }
+
+      .kunsterPic {
+        width: 12.90rem;
+        height: 11.90rem;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+       
+      }
+        
+   
+      .containerCards {
+        width: 12.90rem;
+        height: 11.90rem;
+        margin: 0;
+        padding: 0;
+        
+      }
+      .singleview a {
+        font-size: 0.5rem;
+      }
+      ul a .fa-2xl {
+        font-size: 0.7rem;
+      }
+    
+    
+  }
+
+
+  
+  
+
+
+  @media screen and (max-width: 800px) {
+
+
+ 
+    .grid_auto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        
+      }
+
+      .kunsterPic {
+        width: 20.90rem;
+        height: 19.90rem;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+       
+      }
+        
+   
+      .containerCards {
+        width: 20.90rem;
+        height: 19.90rem;
+        margin: 0;
+        padding: 0;
+        
+      }
+     
+      ul a .fa-2xl {
+        font-size: 1.3rem;
+      }
+      .icon_containerCards {
+        bottom: 2.5vh;
+         right: 4vw;
+       }
+     
+    
+    
+  }
+  @media screen and (max-width: 541px) {
+
+
+    .grid_auto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        
+      }
+
+      .kunsterPic {
+        width: 16.90rem;
+        height: 15.90rem;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+       
+      }
+        
+   
+      .containerCards {
+        width: 16.90rem;
+        height: 15.90rem;
+        margin: 0;
+        padding: 0;
+        
+      }
+     
+      ul a .fa-2xl {
+        font-size: 1.2rem;
+      }
+      .icon_containerCards {
+       bottom: 2vh;
+        right: 3.5vw;
+      }
+    
+    
+  }
+
+
+
+  @media screen and (max-width: 414px) {
+
+
+    .grid_auto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        
+      }
+
+      .kunsterPic {
+        width: 12.90rem;
+        height: 11.90rem;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+       
+      }
+        
+   
+      .containerCards {
+        width: 12.90rem;
+        height: 11.90rem;
+        margin: 0;
+        padding: 0;
+        
+      }
+      .singleview a {
+        font-size: 0.5rem;
+      }
+      ul a .fa-2xl {
+        font-size: 0.7rem;
+      }
+      .icon_containerCards {
+        bottom: 2vh;
+         right: 4.5vw;
+    }
+    
+    
+  }
+
+
+
+
+  @media screen and (max-width: 380px) {
+
+
+    .grid_auto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        
+      }
+
+      .kunsterPic {
+        width: 11.90rem;
+        height: 10.90rem;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+       
+      }
+        
+   
+      .containerCards {
+        width: 11.90rem;
+        height: 10.90rem;
+        margin: 0;
+        padding: 0;
+        
+      }
+      .singleview a {
+        font-size: 0.5rem;
+      }
+      ul a .fa-2xl {
+        font-size: 0.7rem;
+      }
+    
+    
+  }
+  @media screen and (max-width: 340px) {
+
+    .grid_auto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        
+      }
+
+      .kunsterPic {
+        width: 11.90rem;
+        height: 10.30rem;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+       
+      }
+        
+   
+      .containerCards {
+        width: 11.60rem;
+        height: 10.30rem;
+        margin: 0;
+        padding: 0;
+        
+      }
+      .singleview a {
+        font-size: 0.5rem;
+      }
+      ul a .fa-2xl {
+        font-size: 0.7rem;
+      }
+    
+  }
+
+
+  @media screen and (max-width: 332px) {
+
+    .grid_auto {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        
+      }
+
+      .kunsterPic {
+        width: 22rem;
+        height: 21rem;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%);
+       
+      }
+        
+   
+      .containerCards {
+        width: 22rem;
+        height: 21rem;
+        margin: 0;
+        padding: 0;
+        
+      }
+     
+      ul a .fa-2xl {
+        font-size: 1.5rem;
+      }
+    
+      .icon_containerCards {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        bottom: 2.5vh;
+        right: 6.5vw;
+      }
+  }
