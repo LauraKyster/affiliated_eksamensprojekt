@@ -7,36 +7,22 @@ import Somelinks from "../components/Somelinks.astro";
   <nav class="navbar">
     <div class="nav_icons">
       <p>
-        <a
-          class="social-icon"
-          href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=YEvX-DwNQiOtpXdhzkcMOg/"
-          ><i class="fab fa-spotify fa-2xl"></i></a
-        >
+        <a class="social-icon" href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=YEvX-DwNQiOtpXdhzkcMOg/"><i class="fab fa-spotify fa-2xl"></i></a>
       </p>
       <p>
-        <a class="social-icon" href="https://twitter.com/?lang=da"
-          ><i class="fab fa-youtube fa-2xl"></i></a
-        >
+        <a class="social-icon" href="https://twitter.com/?lang=da"><i class="fab fa-youtube fa-2xl"></i></a>
       </p>
       <p>
-        <a class="social-icon" href="https://www.instagram.com/"
-          ><i class="fab fa-instagram fa-2xl"></i></a
-        >
+        <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram fa-2xl"></i></a>
       </p>
       <p>
-        <a class="social-icon" href="https://www.instagram.com/"
-          ><i class="fab fa-facebook fa-2xl"></i></a
-        >
+        <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-facebook fa-2xl"></i></a>
       </p>
     </div>
 
-    <a href="../#frontpage"
-      ><img class="nav_logo" src="../public/img/logonormal.svg" alt="logo" /></a
-    >
+    <a href="../#frontpage"><img class="nav_logo" src="../public/img/logonormal.svg" alt="logo" /></a>
 
-    <a href="../community">
-      <Button class="com_pos" variant="community_button">COMMUNITY</Button></a
-    >
+    <a href="../community"> <Button class="com_pos" variant="community_button">COMMUNITY</Button></a>
     <ul class="nav_menu">
       <li class="nav_item">
         <a href="#highlights_link_sektion">HIGHTLIGHTS</a>
@@ -215,8 +201,7 @@ import Somelinks from "../components/Somelinks.astro";
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          const topOffset =
-            targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const topOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;
 
           window.scrollTo({
             top: topOffset,
