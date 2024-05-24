@@ -1,6 +1,6 @@
 ---
-import Button from "../components/Button.astro";
-import Somelinks from "../components/Somelinks.astro";
+import Button from "./Button.astro";
+import Somelinks from "./Somelinks.astro";
 ---
 
 <header class="header">
@@ -39,14 +39,12 @@ import Somelinks from "../components/Somelinks.astro";
     >
     <ul class="nav_menu">
       <li class="nav_item">
-        <a href="#highlights_link_sektion">HIGHLIGHTS</a>
+        <a href="#col_link_vision">VISION</a>
       </li>
-      <li class="nav_item"><a href="#artist_link_sektion">ARTISTS</a></li>
+      <li class="nav_item"><a href="#col_link_about">ABOUT</a></li>
       <li class="nav_item">
-        <a href="#col_link_sektion">COLLABORATION</a>
+        <a href="#col_link_partners">PARTNERS</a>
       </li>
-      <li class="nav_item"><a href="#contact_link_sektion">CONTACT</a></li>
-      <li class="communityBurger"><a href="../community">COMMUNITY</a></li>
     </ul>
     <div class="burger_menu">
       <span class="bar"></span>
@@ -108,11 +106,11 @@ import Somelinks from "../components/Somelinks.astro";
   }
   .burger_menu.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-    background-color: var(--backgroundColor);
+    background-color: var(--textColor);
   }
   .burger_menu.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-    background-color: var(--backgroundColor);
+    background-color: var(--textColor);
   }
 
   /*  .nav_item {
@@ -127,8 +125,8 @@ import Somelinks from "../components/Somelinks.astro";
     right: -100%;
     width: 33.33%;
     height: 100vh;
-    background-color: var(--textColor);
-    opacity: 95%;
+    background-color: #f67f54;
+    opacity: 90%;
     text-align: left;
     top: 0;
     position: fixed;
@@ -168,7 +166,7 @@ import Somelinks from "../components/Somelinks.astro";
   /* Links i nav-baren*/
   .nav_menu a {
     float: right;
-    color: var(--backgroundColor);
+    color: var(--textColor);
     text-align: center;
     text-decoration: none;
   }
@@ -182,12 +180,6 @@ import Somelinks from "../components/Somelinks.astro";
   }
   .navbar a:hover,
   .nav_item:hover .dropbtn {
-  }
-  .communityBurger a {
-    color: #d68c45;
-  }
-  .communityBurger a:hover {
-    color: var(--backgroundColor);
   }
 
   @media screen and (max-width: 700px) {
