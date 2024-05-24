@@ -43,20 +43,21 @@ import Somelinks from "../components/Somelinks.astro";
 
   function renderArtists(artists) {
     const artistSection = document.querySelector(".artist.grid_auto");
-    artistSection.innerHTML = "";
+    artistSection.innerHTML = ""; // Clear existing content
+
     artists.forEach((artist) => {
       artistSection.innerHTML += `<div class="containerCards">
-      <a href="artist/${artist.slug}">
-        <article>
-          <section class="collab_wrappe">
-            <div class="name_wrapper">
-              <h2 class="col listeNavn">${artist.kunsterNavn}</h2>
-              <img src="/public/images/${artist.kunsterBillede1}" alt="billede af artist" />
-            </div>
-          </section>
-        </article>
-      </a>
-    </div>`;
+          <a href="artist/${artist.slug}">
+            <article>
+              <section class="collab_wrappe">
+                <div class="name_wrapper">
+                  <h2 class="col listeNavn">${artist.kunsterNavn}</h2>
+                  <img src="/public/images/${artist.kunsterBillede1}" alt="billede af artist" />
+                </div>
+              </section>
+            </article>
+          </a>
+        </div>`;
     });
   }
 
