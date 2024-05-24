@@ -81,12 +81,6 @@ import Somelinks from "../components/Somelinks.astro";
     font-size: 0.75rem;
     padding-right: 1rem;
   }
-  .nav_icons a:visited {
-    color: var(--textColor);
-    font-size: 0.75rem;
-    padding-right: 1rem;
-  }
-
   .bar {
     display: block;
     width: 25px;
@@ -102,7 +96,6 @@ import Somelinks from "../components/Somelinks.astro";
 
   .burger_menu {
     display: flex;
-    color: var(--backgroundColor);
     margin-left: auto;
     z-index: 99;
     display: block;
@@ -169,11 +162,10 @@ import Somelinks from "../components/Somelinks.astro";
   /* Fjerner understregning på*/
   a {
     text-decoration: none;
-    color: black;
   }
 
   /* Links i nav-baren*/
-  .navbar a {
+  .nav_menu a {
     float: right;
     color: var(--backgroundColor);
     text-align: center;
@@ -195,6 +187,12 @@ import Somelinks from "../components/Somelinks.astro";
     .nav_menu {
       width: 45%;
       padding: 1rem 2rem;
+    }
+
+    .nav_icons a {
+      color: var(--textColor);
+      font-size: 0.5rem;
+      padding-right: 0.5rem;
     }
   }
 </style>
