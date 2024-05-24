@@ -62,5 +62,33 @@
       transform: translateX(-60%);
     }
   }
+  .icon_containerCards {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 2vh;
+  }
+  .icon_containerCards a {
+    margin: 0.5rem;
+    font-size: 0.65rem;
+  }
+  .social-iconCards {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
+
+  .social-iconCards:hover {
+    color: var(--accentColor);
+  }
+  .singleview a {
+    color: var(--textColor);
+    font-size: 1rem;
+  }
+  .singleview a:hover {
+    color: var(--accentColor);
+  }
   
   

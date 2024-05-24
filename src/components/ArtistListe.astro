@@ -1,10 +1,14 @@
 ---
 // import { isVNode } from "astro/jsx-runtime";
+const someLink = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+  },
+}).then((res) => res.json());
 
 const { data } = Astro.props;
 import "../style/card.css";
-
-import Somelinks from "../components/Somelinks.astro";
 ---
 
 <div class="containerCards">
@@ -15,13 +19,59 @@ import Somelinks from "../components/Somelinks.astro";
           <h2 class="colCard listeNavnCards">{data.kunsterNavn}</h2>
 
           <img class="kunsterPic" src={"/public/images/" + `${data.kunsterBillede1}`} alt="billede af artist" ; />
-          <Somelinks />
+
+          <div class="icon_containerCards">
+            <li class="icon_containerCards">
+              <ul>
+                <a class="social-iconCards" href=`${someLink.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
+              </ul>
+              <ul><a class="social-iconCards" href=`${someLink.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></ul>
+              <ul>
+                <a class="social-iconCards" href=`${someLink.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
+              </ul>
+              <ul>
+                <a class="social-iconCards" href=`${someLink.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
+              </ul>
+            </li>
+          </div>
         </div>
       </section>
     </article>
   </a>
 </div>
 
+<style>
+  .icon_containerCards {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 2vh;
+  }
+  .icon_containerCards a {
+    margin: 0.5rem;
+    font-size: 0.65rem;
+  }
+  .social-iconCards {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
+
+  .social-iconCards:hover {
+    color: var(--accentColor);
+  }
+  .singleview a {
+    color: var(--textColor);
+    font-size: 1rem;
+  }
+  .singleview a:hover {
+    color: var(--accentColor);
+  }
+</style>
+
+<script src="https://kit.fontawesome.com/75de2ab164.js" crossorigin="anonymous"></script>
 <script>
   async function fetchData(stilling) {
     let url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling}`;
@@ -41,24 +91,51 @@ import Somelinks from "../components/Somelinks.astro";
     return response.json();
   }
 
-  function renderArtists(artists) {
+  async function fetchLinks(artistId) {
+    const response = await fetch(`https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?id=eq.${artistId}`, {
+      method: "GET",
+      headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+      },
+    });
+    return response.json();
+  }
+
+  async function renderArtists(artists) {
     const artistSection = document.querySelector(".artist.grid_auto");
     artistSection.innerHTML = ""; // Clear existing content
 
-    artists.forEach((artist) => {
+    for (const artist of artists) {
+      const links = await fetchLinks(artist.id); // Fetch links for the artist
       artistSection.innerHTML += `<div class="containerCards">
-          <a href="artist/${artist.slug}">
+          <a class="cardsLink" href="artist/${artist.slug}">
             <article>
-              <section class="collab_wrappe">
-                <div class="name_wrapper">
-                  <h2 class="col listeNavn">${artist.kunsterNavn}</h2>
-                  <img src="/public/images/${artist.kunsterBillede1}" alt="billede af artist" />
+              <section class="collab_wrappeCards">
+                <div class="name_wrapperCards">
+                  <h2 class="colCard listeNavnCards">${artist.kunsterNavn}</h2>
+                  <img class="kunsterPic" src="/public/images/${artist.kunsterBillede1}" alt="billede af artist" />
+                  <div class="icon_containerCards">
+                    <li class="icon_containerCards">
+                      <ul>
+                        <a class="social-iconCards" href="${links[0].spotifyLogoLink}"><i class="fab fa-spotify fa-2xl"></i></a>
+                      </ul>
+                      <ul>
+                        <a class="social-iconCards" href="${links[0].youtubeLogoLink}"><i class="fab fa-youtube fa-2xl"></i></a>
+                      </ul>
+                      <ul>
+                        <a class="social-iconCards" href="${links[0].instagramLogoLink}"><i class="fab fa-instagram fa-2xl"></i></a>
+                      </ul>
+                      <ul>
+                        <a class="social-iconCards" href="${links[0].facebookLogoLink}"><i class="fab fa-facebook fa-2xl"></i></a>
+                      </ul>
+                    </li>
+                  </div>
                 </div>
               </section>
             </article>
           </a>
         </div>`;
-    });
+    }
   }
 
   document.querySelectorAll(".filter_knap").forEach((button) => {
