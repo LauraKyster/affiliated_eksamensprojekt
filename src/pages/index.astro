@@ -65,11 +65,16 @@ console.log(data);
   <section class="contact" id="contact_link_sektion">
     <div class="booking">
       <h3 class="underlinebooking">BOOKING</h3>
-      <div id="bookingMail" class="mail">booking@affiliatedcph.com</div>
+      <div id="bookingMail" class="mail">
+        <p><a href="manager@affiliatedcph.com">booking@affiliatedcph.com</a></p>
+      </div>
     </div>
     <div class="contact2">
       <h3 class="underlinebooking">CONTACT</h3>
-      <div id="contactMail" class="mail">manager@affiliatedcph.com</div>
+      <a href=""></a>
+      <div id="contactMail" class="mail">
+        <p><a href="manager@affiliatedcph.com">manager@affiliatedcph.com</a></p>
+      </div>
     </div>
   </section>
   <img class="frontpage_logo" src="" alt="" />
@@ -115,7 +120,13 @@ console.log(data);
     margin-top: 1rem;
     font-size: 1.2rem;
   }
-  
+  .contact .mail a{
+    text-decoration: none;
+    color: var(--textColor);
+  }
+  .contact .mail a:hover{
+    color: var(--accentColor);
+  }
   .contact2 {
     display: flex;
     flex-direction: column;
