@@ -46,17 +46,19 @@ console.log(myData);
 
 <section class="singleview_grid">
   <div class="artist_info">
-    <div class="col_flexSingle kunsterneNavnS">
-      <h3>{myData.kunsterNavn}</h3>
-
+    <div class="col_flexSingle">
       <Somelinks variant="singleview" />
+
+      <h3>{myData.kunsterNavn}</h3>
     </div>
     <p>{myData.beskrivelse}</p>
   </div>
+
   <div id="embed-iframe">
     <iframe style="border-radius:12px" src=`https://open.spotify.com/embed/${myData.spotifyPlaylistLink}` width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </section>
+
 <Footer />
 
 <style>
@@ -107,7 +109,7 @@ console.log(myData);
   }
 
   h3 {
-    margin: 1rem 5rem 2rem 3rem;
+    /* margin: 1rem 5rem 2rem 3rem; */
     font-size: 24px;
   }
   p {
@@ -117,6 +119,7 @@ console.log(myData);
   .col_flexSingle {
     display: flex;
     flex-direction: row;
+    margin-left: 2.8rem;
   }
   #embed-iframe {
     margin-bottom: 3rem;
