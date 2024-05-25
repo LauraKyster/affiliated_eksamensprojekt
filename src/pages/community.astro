@@ -122,15 +122,15 @@ import Communitylayout from "../layouts/Communitylayout.astro";
       width: 100%;
       text-align: center;
       background-color: rgba(189, 110, 41, 0.75);
-      color: var(--textColor);
-      padding: 10px;
+      color: var(--backgroundColor);
+      padding: -3rem;
       opacity: 0;
       transition: opacity 0.4s ease;
     }
     .partner_name p {
       font-family: sans_tekst;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 12px;
     }
     .partner_wrap:hover .partner_name {
       opacity: 1;
@@ -228,6 +228,12 @@ import Communitylayout from "../layouts/Communitylayout.astro";
       .partner_flex {
         gap: 5rem;
         margin: -5rem 4rem 4rem 4rem;
+      }
+      .partner_name {
+        padding: 2rem;
+      }
+      .partner_name p {
+        font-size: 16px;
       }
       .parallax {
         background-image: url("../img/orange collage.webp");
