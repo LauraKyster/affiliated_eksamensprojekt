@@ -6,12 +6,16 @@ import Collaborate from "../components/Collaborate.astro";
 import Carousel from "../components/Carousel.astro";
 
 import ArtistListe from "../components/ArtistListe.astro";
-const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-  },
-}).then((res) => res.json());
+const data = await fetch(
+  "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+    },
+  }
+).then((res) => res.json());
 
 console.log(data);
 
@@ -28,7 +32,10 @@ console.log(data);
     <Carousel />
   </section>
   <div>
-    <h3 class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
+    <h3 class="intro">
+      AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO
+      CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.
+    </h3>
   </div>
   <section class="artist_section" id="artist_link_sektion">
     <div class="artist_filter_buttons">
@@ -49,12 +56,22 @@ console.log(data);
   </section>
   <section class="collaborate" id="col_link_sektion">
     <div class="collab_grid">
-      <img class="affiliated_logo" id="order" src="/public/images/affiliated_logo.png" alt="Affiliated Logo" />
+      <img
+        class="affiliated_logo"
+        id="order"
+        src="/public/images/affiliated_logo.png"
+        alt="Affiliated Logo"
+      />
       <div class="collab_text">
         <h2 class="collab_header">OUR COLLABORATORS</h2>
         <p class="collab_p">
-          With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more opne and transparent to create better opportunities for the
-          smaller players. We wish to give listeners a greater insight into the dominationg forces of the music buisness, as well as why this must change to create equal opportunities for everyone in the industry.
+          With the spread of our music, we want to create a platform for
+          upcoming artists who do not want to compromise on their sound and
+          vision. We dream of making the music industry more opne and
+          transparent to create better opportunities for the smaller players. We
+          wish to give listeners a greater insight into the dominationg forces
+          of the music buisness, as well as why this must change to create equal
+          opportunities for everyone in the industry.
         </p>
         <!-- <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.
           </p> -->
@@ -64,12 +81,17 @@ console.log(data);
   </section>
   <section class="contact" id="contact_link_sektion">
     <div class="booking">
-      <Button variant="primary" id="bookingBtn">BOOKING</Button>
-      <div id="bookingMail" class="mail hidden">booking@affiliatedcph.com</div>
+      <h3 class="underlinebooking">BOOKING</h3>
+      <div id="bookingMail" class="mail">
+        <p><a href="manager@affiliatedcph.com">booking@affiliatedcph.com</a></p>
+      </div>
     </div>
     <div class="contact2">
-      <Button variant="primary" id="contactBtn">CONTACT</Button>
-      <div id="contactMail" class="mail hidden">manager@affiliatedcph.com</div>
+      <h3 class="underlinebooking">CONTACT</h3>
+      <a href=""></a>
+      <div id="contactMail" class="mail">
+        <p><a href="manager@affiliatedcph.com">manager@affiliatedcph.com</a></p>
+      </div>
     </div>
   </section>
   <img class="frontpage_logo" src="" alt="" />
@@ -111,13 +133,16 @@ console.log(data);
 
   .mail {
     color: var(--textColor);
-    text-decoration: underline;
+    text-decoration: none;
     margin-top: 1rem;
     font-size: 1.2rem;
   }
-  .booking {
-    display: flex;
-    flex-direction: column;
+  .contact .mail a {
+    text-decoration: none;
+    color: var(--textColor);
+  }
+  .contact .mail a:hover {
+    color: var(--accentColor);
   }
   .contact2 {
     display: flex;
@@ -131,6 +156,11 @@ console.log(data);
     gap: 5rem;
     margin: 7rem;
   }
+  .underlinebooking {
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+
   .header_karrusel {
     margin-top: 6rem;
   }
@@ -173,6 +203,11 @@ console.log(data);
   }
   @media (max-width: 1714px) {
     .intro {
+      font-size: 30px;
+    }
+    .collab_header {
+      font-size: 3.5rem;
+      white-space: nowrap;
       font-size: 30px;
     }
     .collab_header {
@@ -246,6 +281,7 @@ console.log(data);
     .collab_p {
       max-width: 100%;
       font-size: 1.5rem;
+      font-size: 1.5rem;
     }
 
     .contact {
@@ -286,6 +322,12 @@ console.log(data);
 
     .collab_p {
       max-width: 100%;
+      position: relative;
+      right: 3vw;
+    }
+
+    .collab_p {
+      max-width: 100%;
     }
 
     .contact {
@@ -320,31 +362,3 @@ console.log(data);
     }
   }
 </style>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    function showMail(type) {
-      const mailElement = document.getElementById(type);
-      mailElement.classList.toggle("hidden");
-    }
-
-    document.getElementById("bookingBtn").addEventListener("click", () => showMail("bookingMail"));
-    document.getElementById("contactBtn").addEventListener("click", () => showMail("contactMail"));
-  });
-
-  // knappe metode
-  // const knapper = document.querySelectorAll("button");
-  // knapper.forEach((knap) => {
-  //   knap.addEventListener("click", () => {
-  //     document.querySelectorAll("article").forEach((elm) => elm.classList.add("gem"));
-
-  //     if (knap.textContent === "LABEL") {
-  //       document.querySelectorAll(".label").forEach((elm) => elm.classList.remove("gem"));
-  //     } else if (knap.textContent === "PUBLISHING") {
-  //       document.querySelectorAll(".publishing").forEach((elm) => elm.classList.remove("gem"));
-  //     } else {
-  //       document.querySelectorAll("article").forEach((elm) => elm.classList.remove("gem"));
-  //     }
-  //   });
-  // });
-</script>
