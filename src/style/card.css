@@ -117,8 +117,8 @@
       }
 
       .kunsterPic {
-        width: 23.75rem;
-        height: 22.5rem;
+        width: 25.75rem;
+        height: 24.5rem;
         object-fit: cover;
         object-position: center;
         filter: grayscale(100%);
