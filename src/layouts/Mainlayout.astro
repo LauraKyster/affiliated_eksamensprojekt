@@ -12,11 +12,7 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="robots" content="noindex,nofollow" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../public/favicon_io/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="../public/favicon_io/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -36,6 +32,9 @@ const { title } = Astro.props;
 </html>
 
 <style>
+  html {
+    overflow-x: hidden;
+  }
   .scroll_container {
     position: fixed;
     top: 0;
@@ -56,13 +55,9 @@ const { title } = Astro.props;
   window.addEventListener("scroll", onScroll);
 
   function onScroll() {
-    const scrolled =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+    const scrolled = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolledfactor = (scrolled / height) * 100;
-    document.querySelector(".scroll_indicator").style.width =
-      scrolledfactor + "%";
+    document.querySelector(".scroll_indicator").style.width = scrolledfactor + "%";
   }
 </script>

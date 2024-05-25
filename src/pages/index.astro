@@ -135,16 +135,12 @@ console.log(data);
     margin-top: 6rem;
   }
 
-<<<<<<< HEAD
-  @media (min-width: 700px) {
-<<<<<<< HEAD
-=======
   @media (min-width: 1715px) {
     .collab_p {
       max-width: 150%;
       font-size: 2rem;
     }
->>>>>>> tekst_fix
+
     .intro {
       font-size: 30px;
     }
@@ -183,8 +179,6 @@ console.log(data);
       font-size: 3.5rem;
       white-space: nowrap;
     }
-=======
->>>>>>> cards_responsiv_2
     .collab_grid {
       display: flex;
       flex-direction: row;
@@ -283,7 +277,7 @@ console.log(data);
     }
 
     .affiliated_logo {
-      width: rem;
+      width: 20rem;
       height: auto;
       margin: auto;
       position: relative;
@@ -301,8 +295,20 @@ console.log(data);
 
   @media (max-width: 699px) {
     .collab_header {
-      font-size: 2rem;
+      font-size: 1.3rem;
       white-space: nowrap;
+    }
+    .collab_p {
+      font-size: 1rem;
+    }
+
+    .collab_grid > .collab_text {
+      order: 1;
+    }
+    .collab_grid {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
     }
 
     .affiliated_logo {
