@@ -98,6 +98,10 @@ console.log(data);
 </Mainlayout>
 
 <style>
+  .artist_section {
+    position: relative;
+    bottom: 2vh;
+  }
   .intro {
     margin: 2rem 4rem 2rem 4rem;
     font-size: 12px;
@@ -119,10 +123,10 @@ console.log(data);
     margin: auto;
   }
   .underline {
-    width: 22rem;
+    width: 26.2rem;
     margin: auto;
     position: relative;
-    bottom: 0.2vh;
+    bottom: 0.4vh;
   }
   .artist_filter_buttons {
     display: flex;
@@ -237,11 +241,6 @@ console.log(data);
       right: 3vw;
     }
 
-    .collab_p {
-      max-width: 100%;
-      font-size: 1.5rem;
-    }
-
     .contact {
       gap: 10rem;
     }
@@ -278,12 +277,6 @@ console.log(data);
       right: 3vw;
     }
 
-    .collab_p {
-      max-width: 100%;
-      font-size: 1.5rem;
-      font-size: 1.5rem;
-    }
-
     .contact {
       gap: 10rem;
     }
@@ -309,7 +302,7 @@ console.log(data);
 
     .collab_text {
       max-width: 45rem;
-      padding-left: 5rem;
+      padding: 5rem;
     }
 
     .affiliated_logo {
@@ -339,9 +332,40 @@ console.log(data);
     .collab_header {
       font-size: 1.3rem;
       white-space: nowrap;
+      max-width: 20rem;
     }
     .collab_p {
       font-size: 1rem;
+      max-width: 25rem;
+    }
+
+    .collab_grid > .collab_text {
+      order: 1;
+    }
+    .collab_grid {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .affiliated_logo {
+      width: 20rem;
+      height: auto;
+      margin: auto;
+      position: relative;
+      right: 3vw;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .collab_header {
+      font-size: 1.3rem;
+      white-space: nowrap;
+      max-width: 20rem;
+    }
+    .collab_p {
+      font-size: 1rem;
+      max-width: 20rem;
     }
 
     .collab_grid > .collab_text {
