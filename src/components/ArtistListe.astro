@@ -23,14 +23,14 @@ import "../style/card.css";
           <div class="icon_containerCards">
             <li class="icon_containerCards">
               <ul>
-                <a class="social-iconCards" href=`${someLink.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
+                <a class="social-iconCards" href=`${data.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
               </ul>
-              <ul><a class="social-iconCards" href=`${someLink.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></ul>
+              <ul><a class="social-iconCards" href=`${data.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></ul>
               <ul>
-                <a class="social-iconCards" href=`${someLink.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
+                <a class="social-iconCards" href=`${data.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
               </ul>
               <ul>
-                <a class="social-iconCards" href=`${someLink.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
+                <a class="social-iconCards" href=`${data.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
               </ul>
             </li>
           </div>
@@ -49,14 +49,14 @@ import "../style/card.css";
     } else {
       url = `https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData?stilling=eq.${stilling}`;
     }
-    console.log(url);
+
     const response = await fetch(url, {
       method: "GET",
       headers: {
         apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
       },
     });
-    console.log(stilling);
+
     return response.json();
   }
 
