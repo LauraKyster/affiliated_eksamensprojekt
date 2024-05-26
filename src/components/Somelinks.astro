@@ -13,18 +13,18 @@ const { variant } = Astro.props;
 
 <script src="https://kit.fontawesome.com/75de2ab164.js" crossorigin="anonymous"></script>
 <div class={`icon_container ${variant === "singleview" ? "singleview" : ""} ${variant === "menu-links" ? "menu-links" : ""}`}>
-  <li class="icon_container">
-    <ul>
+  <ul class="icon_container">
+    <li>
       <a class="social-icon" href=`${someLink.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
-    </ul>
-    <ul><a class="social-icon" href=`${someLink.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></ul>
-    <ul>
+    </li>
+    <li><a class="social-icon" href=`${someLink.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></li>
+    <li>
       <a class="social-icon" href=`${someLink.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
-    </ul>
-    <ul>
+    </li>
+    <li>
       <a class="social-icon" href=`${someLink.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
-    </ul>
-  </li>
+    </li>
+  </ul>
 </div>
 
 <style>
