@@ -1,0 +1,231 @@
+---
+import Button from "./Button.astro";
+import Somelinks from "./Somelinks.astro";
+---
+
+<header class="header">
+  <nav class="navbar">
+    <div class="nav_icons">
+      <p>
+        <a
+          class="social-icon"
+          href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=YEvX-DwNQiOtpXdhzkcMOg/"
+          ><i class="fab fa-spotify fa-2xl"></i></a
+        >
+      </p>
+      <p>
+        <a class="social-icon" href="https://twitter.com/?lang=da"
+          ><i class="fab fa-youtube fa-2xl"></i></a
+        >
+      </p>
+      <p>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-instagram fa-2xl"></i></a
+        >
+      </p>
+      <p>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-facebook fa-2xl"></i></a
+        >
+      </p>
+    </div>
+
+    <a href="../#frontpage"
+      ><img class="nav_logo" src="../public/img/logonormal.svg" alt="logo" /></a
+    >
+
+    <a href="../community">
+      <Button class="com_pos" variant="community_button">COMMUNITY</Button></a
+    >
+    <ul class="nav_menu">
+      <li class="nav_item">
+        <a href="#col_link_vision">VISION</a>
+      </li>
+      <li class="nav_item"><a href="#col_link_about">ABOUT</a></li>
+      <li class="nav_item">
+        <a href="#col_link_partners">PARTNERS</a>
+      </li>
+    </ul>
+    <div class="burger_menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav_icons {
+    display: flex;
+    margin-right: auto;
+  }
+  .nav_icon {
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+  }
+  .nav_logo {
+    width: 40px;
+    height: 40px;
+  }
+  .nav_item {
+    transition: 0.7s ease;
+    text-align: left;
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  .nav_icons a {
+    color: var(--textColor);
+    font-size: 0.75rem;
+    padding-right: 1rem;
+  }
+  .nav_icons a:hover {
+    color: var(--accentColor);
+  }
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--textColor);
+  }
+
+  .nav_menu.active {
+    right: 0;
+  }
+
+  .burger_menu {
+    display: flex;
+    margin-left: auto;
+    z-index: 99;
+    display: block;
+    cursor: pointer;
+  }
+
+  .burger_menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .burger_menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--textColor);
+  }
+  .burger_menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--textColor);
+  }
+
+  /*  .nav_item {
+    margin: 16px 0;
+  } */
+  .nav_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1;
+    right: -100%;
+    width: 33.33%;
+    height: 100vh;
+    background-color: #f67f54;
+    opacity: 90%;
+    text-align: left;
+    top: 0;
+    position: fixed;
+    transition: right 0.3s ease;
+    padding: 3rem 5rem;
+  }
+
+  .nav_menu a {
+    font-size: 18px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--backgroundColor);
+  }
+
+  /* Fjerner list-style prikker*/
+  li {
+    list-style: none;
+    margin: 10px;
+  }
+  /* Fjerner understregning på*/
+  a {
+    text-decoration: none;
+  }
+
+  /* Links i nav-baren*/
+  .nav_menu a {
+    float: right;
+    color: var(--textColor);
+    text-align: center;
+    text-decoration: none;
+  }
+  .nav_item a:hover {
+    color: var(--backgroundColor);
+  }
+  .social-icon a {
+    color: #f67f54;
+  }
+
+  /* Så links i dropdown er block, og derfor vises*/
+  .nav_item:hover .dropdown-content {
+    display: block;
+  }
+
+  @media screen and (max-width: 700px) {
+    .nav_menu {
+      width: 45%;
+      padding: 1rem 2rem;
+    }
+
+    .nav_icons a {
+      color: var(--textColor);
+      font-size: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.querySelector(".burger_menu").addEventListener("click", function () {
+    let navMenu = document.querySelector(".nav_menu");
+    this.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll('.nav_menu a[href^="#"]');
+
+    links.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          const topOffset =
+            targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+          window.scrollTo({
+            top: topOffset,
+            behavior: "smooth",
+          });
+
+          // Close the burger menu if it's open
+        }
+      });
+    });
+  });
+</script>
