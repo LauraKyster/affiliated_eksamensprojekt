@@ -86,7 +86,6 @@ const { myData } = Astro.props;
 
   <Footer />
 
-
   <style>
     .icon_container {
       display: flex;
@@ -125,7 +124,8 @@ const { myData } = Astro.props;
     }
     .arrow {
       opacity: 100%;
-      width: 3rem;
+      width: 1rem;
+      display: inline-block;
     }
     .arrow_background {
       background-color: #efece5;
@@ -136,7 +136,7 @@ const { myData } = Astro.props;
       position: absolute;
       z-index: 10;
       margin: 1rem 1rem 1rem 2rem;
-      padding: 1.5rem 1rem;
+      padding: 1rem 0.5rem;
     }
     .singleview_img {
       position: relative;
@@ -229,6 +229,9 @@ const { myData } = Astro.props;
       .singleview a {
         font-size: 1rem;
       }
+      .arrow {
+        width: 3rem;
+      }
     }
   </style>
 
@@ -244,4 +247,6 @@ const { myData } = Astro.props;
       });
     });
   </script>
+
+
 </html>
