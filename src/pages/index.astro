@@ -16,10 +16,6 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
 // Filter function to get artists based on category
 ---
 
-<head>
-  <title>Forside</title>
-</head>
-
 <Mainlayout id="frontpage">
   <section class="header_karrusel" id="highlights_link_sektion"></section>
   <section>
@@ -27,6 +23,7 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
   </section>
   <div>
     <h3 class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</h3>
+    <h3 class="artist_header">Artist</h3>
   </div>
   <section class="artist_section" id="artist_link_sektion">
     <div class="artist_filter_buttons">
@@ -50,12 +47,7 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
       <img class="affiliated_logo" id="order" src="/public/images/affiliated_logo.png" alt="Affiliated Logo" />
       <div class="collab_text">
         <h2 class="collab_header">OUR COLLABORATORS</h2>
-        <p class="collab_p">
-          With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more opne and transparent to create better opportunities for the
-          smaller players. We wish to give listeners a greater insight into the dominationg forces of the music buisness, as well as why this must change to create equal opportunities for everyone in the industry.
-        </p>
-        <!-- <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.
-          </p> -->
+        <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.</p>
       </div>
     </div>
     <div><Collaborate /></div>
@@ -79,13 +71,15 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
 </Mainlayout>
 
 <style>
+  .artist_header {
+  }
   .artist_section {
     position: relative;
     bottom: 2vh;
   }
   .intro {
-    margin: 2rem 4rem 2rem 4rem;
-    font-size: 12px;
+    margin: 4rem 4rem 10rem 4rem;
+    max-width: 60rem;
   }
   .collab_text {
     margin: auto;

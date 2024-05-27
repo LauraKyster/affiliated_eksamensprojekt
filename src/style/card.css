@@ -6,6 +6,10 @@
   filter: grayscale(100%);
 }
 
+
+.icon_containerCards li{
+  list-style-type: none;
+}
 .grid_auto {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
