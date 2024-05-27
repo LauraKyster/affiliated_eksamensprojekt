@@ -50,7 +50,7 @@ const { myData } = Astro.props;
     <title>Artist</title>
   </head>
 
-  <a href="../#frontpage"><div class="arrow_background"><img class="arrow" src="/img/normalArrowH.svg" alt="" width="16" height="16" /></div></a>
+  <a href="/#frontpage"><div class="arrow_background"><img class="arrow" src="/img/normalArrowH.svg" alt="" width="16" height="16" /></div></a>
   <section class="singleview_img">
     <img class="artist_img" src={"/images/" + `${myData.kunsterBillede2}`} alt="billede af artist" />
     <div class="name_scrollbar">
@@ -136,7 +136,7 @@ const { myData } = Astro.props;
     }
     .arrow {
       opacity: 100%;
-      width: 1rem;
+      width: 2rem;
       display: inline-block;
     }
     .arrow_background {
@@ -238,8 +238,16 @@ const { myData } = Astro.props;
       .singleview a {
         font-size: 1rem;
       }
+    }
+
+    @media screen and (max-width: 699px) {
+      .arrow_background {
+        z-index: 10;
+        margin: 0rem 1rem 1rem 1rem;
+        padding: 0.4rem 0.2rem;
+      }
       .arrow {
-        width: 3rem;
+        width: 1.2rem;
       }
     }
   </style>
