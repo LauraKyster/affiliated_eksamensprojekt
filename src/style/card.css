@@ -6,8 +6,7 @@
   filter: grayscale(100%);
 }
 
-
-.icon_containerCards li{
+.icon_containerCards li {
   list-style-type: none;
 }
 .grid_auto {
@@ -130,6 +129,9 @@
   .icon_containerCards {
     bottom: 2.5vh;
     right: 1vw;
+  }
+  .listeNavnCards {
+    font-size: 50px;
   }
 }
 
