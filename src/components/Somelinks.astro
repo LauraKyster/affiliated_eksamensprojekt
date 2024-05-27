@@ -7,24 +7,24 @@ const someLink = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/a
   },
 }).then((res) => res.json());
 
-console.log(someLink);
-const { variant } = Astro.props;
+const { variant, data } = Astro.props;
+console.log(variant);
 ---
 
 <script src="https://kit.fontawesome.com/75de2ab164.js" crossorigin="anonymous"></script>
 <div class={`icon_container ${variant === "singleview" ? "singleview" : ""} ${variant === "menu-links" ? "menu-links" : ""}`}>
-  <li class="icon_container">
-    <ul>
-      <a class="social-icon" href=`${someLink.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
-    </ul>
-    <ul><a class="social-icon" href=`${someLink.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></ul>
-    <ul>
-      <a class="social-icon" href=`${someLink.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
-    </ul>
-    <ul>
-      <a class="social-icon" href=`${someLink.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
-    </ul>
-  </li>
+  <ul class="icon_container">
+    <li>
+      <a class="social-icon" href=`${variant.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
+    </li>
+    <li><a class="social-icon" href=`${variant.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></li>
+    <li>
+      <a class="social-icon" href=`${variant.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
+    </li>
+    <li>
+      <a class="social-icon" href=`${variant.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
+    </li>
+  </ul>
 </div>
 
 <style>
@@ -40,6 +40,9 @@ const { variant } = Astro.props;
   }
   .social-icon {
     width: 100%;
+  }
+  .icon_container li {
+    list-style-type: none;
   }
   a {
     text-decoration: none;

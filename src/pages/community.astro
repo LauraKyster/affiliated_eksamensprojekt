@@ -10,6 +10,7 @@ import Communitylayout from "../layouts/Communitylayout.astro";
 
 <Communitylayout class="community_main">
   <div class="parallax"></div>
+  <img class="mobil_head" src="../img/orange collage.webp" alt="" />
   <section id="col_link_vision" class="com_intro">
     <h2>VISION</h2>
     <p>In Affiliated, we primarily work with upcoming artists and producers, and we help to develop, guide and advise them with an uncompromising and transparent approach to creating and publishing music. We view it as our task to give them the best framework to unleash their artistic potential while ensuring them good business.</p>
@@ -135,14 +136,7 @@ import Communitylayout from "../layouts/Communitylayout.astro";
     .partner_wrap:hover .partner_name {
       opacity: 1;
     }
-    .parallax {
-      background-image: url("../img/orange collage.webp");
-      min-height: 500px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: fit-content;
-    }
+
     .parallax2 {
       background-image: url("../img/studie_hero2.webp");
       min-height: 700px;
@@ -225,6 +219,9 @@ import Communitylayout from "../layouts/Communitylayout.astro";
       img {
         max-width: 100%;
       }
+      .mobil_head {
+        display: none;
+      }
       .partner_flex {
         gap: 5rem;
         margin: -5rem 4rem 4rem 4rem;
@@ -249,7 +246,7 @@ import Communitylayout from "../layouts/Communitylayout.astro";
         font-style: normal;
         border-radius: 5px;
         display: inline-block;
-        padding: 0.1rem;
+        padding: 0.5rem;
       }
       .parallax_tekst h3 {
         padding: 1rem 3rem 1rem 3rem;

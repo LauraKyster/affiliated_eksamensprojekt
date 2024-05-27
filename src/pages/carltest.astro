@@ -2,18 +2,12 @@
 import Footer from "..//pages/components/Footer.astro";
 import ArtistListe from "../components/ArtistListe.astro";
 
-const data = await fetch(
-  "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-    },
-  }
-).then((res) => res.json());
-
-console.log(data);
+const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+  },
+}).then((res) => res.json());
 ---
 
 <html lang="en">
@@ -24,10 +18,7 @@ console.log(data);
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
     <title>Astro</title>
   </head>
 
@@ -48,12 +39,7 @@ console.log(data);
           </ul>
         </nav>
       </div>
-      <button
-        onclick="scrollToTop()"
-        id="scrollToTopBtn"
-        class="scrollToTopBtn1"
-        title="Go to Top">^</button
-      >
+      <button onclick="scrollToTop()" id="scrollToTopBtn" class="scrollToTopBtn1" title="Go to Top">^</button>
     </header>
     <main>
       <section id="startSide" class="front_section">
@@ -80,15 +66,8 @@ console.log(data);
             <div class="tekst_mellemrum">
               <p>Telefon: 30 11 30 41</p>
               <p>E-mail: kontakt@baksandwich.dk</p>
-              <button
-                class="virksomhed_btn col_center"
-                class="lined_thin_forside_blueBg"
-                onclick="window.location.href='virksomhedsaftale.html'"
-              >
-                <img
-                  src="img/SVG/virksomhedsaftale_.svg"
-                  alt="virksomhedsaftale"
-                />
+              <button class="virksomhed_btn col_center" class="lined_thin_forside_blueBg" onclick="window.location.href='virksomhedsaftale.html'">
+                <img src="img/SVG/virksomhedsaftale_.svg" alt="virksomhedsaftale" />
               </button>
             </div>
           </div>
@@ -98,8 +77,7 @@ console.log(data);
         <div class="menu_afstand grid_1-1-1">
           <h2>MENU</h2>
           <p>
-            Vores mange forskellige sandwich, velkomponerede salater og kager
-            bliver <br />
+            Vores mange forskellige sandwich, velkomponerede salater og kager bliver <br />
             tilberedt fra bunden og bliver løbende skiftet ud efter årstid og sæson.
             <br />
             friskhed og velsmag er omdrejningspunktet for vores udvalg og vores tilgang
@@ -107,40 +85,19 @@ console.log(data);
             til håndværket.
           </p>
           <p>
-            Alle vores sandwich og salater blive lavet direkte ved din
-            bestilling. <br />på den måde får du altid en sprød og frisk frokost
-            som du enten kan nyde i vores <br />
+            Alle vores sandwich og salater blive lavet direkte ved din bestilling. <br />på den måde får du altid en sprød og frisk frokost som du enten kan nyde i vores <br />
             forretning eller som take-away.
           </p>
           <div class="tekst_knap_p">
-            <p>
-              Bestil gerne din frokost på 30113041, så undgår du
-              ventetid......Bon Appètit.
-            </p>
-            <button
-              class="menuFoside_knap"
-              class="lined_thin_forside"
-              onclick="window.location.href='menu.html'"
-            >
+            <p>Bestil gerne din frokost på 30113041, så undgår du ventetid......Bon Appètit.</p>
+            <button class="menuFoside_knap" class="lined_thin_forside" onclick="window.location.href='menu.html'">
               <img src="img/menu.svg" alt="Menu knap" />
             </button>
           </div>
 
-          <img
-            class="flasker_tegning"
-            src="img/flasker_drawing.png"
-            alt="To flasker, som ikke indholder noget"
-          />
-          <img
-            class="sandwich_tegning"
-            src="img/sanwich_drawing.png"
-            alt="En trekantet sandwich med salat og skinke"
-          />
-          <img
-            class="grøntsager_tegning"
-            src="img/grøntsager_.png"
-            alt="En bunke grøntsager som er tegnet i blå farve"
-          />
+          <img class="flasker_tegning" src="img/flasker_drawing.png" alt="To flasker, som ikke indholder noget" />
+          <img class="sandwich_tegning" src="img/sanwich_drawing.png" alt="En trekantet sandwich med salat og skinke" />
+          <img class="grøntsager_tegning" src="img/grøntsager_.png" alt="En bunke grøntsager som er tegnet i blå farve" />
         </div>
       </section>
       <section id="aboutUsSide" class="aboutUs_section">
@@ -150,10 +107,7 @@ console.log(data);
           </video>
           <div class="om_osKnap">
             <h2>BAK's Sandwich</h2>
-            <button
-              class="lined_thin_forside knap_os"
-              onclick="window.location.href='aboutUs.html'"
-            >
+            <button class="lined_thin_forside knap_os" onclick="window.location.href='aboutUs.html'">
               <img src="img/om_os.svg" alt="Om os knap" />
             </button>
           </div>
@@ -283,15 +237,10 @@ console.log(data);
   </style>
 
   <script>
-    document
-      .getElementById("mobile-menu")
-      .addEventListener("click", function () {
-        let nav = document.querySelector("nav");
-        nav.style.display =
-          nav.style.display === "none" || nav.style.display === ""
-            ? "flex"
-            : "none";
-      });
+    document.getElementById("mobile-menu").addEventListener("click", function () {
+      let nav = document.querySelector("nav");
+      nav.style.display = nav.style.display === "none" || nav.style.display === "" ? "flex" : "none";
+    });
 
     document.addEventListener("DOMContentLoaded", function () {
       const links = document.querySelectorAll(".burger-menu a");
