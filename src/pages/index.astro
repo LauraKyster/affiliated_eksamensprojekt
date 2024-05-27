@@ -47,11 +47,7 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
       <img class="affiliated_logo" id="order" src="../images/affiliated_logo.png" alt="Affiliated Logo" />
       <div class="collab_text">
         <h2 class="collab_header">OUR COLLABORATORS</h2>
-        <p class="collab_p">
-          We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier
-          music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative
-          musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.
-        </p>
+        <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.</p>
       </div>
     </div>
     <div><Collaborate /></div>
@@ -85,12 +81,16 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
     bottom: 2vh;
   }
   .intro {
-    margin: 4rem 4rem 10rem 4rem;
+    margin: 3rem 2rem 3rem 2em;
     max-width: 60rem;
+    font-size: 16px;
   }
+  .collab_grid {
+    margin: 2rem 0;
+  }
+
   .collab_text {
-    margin: auto;
-    max-width: 24rem;
+    margin: 0 4rem;
     text-align: left;
     padding-bottom: 3rem;
   }
@@ -187,7 +187,7 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
       right: 3vw;
     }
   }
-  @media (max-width: 1714px) {
+  @media (min-width: 1714px) {
     .intro {
       font-size: 30px;
     }
@@ -228,9 +228,9 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
     }
   }
 
-  @media (max-width: 1293px) {
+  @media (min-width: 1293px) {
     .intro {
-      font-size: 24px;
+      font-size: 32px;
     }
     .collab_header {
       font-size: 3.5rem;
@@ -252,24 +252,22 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
     }
 
     .affiliated_logo {
-      width: 30rem;
+      width: 35rem;
       height: auto;
       margin: auto;
       position: relative;
       right: 3vw;
     }
-
-    .contact {
-      gap: 10rem;
-    }
   }
 
-  @media (max-width: 1132px) {
+  @media (min-width: 1132px) {
     .intro {
-      font-size: 18px;
+      margin: 4rem 4rem 7rem 4rem;
+      max-width: 60rem;
     }
+
     .collab_header {
-      font-size: 2rem;
+      font-size: 3rem;
       white-space: nowrap;
     }
     .collab_grid {
@@ -288,17 +286,14 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
     }
 
     .affiliated_logo {
-      width: 20rem;
+      width: 31rem;
       height: auto;
       margin: auto;
-      position: relative;
       right: 3vw;
     }
 
     .collab_p {
       max-width: 100%;
-      position: relative;
-      right: 3vw;
     }
 
     .collab_p {
@@ -307,6 +302,7 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
 
     .contact {
       gap: 10rem;
+      margin: 10rem;
     }
   }
 
