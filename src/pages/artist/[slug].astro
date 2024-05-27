@@ -1,7 +1,7 @@
 ---
 import Nav from "../../components/Nav.astro";
 import "../../style/generalstyle.css";
-import Somelinks from "../../components/Somelinks.astro";
+
 import Footer from "../../components/Footer.astro";
 export async function getStaticPaths() {
   const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
@@ -47,7 +47,20 @@ const { myData } = Astro.props;
   <div class="artist_info">
     <div class="col_flexSingle">
       <h3>{myData.kunsterNavn}</h3>
-      <Somelinks variant="singleview" />
+      <div class="icon_container singleview menu-links">
+        <ul class="icon_container">
+          <li>
+            <a class="social-icon" href=`${myData.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
+          </li>
+          <li><a class="social-icon" href=`${myData.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></li>
+          <li>
+            <a class="social-icon" href=`${myData.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
+          </li>
+          <li>
+            <a class="social-icon" href=`${myData.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
+          </li>
+        </ul>
+      </div>
     </div>
     <p>{myData.beskrivelse}</p>
   </div>
@@ -68,6 +81,41 @@ const { myData } = Astro.props;
 <Footer />
 
 <style>
+  .icon_container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 2vh;
+  }
+  .icon_container a {
+    margin: 0.5rem;
+    font-size: 0.65rem;
+  }
+  .social-icon {
+    width: 100%;
+  }
+  .icon_container li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: var(--backgroundColor);
+  }
+
+  .social-icon:hover {
+    color: var(--accentColor);
+  }
+  .singleview a {
+    color: var(--textColor);
+    font-size: 0.65rem;
+  }
+  .singleview a:hover {
+    color: var(--accentColor);
+  }
+  .singleview {
+    display: flex;
+    margin: 3rem 5rem 0 5rem;
+  }
   .arrow {
     opacity: 100%;
     width: 3rem;
@@ -167,6 +215,12 @@ const { myData } = Astro.props;
     }
     h3 {
       font-size: 36px;
+    }
+    .singleview {
+      display: flex;
+    }
+    .singleview a {
+      font-size: 1rem;
     }
   }
 </style>
