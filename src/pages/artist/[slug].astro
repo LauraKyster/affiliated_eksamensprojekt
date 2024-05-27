@@ -47,9 +47,10 @@ const { myData } = Astro.props;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <title>Artist</title>
   </head>
 
-  <a href="../#frontpage"><div class="arrow_background"><img class="arrow" src="../img/normalArrowH.svg" alt="" /></div></a>
+  <a href="../#frontpage"><div class="arrow_background"><img class="arrow" src="../img/normalArrowH.svg" alt="" width="16" height="16" /></div></a>
   <section class="singleview_img">
     <img class="artist_img" src={"/public/images/" + `${myData.kunsterBillede2}`} alt="billede af artist" />
     <div class="name_scrollbar">
@@ -187,7 +188,7 @@ const { myData } = Astro.props;
       margin-left: 2.8rem;
     }
     #embed-iframe {
-      margin-bottom: 3rem;
+      margin: 3rem;
     }
 
     @keyframes scrollText {
