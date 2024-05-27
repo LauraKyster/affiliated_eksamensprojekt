@@ -39,9 +39,11 @@
   position: absolute;
   top: 35%;
   width: 100%;
-  animation: scrollText 4s linear infinite;
+  text-align: center;
+  /* animation: scrollText 4s linear infinite; */
   display: none;
   pointer-events: none;
+  background-color: #2929299e;
 }
 
 .kunsterPic {
@@ -63,14 +65,15 @@
   animation: scrollText 1s linear infinite;
 }
 
-@keyframes scrollText {
+/* @keyframes scrollText {
   from {
     transform: translateX(100%);
   }
   to {
     transform: translateX(-60%);
   }
-}
+  
+} */
 .icon_containerCards {
   display: flex;
   flex-direction: row;
