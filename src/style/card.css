@@ -1,10 +1,9 @@
 .kunsterPic {
-  width: 23.75rem;
-  height: 22.5rem;
+  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
   filter: grayscale(100%);
-}
+} 
 
 .icon_containerCards li {
   list-style-type: none;
@@ -15,11 +14,20 @@
 }
 
 .containerCards {
-  width: 23.75rem;
-  height: 22.5rem;
+  aspect-ratio: 1/1;
   margin: 0;
   padding: 0;
   overflow: hidden;
+} 
+
+
+.containerCards > img {
+  display: block;
+  width: 100%;
+  height: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
 }
 .cardsLink {
   text-decoration: none;
@@ -101,246 +109,4 @@
 }
 .singleview a:hover {
   color: var(--accentColor);
-}
-
-@media screen and (min-width: 800px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 25.75rem;
-    height: 24.5rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 25.75rem;
-    height: 24.5rem;
-    margin: 0;
-    padding: 0;
-  }
-  ul a .fa-2xl {
-    font-size: 1.3rem;
-  }
-  .icon_containerCards {
-    bottom: 2.5vh;
-    right: 1vw;
-  }
-  .listeNavnCards {
-    font-size: 50px;
-  }
-}
-
-@media screen and (max-width: 699px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 20.9rem;
-    height: 19.9rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 20.9rem;
-    height: 19.9rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul a .fa-2xl {
-    font-size: 1.3rem;
-  }
-  .icon_containerCards {
-    bottom: 2.5vh;
-    right: 4vw;
-  }
-}
-
-@media screen and (max-width: 668px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 20.9rem;
-    height: 19.9rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 20.9rem;
-    height: 19.9rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul a .fa-2xl {
-    font-size: 1.3rem;
-  }
-  .icon_containerCards {
-    bottom: 2.5vh;
-    right: 4vw;
-  }
-}
-@media screen and (max-width: 541px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 16.9rem;
-    height: 15.9rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 16.9rem;
-    height: 15.9rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul a .fa-2xl {
-    font-size: 1.2rem;
-  }
-  .icon_containerCards {
-    bottom: 2vh;
-    right: 3.5vw;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 12.9rem;
-    height: 11.9rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 12.9rem;
-    height: 11.9rem;
-    margin: 0;
-    padding: 0;
-  }
-  .singleview a {
-    font-size: 0.5rem;
-  }
-  ul a .fa-2xl {
-    font-size: 0.7rem;
-  }
-  .icon_containerCards {
-    bottom: 2vh;
-    right: 4.5vw;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 11.9rem;
-    height: 10.9rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 11.9rem;
-    height: 10.9rem;
-    margin: 0;
-    padding: 0;
-  }
-  .singleview a {
-    font-size: 0.5rem;
-  }
-  ul a .fa-2xl {
-    font-size: 0.7rem;
-  }
-}
-@media screen and (max-width: 340px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 11.9rem;
-    height: 10.3rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 11.6rem;
-    height: 10.3rem;
-    margin: 0;
-    padding: 0;
-  }
-  .singleview a {
-    font-size: 0.5rem;
-  }
-  ul a .fa-2xl {
-    font-size: 0.7rem;
-  }
-}
-
-@media screen and (max-width: 332px) {
-  .grid_auto {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-
-  .kunsterPic {
-    width: 24rem;
-    height: 23rem;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%);
-  }
-
-  .containerCards {
-    width: 24rem;
-    height: 23rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul a .fa-2xl {
-    font-size: 1.5rem;
-  }
-
-  .icon_containerCards {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    bottom: 2.5vh;
-    right: 6.5vw;
-  }
 }
