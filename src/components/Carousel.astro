@@ -2,60 +2,51 @@
 
 ---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Free Web tutorials" />
-  <meta name="keywords" content="HTML, CSS, JavaScript" />
-  <meta name="author" content="John Doe" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
-  <!-- aria-label, det her er et label for screen readers   -->
-  <section aria-label="Newest Photos">
-    <div class="carousel" data-carousel>
-      <button aria-label="Carousel right button" role="button" class="carousel_button prev" data-carousel-button="prev"
-        ><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="50.66" height="104" viewBox="0 0 87.66 104"
-          ><defs></defs><path class="cls-1" d="M69.9,55.53l-2.81-7.33L49.33,0h-11.28l-18.32,48.2-2.81,7.33L0,104h8.46c1.54-3.27,4.5-8.51,9.94-13.35,4.24-3.77,8.47-5.96,11.48-7.22,3.58-.68,7.88-1.24,12.77-1.32,5.29-.09,9.93.39,13.73,1.04,2.84,1.02,7.88,3.27,12.67,8.02,4.87,4.84,7.15,9.98,8.18,12.83h10.43l-17.76-48.47Z"></path></svg
-        ></button
-      >
-      <button aria-label="Carousel left button" role="button" class="carousel_button next" data-carousel-button="next"
-        ><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" width="50.66" height="104" viewBox="0 0 87.66 104"
-          ><defs></defs><path class="cls-1" d="M69.9,55.53l-2.81-7.33L49.33,0h-11.28l-18.32,48.2-2.81,7.33L0,104h8.46c1.54-3.27,4.5-8.51,9.94-13.35,4.24-3.77,8.47-5.96,11.48-7.22,3.58-.68,7.88-1.24,12.77-1.32,5.29-.09,9.93.39,13.73,1.04,2.84,1.02,7.88,3.27,12.67,8.02,4.87,4.84,7.15,9.98,8.18,12.83h10.43l-17.76-48.47Z"></path></svg
-        ></button
-      >
-      <ul data-slides>
-        <li class="slide" data-active>
-          <!-- brug supabase til at gøre de nemmere at skifte billeder -->
-          <img class="heroBig" src="../img/frontpage_hero1.webp" alt="Billede af en kunster der synger" />
-          <img class="heroSmall" src="../img/heroNWS1.webp" alt="Billede af en kunster der synger" />
-        </li>
-        <li class="slide">
-          <!-- brug supabase til at gøre de nemmere at skifte billeder -->
-          <img class="heroBig" src="../img/heroNW2.webp" alt="Billede af en kunster der synger" />
-          <img class="heroSmall" src="../img/heroNWS2.webp" alt="Billede af en kunster der synger" />
-        </li>
-        <li class="slide">
-          <!-- brug supabase til at gøre de nemmere at skifte billeder -->
-          <img class="heroBig" src="../img/heroNW3.webp" alt="Billede af en kunster der synger" />
-          <img class="heroSmall" src="../img/heroNWS3.webp" alt="Billede af en kunster der synger" />
-        </li>
-        <li class="slide">
-          <!-- brug supabase til at gøre de nemmere at skifte billeder -->
-          <img class="heroBig" src="../img/heroNW4.webp" alt="Billede af en kunster der synger" />
-          <img class="heroSmall" src="../img/heroNWS4.webp" alt="Billede af en kunster der synger" />
-        </li>
+<!-- aria-label, det her er et label for screen readers   -->
+<section aria-label="Newest Photos">
+  <div class="carousel" data-carousel>
+    <button aria-label="Carousel right button" role="button" class="carousel_button prev" data-carousel-button="prev"
+      ><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="50.66" height="104" viewBox="0 0 87.66 104"
+        ><defs></defs><path class="cls-1" d="M69.9,55.53l-2.81-7.33L49.33,0h-11.28l-18.32,48.2-2.81,7.33L0,104h8.46c1.54-3.27,4.5-8.51,9.94-13.35,4.24-3.77,8.47-5.96,11.48-7.22,3.58-.68,7.88-1.24,12.77-1.32,5.29-.09,9.93.39,13.73,1.04,2.84,1.02,7.88,3.27,12.67,8.02,4.87,4.84,7.15,9.98,8.18,12.83h10.43l-17.76-48.47Z"></path></svg
+      ></button
+    >
+    <button aria-label="Carousel left button" role="button" class="carousel_button next" data-carousel-button="next"
+      ><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" width="50.66" height="104" viewBox="0 0 87.66 104"
+        ><defs></defs><path class="cls-1" d="M69.9,55.53l-2.81-7.33L49.33,0h-11.28l-18.32,48.2-2.81,7.33L0,104h8.46c1.54-3.27,4.5-8.51,9.94-13.35,4.24-3.77,8.47-5.96,11.48-7.22,3.58-.68,7.88-1.24,12.77-1.32,5.29-.09,9.93.39,13.73,1.04,2.84,1.02,7.88,3.27,12.67,8.02,4.87,4.84,7.15,9.98,8.18,12.83h10.43l-17.76-48.47Z"></path></svg
+      ></button
+    >
+    <ul data-slides>
+      <li class="slide" data-active>
+        <!-- brug supabase til at gøre de nemmere at skifte billeder -->
+        <img class="heroBig" src="../img/frontpage_hero1.webp" alt="Billede af en kunster der synger" />
+        <img class="heroSmall" src="../img/heroNWS1.webp" alt="Billede af en kunster der synger" />
+      </li>
+      <li class="slide">
+        <!-- brug supabase til at gøre de nemmere at skifte billeder -->
+        <img class="heroBig" src="../img/heroNW2.webp" alt="Billede af en kunster der synger" />
+        <img class="heroSmall" src="../img/heroNWS2.webp" alt="Billede af en kunster der synger" />
+      </li>
+      <li class="slide">
+        <!-- brug supabase til at gøre de nemmere at skifte billeder -->
+        <img class="heroBig" src="../img/heroNW3.webp" alt="Billede af en kunster der synger" />
+        <img class="heroSmall" src="../img/heroNWS3.webp" alt="Billede af en kunster der synger" />
+      </li>
+      <li class="slide">
+        <!-- brug supabase til at gøre de nemmere at skifte billeder -->
+        <img class="heroBig" src="../img/heroNW4.webp" alt="Billede af en kunster der synger" />
+        <img class="heroSmall" src="../img/heroNWS4.webp" alt="Billede af en kunster der synger" />
+      </li>
+    </ul>
+    <div class="carousel_nav">
+      <ul class="dotsData">
+        <li><button role="button" aria-label="1 hero picture" class="carousel_indicator current-slide" data-dot="0"></button></li>
+        <li><button role="button" aria-label="1 hero picture" class="carousel_indicator" data-dot="1"></button></li>
+        <li><button role="button" aria-label="1 hero picture" class="carousel_indicator" data-dot="2"></button></li>
+        <li><button role="button" aria-label="1 hero picture" class="carousel_indicator" data-dot="3"></button></li>
       </ul>
-      <div class="carousel_nav">
-        <ul class="dotsData">
-          <li><button role="button" aria-label="1 hero picture" class="carousel_indicator current-slide" data-dot="0"></button></li>
-          <li><button role="button" aria-label="1 hero picture" class="carousel_indicator" data-dot="1"></button></li>
-          <li><button role="button" aria-label="1 hero picture" class="carousel_indicator" data-dot="2"></button></li>
-          <li><button role="button" aria-label="1 hero picture" class="carousel_indicator" data-dot="3"></button></li>
-        </ul>
-      </div>
     </div>
-  </section>
-</body>
+  </div>
+</section>
 
 <style>
   /* Dette skal slettes når vi sætter det ind i index */
