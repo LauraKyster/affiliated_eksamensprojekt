@@ -7,17 +7,27 @@ import Somelinks from "./Somelinks.astro";
   <nav class="navbar">
     <div class="nav_icons">
       <p>
-        <a class="social-icon" href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=YEvX-DwNQiOtpXdhzkcMOg/"><i class="fab fa-spotify fa-2xl"></i></a>
+        <a
+          class="social-icon"
+          href="https://open.spotify.com/artist/4GqbDRAmRUxVypISluMWtb?si=YEvX-DwNQiOtpXdhzkcMOg/"
+          ><i class="fab fa-spotify fa-2xl"></i></a
+        >
       </p>
       <p>
-        <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram fa-2xl"></i></a>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-instagram fa-2xl"></i></a
+        >
       </p>
       <p>
-        <a class="social-icon" href="https://www.instagram.com/"><i class="fab fa-facebook fa-2xl"></i></a>
+        <a class="social-icon" href="https://www.instagram.com/"
+          ><i class="fab fa-facebook fa-2xl"></i></a
+        >
       </p>
     </div>
 
-    <a href="../#frontpage"><img class="nav_logo" src="../img/logonormal.svg" alt="logo" /></a>
+    <a href="../#frontpage"
+      ><img class="nav_logo" src="../img/logonormal.svg" alt="logo" /></a
+    >
 
     <ul class="nav_menu">
       <li class="nav_item">
@@ -26,6 +36,9 @@ import Somelinks from "./Somelinks.astro";
       <li class="nav_item"><a href="#col_link_about">ABOUT</a></li>
       <li class="nav_item">
         <a href="#col_link_partners">PARTNERS</a>
+      </li>
+      <li class="homeBurger">
+        <a class="burgerLink" href="/" title="Affiliated index link">HOME</a>
       </li>
     </ul>
     <div class="burger_menu">
@@ -164,7 +177,16 @@ import Somelinks from "./Somelinks.astro";
   .nav_item:hover .dropdown-content {
     display: block;
   }
+  .nav_menu.homeBurger .burgerLink {
+    color: yellow;
+  }
+  .nav_menu .homeBurger a:hover {
+    color: var(--textColor);
+  }
 
+  .homeBurger a {
+    color: var(--backgroundColor);
+  }
   @media screen and (max-width: 700px) {
     .nav_menu {
       width: 45%;
@@ -197,7 +219,8 @@ import Somelinks from "./Somelinks.astro";
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-          const topOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const topOffset =
+            targetElement.getBoundingClientRect().top + window.pageYOffset;
 
           window.scrollTo({
             top: topOffset,
