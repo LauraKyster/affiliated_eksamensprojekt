@@ -18,10 +18,13 @@ import Somelinks from "../components/Somelinks.astro";
         <a class="social-icon" title="Affiliated Facebook" href="https://www.facebook.com/affiliatedcph/"><i class="fab fa-facebook fa-2xl"></i></a>
       </p>
     </div>
-
-    <a href="../#frontpage" title="Affiliated logo and link to frontpage"><img class="nav_logo" src="../img/logonormal.svg" alt="logo" /></a>
     <div>
-      <Button role="link" class="com_pos" variant="community_button"> <a href="../community" title="Affiliated community page"> COMMUNITY</a></Button>
+      <a href="../#frontpage" title="Affiliated logo and link to frontpage"><img class="nav_logo" src="../img/logonormal.svg" alt="logo" /></a>
+    </div>
+    <div class="cpKnap_container">
+      <div class="com_pos community_button">
+        <a href="../community" title="Affiliated community page"> COMMUNITY</a>
+      </div>
     </div>
 
     <ul class="nav_menu">
@@ -35,6 +38,7 @@ import Somelinks from "../components/Somelinks.astro";
       <li class="nav_item"><a href="#contact_link_sektion" title="Affiliated contact section">CONTACT</a></li>
       <li class="communityBurger"><a href="../community" title="Affiliated community link">COMMUNITY</a></li>
     </ul>
+
     <div class="burger_menu">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -44,6 +48,29 @@ import Somelinks from "../components/Somelinks.astro";
 </header>
 
 <style>
+  .cpKnap_container {
+    position: relative;
+    display: block;
+    left: 30%;
+  }
+  .community_button {
+    border: 0.5px solid var(--buttonColor);
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    font-size: 8px;
+    position: relative;
+    border-radius: 0.3rem;
+    left: auto;
+    margin-left: auto;
+    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+    box-shadow:
+      inset 0 -3em 3em var(--backgroundColor),
+      0.4em 0.3em 0.4em rgb(105, 104, 104);
+  }
+  .community_button:hover {
+    background-color: var(--accentColor);
+    color: var(--textColor);
+  }
   .com_pos a {
     text-decoration: none;
     list-style-type: none;
@@ -148,6 +175,13 @@ import Somelinks from "../components/Somelinks.astro";
     z-index: 10;
     background-color: var(--backgroundColor);
   }
+
+  .col_flx {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 7rem;
+  }
   .social-icon {
   }
 
@@ -186,10 +220,13 @@ import Somelinks from "../components/Somelinks.astro";
     color: var(--backgroundColor);
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1050px) {
     .nav_menu {
       width: 45%;
       padding: 1rem 2rem;
+    }
+    .cpKnap_container {
+      display: none;
     }
 
     .nav_icons a {
@@ -199,7 +236,7 @@ import Somelinks from "../components/Somelinks.astro";
     }
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 1051px) {
     .nav_logo {
       margin-right: 5.5rem;
     }
