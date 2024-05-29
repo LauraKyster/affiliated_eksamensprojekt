@@ -81,7 +81,15 @@ const { myData } = Astro.props;
     </div>
 
     <div id="embed-iframe">
-      <iframe style="border-radius:12px" src=`https://open.spotify.com/embed/${myData.spotifyPlaylistLink}` width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe
+        style="border-radius:12px"
+        src=`https://open.spotify.com/embed/${myData.spotifyPlaylistLink}`
+        width="100%"
+        height="352"
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
     </div>
   </section>
 
@@ -137,7 +145,7 @@ const { myData } = Astro.props;
       /* border: solid 0.5rem #efece5; */
       border-radius: 1.3rem;
       opacity: 80%;
-      rotate: 270deg;
+      transform: rotate(270deg);
       position: absolute;
       z-index: 10;
       margin: 1rem 1rem 1rem 2rem;
