@@ -27,6 +27,7 @@ import Somelinks from "./Somelinks.astro";
       <li class="nav_item">
         <a href="#col_link_partners">PARTNERS</a>
       </li>
+      <li class="homeBurger"><a href="../index" " title="Affiliated index link">HOME</a></li>
     </ul>
     <div class="burger_menu">
       <span class="bar"></span>
@@ -163,6 +164,12 @@ import Somelinks from "./Somelinks.astro";
   /* Så links i dropdown er block, og derfor vises*/
   .nav_item:hover .dropdown-content {
     display: block;
+  }
+  .homeBurger a {
+    color: #d68c45;
+  }
+  .homeBurger a:hover {
+    color: var(--backgroundColor);
   }
 
   @media screen and (max-width: 700px) {
