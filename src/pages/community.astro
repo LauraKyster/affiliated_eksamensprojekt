@@ -9,7 +9,10 @@ import Communitylayout from "../layouts/Communitylayout.astro";
   <img class="mobil_head" src="../img/orange_collage.webp" alt="" />
   <section id="col_link_vision" class="com_intro">
     <h2>VISION</h2>
-    <p>In Affiliated, we primarily work with upcoming artists and producers, and we help to develop, guide and advise them with an uncompromising and transparent approach to creating and publishing music. We view it as our task to give them the best framework to unleash their artistic potential while ensuring them good business.</p>
+    <p>
+      In Affiliated, we primarily work with upcoming artists and producers, and we help to develop, guide and advise them with an uncompromising and transparent approach to creating and publishing music. We view it as our task to give them the best
+      framework to unleash their artistic potential while ensuring them good business.
+    </p>
     <h4>"Independent record label with a vision of artistic freedom"</h4>
   </section>
   <section class="flex_img">
@@ -42,7 +45,10 @@ import Communitylayout from "../layouts/Communitylayout.astro";
     <div class="com_intro2">
       <h4>"We believe that artistic freedom and creative expression is the essence of making good music."</h4>
       <p>In Affiliated, we sign artists across style, genre and language.Where some of our artists work within Hip Hop's subgenres such as Trap, Drill, UK garage and Backpack-Rap, others make melodic Pop, Neosoul, modern R&B and Afrobeats.</p>
-      <p>With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more open and transparent to create better opportunities for the smaller players. We wish to give listeners a greater insight into the dominating forces of the music business, as well as why this must change to create equal opportunities for everyone in the industry.</p>
+      <p>
+        With the spread of our music, we want to create a platform for upcoming artists who do not want to compromise on their sound and vision. We dream of making the music industry more open and transparent to create better opportunities for the
+        smaller players. We wish to give listeners a greater insight into the dominating forces of the music business, as well as why this must change to create equal opportunities for everyone in the industry.
+      </p>
     </div>
   </section>
   <section id="col_link_partners" class="partner_section">
@@ -50,24 +56,24 @@ import Communitylayout from "../layouts/Communitylayout.astro";
       <div class="partner_wrap">
         <img class="partner_img" src="../img/partner2.webp" alt="" />
         <div class="partner_name">
-          <p>Alexander Engel</p><p>Creative Director</p>
+          <p>Alexander</p><p>Creative Director</p>
         </div>
       </div>
       <div class="partner_wrap">
         <img class="partner_img" src="../img/partner3.webp" alt="" />
         <div class="partner_name">
-          <p>Manus Bell</p><p>Managing Director</p>
+          <p>Manus</p><p>Managing Director</p>
         </div>
       </div>
       <div class="partner_wrap">
         <img class="partner_img" src="../img/partner4.webp" alt="" />
         <div class="partner_name">
-          <p>Benjamin Winberg</p><p>Label Manager</p>
+          <p>Benjamin</p><p>Label Manager</p>
         </div>
       </div>
       <div class="partner_wrap">
         <img class="partner_img" src="../img/partner5.webp" alt="" />
-        <div class="partner_name"><p>Michael Brandt</p><p>Lawyer</p></div>
+        <div class="partner_name"><p>Michael</p><p>Lawyer</p></div>
       </div>
     </div>
   </section>
@@ -182,6 +188,9 @@ import Communitylayout from "../layouts/Communitylayout.astro";
     h4 {
       font-style: italic;
     }
+    .partner_wrap:hover .partner_name {
+      opacity: 1;
+    }
 
     @keyframes img_animation {
       from {
@@ -194,9 +203,6 @@ import Communitylayout from "../layouts/Communitylayout.astro";
       }
     }
     @media screen and (max-width: 999px) {
-      .partner_wrap:hover .partner_name {
-        opacity: 1;
-      }
       .grid_com,
       .flex_img {
         margin: 2rem;
@@ -290,6 +296,15 @@ import Communitylayout from "../layouts/Communitylayout.astro";
       }
       .com_intro {
         margin: 2rem 20rem 5rem 20rem;
+      }
+    }
+
+    @media screen and (max-width: 499px) {
+      .partner_name {
+        padding: 0rem;
+      }
+      .partner_name :nth-child(2) {
+        display: none;
       }
     }
   </style>
