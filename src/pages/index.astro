@@ -58,7 +58,7 @@ const data = await fetch(
         alt="Affiliated Logo"
       />
       <div class="collab_text">
-        <h2 class="collab_header">OUR COLLABORATORS</h2>
+        <h3 class="collab_header">OUR COLLABORATORS</h3>
         <p class="collab_p">
           We deliver the same high standards as major record labels but at a
           more accessible price. Our visionary partnership emphasizes
@@ -101,6 +101,7 @@ const data = await fetch(
   .artist_section {
     position: relative;
     bottom: 2vh;
+    font-weight: lighter;
   }
   .intro {
     margin: 3rem 2rem 3rem 2em;
@@ -173,42 +174,6 @@ const data = await fetch(
     margin-top: 6rem;
   }
 
-  @media (min-width: 1715px) {
-    .collab_p {
-      max-width: 150%;
-      font-size: 2rem;
-    }
-
-    .intro {
-      font-size: 30px;
-    }
-    .collab_header {
-      font-size: 3.5rem;
-      white-space: nowrap;
-    }
-    .collab_grid {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-
-    .collab_grid > .collab_text {
-      order: -1;
-    }
-
-    .collab_text {
-      max-width: 45rem;
-      padding-left: 5rem;
-    }
-
-    .affiliated_logo {
-      width: 40rem;
-      height: auto;
-      margin: auto;
-      position: relative;
-      right: 3vw;
-    }
-  }
   @media (min-width: 1714px) {
     .intro {
       font-size: 30px;
@@ -255,9 +220,14 @@ const data = await fetch(
       font-size: 32px;
     }
     .collab_header {
-      font-size: 64px;
+      font-size: 3rem;
       white-space: nowrap;
     }
+    .artist_header {
+      font-size: 3rem;
+      white-space: nowrap;
+    }
+
     .collab_grid {
       display: flex;
       flex-direction: row;
@@ -287,9 +257,12 @@ const data = await fetch(
       margin: 4rem 4rem 7rem 4rem;
       max-width: 60rem;
     }
-
+    .artist_header {
+      font-size: 3rem;
+      white-space: nowrap;
+    }
     .collab_header {
-      font-size: 64px;
+      font-size: 3rem;
       white-space: nowrap;
     }
     .collab_grid {
@@ -329,6 +302,10 @@ const data = await fetch(
   }
 
   @media (max-width: 699px) {
+    .artist_header {
+      font-size: 1.3rem;
+      white-space: nowrap;
+    }
     .collab_header {
       font-size: 1.3rem;
       white-space: nowrap;
@@ -358,6 +335,10 @@ const data = await fetch(
   }
 
   @media (max-width: 460px) {
+    .artist_header {
+      font-size: 1.3rem;
+      white-space: nowrap;
+    }
     .collab_header {
       font-size: 1.3rem;
       white-space: nowrap;
