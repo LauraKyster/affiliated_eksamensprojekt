@@ -6,12 +6,16 @@ import Collaborate from "../components/Collaborate.astro";
 import Carousel from "../components/Carousel.astro";
 
 import ArtistListe from "../components/ArtistListe.astro";
-const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
-  },
-}).then((res) => res.json());
+const data = await fetch(
+  "https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affiliatedCphData",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxbGNxbXJ2ZXVwZndsdXdvY3R2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc3MzQ3MzQsImV4cCI6MjAyMzMxMDczNH0.18SZnOZc5uAHdiIeonTl5cOenfcDIkL4VOhqSCsTFwM",
+    },
+  }
+).then((res) => res.json());
 
 // Filter function to get artists based on category
 ---
@@ -22,7 +26,10 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
     <Carousel />
   </section>
   <div>
-    <p class="intro">AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.</p>
+    <p class="intro">
+      AFFILIATED IS A FIERCE BOUTIQUE INDEPENDENT RECORD LABEL, AIMING TO
+      CULTUVATE A DIVERSE ROSTER OF UNDISCOVERED AND UPCOMING MUSIC TALENT.
+    </p>
     <h2 class="artist_header">artists</h2>
   </div>
   <section class="artist_section" id="artist_link_sektion">
@@ -44,10 +51,25 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
   </section>
   <section class="collaborate" id="col_link_sektion">
     <div class="collab_grid">
-      <img class="affiliated_logo" id="order" src="../images/affiliated_logo.png" alt="Affiliated Logo" />
+      <img
+        class="affiliated_logo"
+        id="order"
+        src="../images/affiliated_logo.png"
+        alt="Affiliated Logo"
+      />
       <div class="collab_text fade_in">
-        <h2 class="collab_header">OUR COLLABORATORS</h2>
-        <p class="collab_p">We deliver the same high standards as major record labels but at a more accessible price. Our visionary partnership emphasizes cooperation and the nurturing of upcoming talent. By working together, we enable partners to integrate top-tier music into their projects without exceeding their budget. Our commitment to supporting emerging artists ensures a dynamic and fresh musical landscape, fostering creativity and innovation. Join us in shaping a new era of collaborative musical excellence, where businesses and artists thrive together in a mutually beneficial partnership.</p>
+        <h3 class="collab_header">OUR COLLABORATORS</h3>
+        <p class="collab_p">
+          We deliver the same high standards as major record labels but at a
+          more accessible price. Our visionary partnership emphasizes
+          cooperation and the nurturing of upcoming talent. By working together,
+          we enable partners to integrate top-tier music into their projects
+          without exceeding their budget. Our commitment to supporting emerging
+          artists ensures a dynamic and fresh musical landscape, fostering
+          creativity and innovation. Join us in shaping a new era of
+          collaborative musical excellence, where businesses and artists thrive
+          together in a mutually beneficial partnership.
+        </p>
       </div>
     </div>
     <div><Collaborate /></div>
@@ -79,6 +101,7 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
   .artist_section {
     position: relative;
     bottom: 2vh;
+    font-weight: lighter;
   }
   .intro {
     margin: 3rem 2rem 3rem 2em;
@@ -151,42 +174,6 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
     margin-top: 6rem;
   }
 
-  @media (min-width: 1715px) {
-    .collab_p {
-      max-width: 150%;
-      font-size: 2rem;
-    }
-
-    .intro {
-      font-size: 30px;
-    }
-    .collab_header {
-      font-size: 3.5rem;
-      white-space: nowrap;
-    }
-    .collab_grid {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-
-    .collab_grid > .collab_text {
-      order: -1;
-    }
-
-    .collab_text {
-      max-width: 45rem;
-      padding-left: 5rem;
-    }
-
-    .affiliated_logo {
-      width: 40rem;
-      height: auto;
-      margin: auto;
-      position: relative;
-      right: 3vw;
-    }
-  }
   @media (min-width: 1714px) {
     .intro {
       font-size: 30px;
@@ -233,9 +220,14 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
       font-size: 32px;
     }
     .collab_header {
-      font-size: 64px;
+      font-size: 3rem;
       white-space: nowrap;
     }
+    .artist_header {
+      font-size: 3rem;
+      white-space: nowrap;
+    }
+
     .collab_grid {
       display: flex;
       flex-direction: row;
@@ -265,9 +257,12 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
       margin: 4rem 4rem 7rem 4rem;
       max-width: 60rem;
     }
-
+    .artist_header {
+      font-size: 3rem;
+      white-space: nowrap;
+    }
     .collab_header {
-      font-size: 64px;
+      font-size: 3rem;
       white-space: nowrap;
     }
     .collab_grid {
@@ -307,6 +302,10 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
   }
 
   @media (max-width: 699px) {
+    .artist_header {
+      font-size: 1.3rem;
+      white-space: nowrap;
+    }
     .collab_header {
       font-size: 1.3rem;
       white-space: nowrap;
@@ -336,6 +335,10 @@ const data = await fetch("https://qqlcqmrveupfwluwoctv.supabase.co/rest/v1/affil
   }
 
   @media (max-width: 460px) {
+    .artist_header {
+      font-size: 1.3rem;
+      white-space: nowrap;
+    }
     .collab_header {
       font-size: 1.3rem;
       white-space: nowrap;
