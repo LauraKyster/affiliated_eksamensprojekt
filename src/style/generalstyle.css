@@ -16,17 +16,6 @@ img {
   height: auto;
 }
 
-/* Farver og fonts */
-@font-face {
-  font-family: sans_tekst;
-  src: url("../public/fonts/ptsans.woff2");
-}
-
-@font-face {
-  font-family: serif_tekst;
-  src: url("../public/fonts/ptserif.woff2");
-}
-
 :root {
   --backgroundColor: #efece5;
   --accentColor: #eb840e;
@@ -40,15 +29,13 @@ body {
   color: var(--textColor);
 }
 
-/* generel styling */
-
 h1,
 h2,
 h3,
 h4,
 button,
 a {
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 p {
   font-family: Arial, Helvetica, sans-serif;
