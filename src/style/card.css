@@ -78,7 +78,7 @@
   flex-direction: row;
   position: relative;
   bottom: 2vh;
-  right: 1.5vw;
+  
 }
 .icon_containerCards a {
   margin: 0.5rem;
@@ -130,13 +130,15 @@
   }
   .icon_containerCards {
     bottom: 2.5vh;
-    right: 1vw;
+   
   }
   .listeNavnCards {
     font-size: 50px;
     font-weight: lighter;
   }
 }
+
+
 
 @media screen and (max-width: 699px) {
   .grid_auto {
@@ -164,7 +166,7 @@
   }
   .icon_containerCards {
     bottom: 2.5vh;
-    right: 4vw;
+    
   }
 }
 
@@ -194,7 +196,7 @@
   }
   .icon_containerCards {
     bottom: 2.5vh;
-    right: 4vw;
+
   }
 }
 @media screen and (max-width: 541px) {
@@ -223,7 +225,7 @@
   }
   .icon_containerCards {
     bottom: 2vh;
-    right: 3.5vw;
+   
   }
 }
 
@@ -255,7 +257,7 @@
   }
   .icon_containerCards {
     bottom: 2vh;
-    right: 4.5vw;
+    
   }
 }
 
@@ -344,6 +346,6 @@
     flex-direction: row;
     position: relative;
     bottom: 2.5vh;
-    right: 6.5vw;
+    
   }
 }
