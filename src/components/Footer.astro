@@ -3,9 +3,7 @@
 ---
 
 <head>
-  <script
-    src="https://kit.fontawesome.com/75de2ab164.js"
-    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/75de2ab164.js" crossorigin="anonymous"></script>
 </head>
 <footer>
   <section class="flex_container">
@@ -21,28 +19,15 @@
     </div>
     <div class="icon_container">
       <p>
-        <a
-          title="Affiliated spotify"
-          class="social-icon"
-          href="https://open.spotify.com/playlist/5VbcNbRnFtpPQc4fjjjfS5?si=89bdPcFRS1ixRUsoq1Nzlg&fbclid=IwAR3zqxbzfAjjdSpPr_9ELHn4x06pPdbU1strd67K2aJzGtDbeKn-lf3h-bI&nd=1"
+        <a title="Affiliated spotify" class="social-icon" href="https://open.spotify.com/playlist/5VbcNbRnFtpPQc4fjjjfS5?si=89bdPcFRS1ixRUsoq1Nzlg&fbclid=IwAR3zqxbzfAjjdSpPr_9ELHn4x06pPdbU1strd67K2aJzGtDbeKn-lf3h-bI&nd=1"
           ><i class="fab fa-spotify fa-2xl"></i></a
         >
       </p>
       <p>
-        <a
-          title="Affiliated Instagram"
-          class="social-icon"
-          href="https://www.instagram.com/affiliatedcph/"
-          ><i class="fab fa-instagram fa-2xl"></i></a
-        >
+        <a title="Affiliated Instagram" class="social-icon" href="https://www.instagram.com/affiliatedcph/"><i class="fab fa-instagram fa-2xl"></i></a>
       </p>
       <p>
-        <a
-          title="Affiliated Facebook"
-          class="social-icon"
-          href="https://www.facebook.com/affiliatedcph/"
-          ><i class="fab fa-facebook fa-2xl"></i></a
-        >
+        <a title="Affiliated Facebook" class="social-icon" href="https://www.facebook.com/affiliatedcph/"><i class="fab fa-facebook fa-2xl"></i></a>
       </p>
     </div>
   </section>
@@ -62,11 +47,13 @@
   footer {
     background-color: #685950;
     color: white;
+    padding: 1rem;
   }
 
   footer a,
   a:visited {
     color: white;
+    text-decoration: none;
   }
 
   a:hover {
@@ -79,25 +66,31 @@
     padding-bottom: 1rem;
   }
 
+  .flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 2rem;
+  }
+
+  .flex_container > div {
+    flex: 1 1 100px; /* This allows flexibility and wrapping */
+    margin: 0.5rem;
+  }
+
+  .icon_container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .social-icon {
+    margin: 0 0.5rem;
+  }
+
   /* Media queries */
-
   @media only screen and (max-width: 600px) {
-    a {
-      font-size: 0.875rem;
-    }
-
     .flex_container {
       display: block;
-      padding-top: 2rem;
-    }
-
-    .adresse_container,
-    .opening_container,
-    .icon_container {
-      position: static;
-      left: auto;
-      bottom: auto;
-      top: auto;
     }
 
     .icon_container {
@@ -107,76 +100,30 @@
     }
 
     .social-icon {
-      bottom: 0.5rem;
+      display: inline-block;
+      margin: 0.5rem;
     }
   }
-
-  @media only screen and (max-width: 1311px) {
-    a {
-      font-size: 1rem;
-    }
-
-    .flex_container {
-      display: flex;
-      flex-direction: row;
-      padding-top: 3rem;
-    }
-
-    .adresse_container,
-    .opening_container,
-    .icon_container {
-      position: relative;
-    }
-
-    .adresse_container {
-      left: 1rem;
-    }
-
-    .opening_container {
-      left: 2rem;
-    }
-
-    .icon_container {
-      display: flex;
-      flex-direction: column;
-      left: 50%;
-      bottom: 1.5rem;
-    }
-
-    .social-icon {
-      bottom: 1rem;
-    }
+  .adresse_container {
+    position: relative;
+    text-align: center;
+  }
+  .opening_container {
+    position: relative;
+    text-align: center;
   }
 
-  @media only screen and (min-width: 1312px) {
-    a {
-      padding-right: 20px;
-      font-size: 1rem;
-    }
-
-    .adresse_container,
-    .opening_container,
-    .icon_container {
-      position: relative;
-    }
-
-    .adresse_container {
-      left: 5rem;
-    }
-
-    .opening_container {
-      left: 20rem;
-    }
-
-    .icon_container {
-      display: flex;
-      left: 64rem;
-      top: 1.5rem;
-    }
-
+  @media only screen and (min-width: 601px) {
     .flex_container {
       display: flex;
-      padding-top: 5rem;
+      justify-content: space-between;
+    }
+
+    .icon_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
     }
   }
 </style>
