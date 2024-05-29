@@ -51,14 +51,14 @@ const { myData } = Astro.props;
   </head>
 
   <a href="/#frontpage"><div class="arrow_background"><img class="arrow" src="/img/normalArrowH.svg" alt="" width="16" height="16" /></div></a>
-  <section class="singleview_img">
+  <section class="singleview_img fade_in">
     <img class="artist_img" src={"/images/" + `${myData.kunsterBillede2}`} alt="billede af artist" />
     <div class="name_scrollbar">
       <h1 class="parallax_name">{myData.kunsterNavn}</h1>
     </div>
   </section>
 
-  <section class="singleview_grid">
+  <section class="singleview_grid fade_in">
     <div class="artist_info">
       <div class="col_flexSingle">
         <h3>{myData.kunsterNavn}</h3>
@@ -91,6 +91,7 @@ const { myData } = Astro.props;
     html {
       overflow-x: hidden;
     }
+
     .icon_container {
       display: flex;
       flex-direction: row;
@@ -242,6 +243,19 @@ const { myData } = Astro.props;
       }
       .arrow {
         width: 1.2rem;
+      }
+    }
+
+    .fade_in {
+      animation: fade_in 2s both;
+    }
+    @keyframes fade_in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
       }
     }
   </style>
