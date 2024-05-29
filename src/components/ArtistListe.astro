@@ -19,25 +19,24 @@ import "../style/card.css";
           <h2 class="colCard listeNavnCards">{data.kunsterNavn}</h2>
 
           <img class="kunsterPic" src={"../images/" + `${data.kunsterBillede1}`} alt="billede af artist" />
-
-          <div class="icon_containerCards">
-            <ul class="icon_containerCards">
-              <li>
-                <a class="social-iconCards" href=`${data.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
-              </li>
-              <li><a class="social-iconCards" href=`${data.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></li>
-              <li>
-                <a class="social-iconCards" href=`${data.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
-              </li>
-              <li>
-                <a class="social-iconCards" href=`${data.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
     </article>
   </a>
+  <div class="icon_containerCards">
+    <ul class="icon_containerCards">
+      <li>
+        <a class="social-iconCards" href=`${data.spotifyLogoLink}`><i class="fab fa-spotify fa-2xl"></i></a>
+      </li>
+      <li><a class="social-iconCards" href=`${data.youtubeLogoLink}`><i class="fab fa-youtube fa-2xl"></i></a></li>
+      <li>
+        <a class="social-iconCards" href=`${data.instagramLogoLink}`><i class="fab fa-instagram fa-2xl"></i></a>
+      </li>
+      <li>
+        <a class="social-iconCards" href=`${data.facebookLogoLink}`><i class="fab fa-facebook fa-2xl"></i></a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <script src="https://kit.fontawesome.com/75de2ab164.js" crossorigin="anonymous"></script>
