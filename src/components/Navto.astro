@@ -52,7 +52,7 @@ import Somelinks from "./Somelinks.astro";
   .nav_logo {
     width: 40px;
     height: 40px;
-    margin-right: 6rem;
+    margin-right: 2.7rem;
   }
   .nav_item {
     transition: 0.7s ease;
@@ -188,6 +188,11 @@ import Somelinks from "./Somelinks.astro";
       color: var(--textColor);
       font-size: 0.5rem;
       padding-right: 0.5rem;
+    }
+  }
+  @media screen and (min-width: 700px) {
+    .nav_logo {
+      margin-right: 6rem;
     }
   }
 </style>
