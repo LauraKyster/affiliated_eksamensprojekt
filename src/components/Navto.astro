@@ -27,7 +27,7 @@ import Somelinks from "./Somelinks.astro";
       <li class="nav_item">
         <a href="#col_link_partners">PARTNERS</a>
       </li>
-      <li class="homeBurger"><a href="../index" " title="Affiliated index link">HOME</a></li>
+      <li class="homeBurger"><a href="../index.astro" " title="Affiliated index link">HOME</a></li>
     </ul>
     <div class="burger_menu">
       <span class="bar"></span>
@@ -165,11 +165,11 @@ import Somelinks from "./Somelinks.astro";
   .nav_item:hover .dropdown-content {
     display: block;
   }
-  .homeBurger a {
-    color: #d68c45;
+  .nav_menu .homeBurger a {
+    color: var(--textColor);
   }
-  .homeBurger a:hover {
-    color: var(--backgroundColor);
+  .nav_menu .homeBurger a:hover {
+    color: var(--textColor);
   }
 
   @media screen and (max-width: 700px) {
