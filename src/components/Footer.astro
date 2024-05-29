@@ -52,88 +52,131 @@
 </footer>
 
 <style>
-  .flex_container div p {
+  /* Common styles */
+  .flex_container div p,
+  .cvr_container div p,
+  footer {
     font-family: Arial, Helvetica, sans-serif;
   }
-  .cvr_container div p {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .flex_container div p {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+
   footer {
     background-color: #685950;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
   }
-  footer a {
+
+  footer a,
+  a:visited {
     color: white;
   }
+
+  a:hover {
+    color: var(--accentColor);
+  }
+
   .cvr_container {
     text-align: center;
     font-size: small;
     padding-bottom: 1rem;
   }
-  @media only screen and (max-width: 1000px) {
+
+  /* Media queries */
+
+  @media only screen and (max-width: 600px) {
+    a {
+      font-size: 0.875rem;
+    }
+
+    .flex_container {
+      display: block;
+      padding-top: 2rem;
+    }
+
+    .adresse_container,
+    .opening_container,
+    .icon_container {
+      position: static;
+      left: auto;
+      bottom: auto;
+      top: auto;
+    }
+
+    .icon_container {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .social-icon {
+      bottom: 0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 1311px) {
     a {
       font-size: 1rem;
     }
+
     .flex_container {
       display: flex;
       flex-direction: row;
       padding-top: 3rem;
     }
-    .adresse_container {
+
+    .adresse_container,
+    .opening_container,
+    .icon_container {
       position: relative;
+    }
+
+    .adresse_container {
       left: 1rem;
     }
+
     .opening_container {
-      position: relative;
       left: 2rem;
     }
 
     .icon_container {
       display: flex;
       flex-direction: column;
-      position: relative;
       left: 50%;
       bottom: 1.5rem;
     }
+
     .social-icon {
-      position: relative;
       bottom: 1rem;
     }
   }
+
   @media only screen and (min-width: 1312px) {
     a {
       padding-right: 20px;
       font-size: 1rem;
     }
-    .adresse_container {
-      position: relative;
-      left: 5rem;
-    }
+
+    .adresse_container,
+    .opening_container,
     .icon_container {
-      display: flex;
       position: relative;
-      left: 64rem;
-      top: 1.5rem;
+    }
+
+    .adresse_container {
+      left: 5rem;
     }
 
     .opening_container {
-      position: relative;
       left: 20rem;
+    }
+
+    .icon_container {
+      display: flex;
+      left: 64rem;
+      top: 1.5rem;
     }
 
     .flex_container {
       display: flex;
       padding-top: 5rem;
     }
-  }
-  a:visited {
-    color: white;
-  }
-  a:hover {
-    color: var(--accentColor);
   }
 </style>
